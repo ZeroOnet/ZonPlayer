@@ -1,0 +1,16 @@
+PODS:
+  - ZonPlayer (0.1.0)
+
+DEPENDENCIES:
+  - ZonPlayer (from `./`)
+
+EXTERNAL SOURCES:
+  ZonPlayer:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  ZonPlayer: df17dde6edb29043defa17462c3d1626705bb87e
+
+PODFILE CHECKSUM: 75a9dc4e7a644ef47969c911f7e920c85d28c654
+
+COCOAPODS: 1.12.1

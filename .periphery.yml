@@ -1,0 +1,13 @@
+# Swift 无用代码的检查依赖编译成功后的 index store 和 AST，需要指定 scheme 和 target。
+schemes:
+- Example-iOS
+targets:
+- ZonPlayer
+workspace: ZonPlayer.xcworkspace
+
+retain_objc_accessible: true # 忽略声明为 @objc、@objcMemebers 的代码以及直接或者间接继承 NSObject 的类型
+retain_public: true # 忽略声明为 public 的代码
+
+retain_unused_protocol_func_params: false # 检查未使用的协议函数参数
+retain_assign_only_properties: false # 检查只赋值未使用的属性
+disable_redundant_public_analysis: false # 检查冗余的 public
