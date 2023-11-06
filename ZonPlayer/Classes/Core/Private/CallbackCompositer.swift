@@ -14,52 +14,68 @@ final class CallbackCompositer: ZPObservable {
         self.monitors = monitors
     }
 
-    lazy var waitToPlay: ((ZonPlayable, ZPWaitingReason) -> Void)? = { { [weak self] player, reason in
-        self?._callback { $0.waitToPlay?(player, reason) }
-        self?._monitor { $0.player(player, didWaitToPlay: reason) }
-    } }()
-
-    lazy var play: ((ZonPlayable, Float) -> Void)? = { { [weak self] player, rate in
-        self?._callback { $0.play?(player, rate) }
-        self?._monitor { $0.player(player, didPlay: rate) }
-    } }()
-
-    lazy var pause: ((ZonPlayable) -> Void)? = { { [weak self] player in
-        self?._callback { $0.pause?(player) }
-        self?._monitor { $0.playerDidPause(player) }
-    } }()
-
-    lazy var finish: ((ZonPlayable, URL) -> Void)? = { { [weak self] player, url in
-        self?._callback { $0.finish?(player, url) }
-        self?._monitor { $0.playerPlayDidFinish(player, url: url) }
-    } }()
-
-    lazy var error: ((ZonPlayable, ZonPlayer.Error) -> Void)? = { { [weak self] player, error in
-        self?._callback { $0.error?(player, error) }
-        self?._monitor { $0.player(player, playFailed: error) }
-    } }()
-
-    lazy var progress: ((ZonPlayable, TimeInterval, Double) -> Void)? = {
-        { [weak self] player, current, percentage in
-            self?._callback { $0.progress?(player, current, percentage) }
-            self?._monitor { $0.player(player, playProgressDidChange: current, percentage: percentage) }
+    lazy var waitToPlay: ZPDelegate<(ZonPlayable, ZPWaitingReason), Void>? = {
+        .init().delegate(on: self) { wlf, input in
+            wlf._callback { $0.waitToPlay?.call(input) }
+            wlf._monitor { $0.player(input.0, didWaitToPlay: input.1) }
         }
     }()
 
-    lazy var duration: ((ZonPlayable, TimeInterval) -> Void)? = { { [weak self] player, duration in
-        self?._callback { $0.duration?(player, duration) }
-        self?._monitor { $0.player(player, playDuration: duration) }
-    } }()
+    lazy var play: ZPDelegate<(ZonPlayable, Float), Void>? = {
+        .init().delegate(on: self) { wlf, input in
+            wlf._callback { $0.play?.call(input) }
+            wlf._monitor { $0.player(input.0, didPlay: input.1) }
+        }
+    }()
 
-    lazy var background: ((ZonPlayable, Bool) -> Void)? = { { [weak self] player, status in
-        self?._callback { $0.background?(player, status) }
-        self?._monitor { $0.play(player, backgroundPlay: status) }
-    } }()
+    lazy var pause: ZPDelegate<ZonPlayable, Void>? = {
+        .init().delegate(on: self) { wlf, input in
+            wlf._callback { $0.pause?.call(input) }
+            wlf._monitor { $0.playerDidPause(input) }
+        }
+    }()
 
-    lazy var rate: ((ZonPlayable, Float, Float) -> Void)? = { { [weak self] player, old, new in
-        self?._callback { $0.rate?(player, old, new) }
-        self?._monitor { $0.play(player, playRateDidChange: old, to: new) }
-    } }()
+    lazy var finish: ZPDelegate<(ZonPlayable, URL), Void>? = {
+        .init().delegate(on: self) { wlf, input in
+            wlf._callback { $0.finish?.call(input) }
+            wlf._monitor { $0.playerPlayDidFinish(input.0, url: input.1) }
+        }
+    }()
+
+    lazy var error: ZPDelegate<(ZonPlayable, ZonPlayer.Error), Void>? = {
+        .init().delegate(on: self) { wlf, input in
+            wlf._callback { $0.error?.call(input) }
+            wlf._monitor { $0.player(input.0, playFailed: input.1) }
+        }
+    }()
+
+    lazy var progress: ZPDelegate<(ZonPlayable, TimeInterval, TimeInterval), Void>? = {
+        .init().delegate(on: self) { wlf, input in
+            wlf._callback { $0.progress?.call(input) }
+            wlf._monitor { $0.player(input.0, playProgressDidChange: input.1, totalTime: input.2) }
+        }
+    }()
+
+    lazy var duration: ZPDelegate<(ZonPlayable, TimeInterval), Void>? = {
+        .init().delegate(on: self) { wlf, input in
+            wlf._callback { $0.duration?.call(input) }
+            wlf._monitor { $0.player(input.0, playDuration: input.1) }
+        }
+    }()
+
+    lazy var background: ZPDelegate<(ZonPlayable, Bool), Void>? = {
+        .init().delegate(on: self) { wlf, input in
+            wlf._callback { $0.background?.call(input) }
+            wlf._monitor { $0.play(input.0, backgroundPlay: input.1) }
+        }
+    }()
+
+    lazy var rate: ZPDelegate<(ZonPlayable, Float, Float), Void>? = {
+        .init().delegate(on: self) { wlf, input in
+            wlf._callback { $0.rate?.call(input) }
+            wlf._monitor { $0.play(input.0, playRateDidChange: input.1, to: input.2) }
+        }
+    }()
 }
 
 extension CallbackCompositer {

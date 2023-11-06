@@ -50,38 +50,38 @@ extension ZPRemoteControllable {
     }
 
     @discardableResult
-    public func playCommand(_ handler: @escaping () -> Void) -> Self {
-        commands.append(ZonPlayer.RemoteCommand.play(handler: handler))
+    public func playCommand<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> Self {
+        commands.append(ZonPlayer.RemoteCommand.play(target, block: block))
         return self
     }
 
     @discardableResult
-    public func pauseCommand(_ handler: @escaping () -> Void) -> Self {
-        commands.append(ZonPlayer.RemoteCommand.pause(handler: handler))
+    public func pauseCommand<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> Self {
+        commands.append(ZonPlayer.RemoteCommand.pause(target, block: block))
         return self
     }
 
     @discardableResult
-    public func previousCommand(_ handler: @escaping () -> Void) -> Self {
-        commands.append(ZonPlayer.RemoteCommand.previousTrack(handler: handler))
+    public func previousCommand<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> Self {
+        commands.append(ZonPlayer.RemoteCommand.previousTrack(target, block: block))
         return self
     }
 
     @discardableResult
-    public func nextCommand(_ handler: @escaping () -> Void) -> Self {
-        commands.append(ZonPlayer.RemoteCommand.nextTrack(handler: handler))
+    public func nextCommand<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> Self {
+        commands.append(ZonPlayer.RemoteCommand.nextTrack(target, block: block))
         return self
     }
 
     @discardableResult
-    public func seekCommand(_ handler: @escaping (TimeInterval) -> Void) -> Self {
-        commands.append(ZonPlayer.RemoteCommand.seek(handler: handler))
+    public func seekCommand<T: AnyObject>(_ target: T, block: ((T, TimeInterval) -> Void)?) -> Self {
+        commands.append(ZonPlayer.RemoteCommand.seek(target, block: block))
         return self
     }
 
     @discardableResult
-    public func headsetCommand(_ handler: @escaping () -> Void) -> Self {
-        commands.append(ZonPlayer.RemoteCommand.playOrPauseViaHeadset(handler: handler))
+    public func headsetCommand<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> Self {
+        commands.append(ZonPlayer.RemoteCommand.playOrPauseViaHeadset(target, block: block))
         return self
     }
 
@@ -93,12 +93,12 @@ extension ZPRemoteControllable {
 }
 
 public protocol ZPRemoteControlSettable {
-    var remoteControl: ((ZPRemoteControllable) -> Void)? { get nonmutating set }
+    var remoteControl: ZPDelegate<ZPRemoteControllable, Void>? { get nonmutating set }
 }
 
 extension ZPRemoteControlSettable {
-    public func remoteControl(_ remoteControl: @escaping (ZPRemoteControllable) -> Void) -> Self {
-        self.remoteControl = remoteControl
+    public func remoteControl<T: AnyObject>(_ target: T, block: ((T, ZPRemoteControllable) -> Void)?) -> Self {
+        remoteControl = (remoteControl ?? .init()).delegate(on: target, block: block)
         return self
     }
 }

@@ -10,6 +10,8 @@ extension ZonPlayer {
         public static let shared = Manager()
 
         /// Global player activity monitors like ZPObservable.
+        ///
+        /// - Important: Add monitor before playback.
         public var monitors: [ZPMonitorable] = []
 
         public var enableConsoleLog: Bool = false {
@@ -62,7 +64,7 @@ extension ZonPlayer.Manager {
             )
         } catch {
             let dummy = DummyPlayer()
-            setter.callbackQueue.async { setter.error?(dummy, .invalidURL(setter.url)) }
+            setter.callbackQueue.async { setter.error?.call((dummy, .invalidURL(setter.url))) }
             return dummy
         }
     }

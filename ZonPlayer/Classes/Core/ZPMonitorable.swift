@@ -16,7 +16,7 @@ public protocol ZPMonitorable {
 
     func player(_ player: ZonPlayable, playFailed error: ZonPlayer.Error)
 
-    func player(_ player: ZonPlayable, playProgressDidChange currentTime: TimeInterval, percentage: Double)
+    func player(_ player: ZonPlayable, playProgressDidChange currentTime: TimeInterval, totalTime: TimeInterval)
 
     func player(_ player: ZonPlayable, playDuration duration: TimeInterval)
 
@@ -34,7 +34,11 @@ extension ZPMonitorable {
     public func playerDidPause(_ player: ZonPlayable) {}
     public func playerPlayDidFinish(_ player: ZonPlayable, url: URL) {}
     public func player(_ player: ZonPlayable, playFailed error: ZonPlayer.Error) {}
-    public func player(_ player: ZonPlayable, playProgressDidChange currentTime: TimeInterval, percentage: Double) {}
+    public func player(
+        _ player: ZonPlayable,
+        playProgressDidChange currentTime: TimeInterval,
+        totalTime: TimeInterval
+    ) {}
     public func player(_ player: ZonPlayable, playDuration duration: TimeInterval) {}
     public func play(_ player: ZonPlayable, backgroundPlay status: Bool) {}
     public func play(_ player: ZonPlayable, playRateDidChange from: Float, to: Float) {}

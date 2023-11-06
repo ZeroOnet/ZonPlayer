@@ -11,12 +11,12 @@ extension ZonPlayer {
     public final class RemoteCommand: NSObject, ZPRemoteCommandable {
         public typealias EventHandler = (MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus
 
-        public var handler: EventHandler?
+        public var handler: ZPDelegate<MPRemoteCommandEvent, MPRemoteCommandHandlerStatus>?
         public let command: MPRemoteCommand
         public init(command: MPRemoteCommand) {
             self.command = command
             super.init()
-            command.addTarget(self, action: #selector(commandAction(event:)))
+            command.addTarget(self, action: #selector(_commandAction(event:)))
             command.isEnabled = false
         }
 
@@ -28,64 +28,55 @@ extension ZonPlayer {
             command.isEnabled = false
         }
 
+        fileprivate var action: ZPDelegate<MPRemoteCommandEvent, MPRemoteCommandHandlerStatus> {
+            if let handler { return handler }
+            let result = ZPDelegate<MPRemoteCommandEvent, MPRemoteCommandHandlerStatus>()
+            handler = result
+            return result
+        }
+
         @objc
-        private func commandAction(event: MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
+        private func _commandAction(event: MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus {
             // Your selector should return a MPRemoteCommandHandlerStatus value when
             // possible. This allows the system to respond appropriately to commands that
             // may not have been able to be executed in accordance with the application's
             // current state.
-            handler?(event) ?? .commandFailed
+            handler?.call(event) ?? .commandFailed
         }
     }
 }
 
 extension ZPRemoteCommand {
-    public static func play(handler: @escaping () -> Void) -> ZPRemoteCommand {
-        play.handler = { _ -> MPRemoteCommandHandlerStatus in
-            handler()
-            return .success
-        }
+    public static func play<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZPRemoteCommand {
+        play.action.delegate(on: target) { wlt, _ in block?(wlt); return .success }
         return play
     }
 
-    public static func pause(handler: @escaping () -> Void) -> ZPRemoteCommand {
-        pause.handler = { _ -> MPRemoteCommandHandlerStatus in
-            handler()
-            return .success
-        }
+    public static func pause<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZPRemoteCommand {
+        pause.action.delegate(on: target) { wlt, _ in block?(wlt); return .success }
         return pause
     }
 
-    public static func previousTrack(handler: @escaping () -> Void) -> ZPRemoteCommand {
-        previousTrack.handler = { _ -> MPRemoteCommandHandlerStatus in
-            handler()
-            return .success
-        }
+    public static func previousTrack<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZPRemoteCommand {
+        previousTrack.action.delegate(on: target) { wlt, _ in block?(wlt); return .success }
         return previousTrack
     }
 
-    public static func nextTrack(handler: @escaping () -> Void) -> ZPRemoteCommand {
-        nextTrack.handler = { _ -> MPRemoteCommandHandlerStatus in
-            handler()
-            return .success
-        }
+    public static func nextTrack<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZPRemoteCommand {
+        nextTrack.action.delegate(on: target) { wlt, _ in block?(wlt); return .success }
         return nextTrack
     }
 
-    public static func seek(handler: @escaping (TimeInterval) -> Void) -> ZPRemoteCommand {
-        seek.handler = { event -> MPRemoteCommandHandlerStatus in
-            guard let positionEvent = event as? MPChangePlaybackPositionCommandEvent else { return .commandFailed }
-            handler(positionEvent.positionTime)
-            return .success
+    public static func seek<T: AnyObject>(_ target: T, block: ((T, TimeInterval) -> Void)?) -> ZPRemoteCommand {
+        seek.action.delegate(on: target) { wlt, event in
+            guard let pvt = event as? MPChangePlaybackPositionCommandEvent else { return .commandFailed }
+            block?(wlt, pvt.positionTime); return .success
         }
         return seek
     }
 
-    public static func playOrPauseViaHeadset(handler: @escaping () -> Void) -> ZPRemoteCommand {
-        headset.handler = { _ -> MPRemoteCommandHandlerStatus in
-            handler()
-            return .success
-        }
+    public static func playOrPauseViaHeadset<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZPRemoteCommand {
+        headset.action.delegate(on: target) { wlt, _ in block?(wlt); return .success }
         return headset
     }
 }
