@@ -8,8 +8,8 @@
 public final class ZPDownloadBeforePlayback: ZPCacheable {
     public let downloader: ZPURLDownloadable
     public let storage: ZPFileStorable
-    init(
-        downloader: ZPURLDownloadable,
+    public init(
+        downloader: ZPURLDownloadable = ZPDefaultDownloader(timeout: 30),
         storage: ZPFileStorable = ZPDefaultStorage()
     ) {
         self.downloader = downloader

@@ -46,6 +46,7 @@ public final class ZPDefaultStorage {
     public let config: Config
     public init(config: Config = .default) {
         self.config = config
+        _prepare()
     }
 
     private lazy var _ioQueue: DispatchQueue = {
@@ -111,6 +112,15 @@ extension ZPDefaultStorage: ZPFileStorable {
             try? FileManager.default.removeItem(at: dir)
             completion?()
         }
+    }
+}
+
+extension ZPDefaultStorage {
+    private func _prepare() {
+        let fileManager = FileManager.default
+        let path = config.cacheDirectory.path
+        guard !fileManager.fileExists(atPath: path) else { return }
+        try? fileManager.createDirectory(atPath: path, withIntermediateDirectories: true)
     }
 }
 

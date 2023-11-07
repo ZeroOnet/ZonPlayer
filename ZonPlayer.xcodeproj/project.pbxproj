@@ -13,6 +13,11 @@
 		8DEC093E248F8294002D1391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEC093C248F8294002D1391 /* LaunchScreen.storyboard */; };
 		8DEC094A248F8383002D1391 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC0949248F8383002D1391 /* Tests.swift */; };
 		C8251832CEA121F5E8633BD5 /* Pods_Example_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAC9455D942F0F82A1CDC0E /* Pods_Example_iOS.framework */; };
+		FA55387D2AFA0A3F003AA11C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55387C2AFA0A3F003AA11C /* AppDelegate.swift */; };
+		FA55387F2AFA0A72003AA11C /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55387E2AFA0A72003AA11C /* HomeScene.swift */; };
+		FA5538812AFA10CD003AA11C /* VideoPlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5538802AFA10CD003AA11C /* VideoPlayerScene.swift */; };
+		FA5538832AFA150A003AA11C /* AudioPlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5538822AFA150A003AA11C /* AudioPlayerScene.swift */; };
+		FA5538852AFA1592003AA11C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5538842AFA1592003AA11C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		CED542671D5FA06579DC1651 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4B92168C78F460DC68D746C /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D86851A3C63A6781369AA506 /* Pods-Tests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.adhoc.xcconfig"; path = "Target Support Files/Pods-Tests/Pods-Tests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		FA55387C2AFA0A3F003AA11C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA55387E2AFA0A72003AA11C /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		FA5538802AFA10CD003AA11C /* VideoPlayerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerScene.swift; sourceTree = "<group>"; };
+		FA5538822AFA150A003AA11C /* AudioPlayerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerScene.swift; sourceTree = "<group>"; };
+		FA5538842AFA1592003AA11C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +112,13 @@
 			isa = PBXGroup;
 			children = (
 				245EAB51298795D800AA2FC1 /* main.swift */,
+				FA55387C2AFA0A3F003AA11C /* AppDelegate.swift */,
+				FA55387E2AFA0A72003AA11C /* HomeScene.swift */,
+				FA5538822AFA150A003AA11C /* AudioPlayerScene.swift */,
+				FA5538802AFA10CD003AA11C /* VideoPlayerScene.swift */,
 				8DEC093A248F8294002D1391 /* Assets.xcassets */,
 				8DEC093C248F8294002D1391 /* LaunchScreen.storyboard */,
+				FA5538842AFA1592003AA11C /* Main.storyboard */,
 				8DEC093F248F8294002D1391 /* Info.plist */,
 			);
 			path = "Example-iOS";
@@ -224,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5538852AFA1592003AA11C /* Main.storyboard in Resources */,
 				8DEC093E248F8294002D1391 /* LaunchScreen.storyboard in Resources */,
 				8DEC093B248F8294002D1391 /* Assets.xcassets in Resources */,
 			);
@@ -290,6 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA55387F2AFA0A72003AA11C /* HomeScene.swift in Sources */,
+				FA55387D2AFA0A3F003AA11C /* AppDelegate.swift in Sources */,
+				FA5538812AFA10CD003AA11C /* VideoPlayerScene.swift in Sources */,
+				FA5538832AFA150A003AA11C /* AudioPlayerScene.swift in Sources */,
 				245EAB52298795D800AA2FC1 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

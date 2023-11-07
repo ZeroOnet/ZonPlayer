@@ -8,7 +8,7 @@
 public final class ZPDefaultDownloader: ZPURLDownloadable {
     public var timeout: TimeInterval
     public let callbackQueue: DispatchQueue
-    init(timeout: TimeInterval, callbackQueue: DispatchQueue = .main) {
+    public init(timeout: TimeInterval, callbackQueue: DispatchQueue = .main) {
         self.timeout = timeout
         self.callbackQueue = callbackQueue
     }
