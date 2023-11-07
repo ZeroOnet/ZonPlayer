@@ -33,16 +33,16 @@ final class Protected<T> {
     }
 }
 
-private protocol _Lockable {
+protocol Lockable {
     func lock()
     func unlock()
 }
 
-extension _Lockable {
+extension Lockable {
     func around<T>(_ closure: () -> T) -> T {
         lock(); defer { unlock() }
         return closure()
     }
 }
 
-extension NSLock: _Lockable {}
+extension NSLock: Lockable {}
