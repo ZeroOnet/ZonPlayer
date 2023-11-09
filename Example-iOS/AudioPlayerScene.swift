@@ -25,7 +25,7 @@ extension AudioPlayerScene {
 
     private func _buildAudioPlayer() {
         _player = ZonPlayer.player(_url)
-            .cache(ZPDownloadBeforePlayback())
+            .cache(ZPC.DownloadThenPlay())
             .activate()
         _player?.play()
     }

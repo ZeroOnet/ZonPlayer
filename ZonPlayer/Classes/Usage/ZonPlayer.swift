@@ -5,6 +5,7 @@
 //  Created by 李文康 on 2023/11/2.
 //
 
+/// A namespace with nested type.
 public enum ZonPlayer {
     /// Build player by a chain call.
     ///

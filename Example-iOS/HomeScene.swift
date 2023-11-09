@@ -69,7 +69,7 @@ extension HomeScene {
 
     @objc
     private func _cleanCacheAction() {
-        ZPDefaultStorage().deleteAll()
+        ZPC.DefaultFileStorage().deleteAll()
     }
 
     private func _loadData() {

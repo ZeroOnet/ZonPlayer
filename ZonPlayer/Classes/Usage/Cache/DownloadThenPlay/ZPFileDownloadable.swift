@@ -1,11 +1,11 @@
 //
-//  ZPURLDownloadable.swift
+//  ZPFileDownloadable.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/3.
 //
 
-public protocol ZPURLDownloadable {
+public protocol ZPFileDownloadable {
     var timeout: TimeInterval { get set }
 
     @discardableResult
@@ -13,5 +13,5 @@ public protocol ZPURLDownloadable {
         with url: URL,
         destination: URL,
         completion: @escaping (Result<Void, ZonPlayer.Error>) -> Void
-    ) -> ZPCancellable
+    ) -> ZPCCancellable
 }

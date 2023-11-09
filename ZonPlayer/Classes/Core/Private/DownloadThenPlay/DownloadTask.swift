@@ -5,7 +5,7 @@
 //  Created by 李文康 on 2023/11/7.
 //
 
-final class DownloadTask: ZPCancellable {
+final class DownloadTask: ZPCCancellable {
     typealias Callback = ZPDelegate<Result<Void, ZonPlayer.Error>, Void>
 
     let onCancelled = ZPDelegate<Callback, Void>()
