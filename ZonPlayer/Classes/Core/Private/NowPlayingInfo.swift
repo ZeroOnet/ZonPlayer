@@ -10,7 +10,7 @@ class NowPlayingInfo {
     @Protected private(set) var existed: [String: Any] = [:]
 
     private lazy var _queue: DispatchQueue = {
-        .init(label: "com.zeroonet.player.nowplayinginfo", qos: .userInitiated)
+        .init(label: "com.zonplayer.nowplayinginfo", qos: .userInitiated)
     }()
 }
 

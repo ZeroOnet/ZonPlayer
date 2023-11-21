@@ -18,7 +18,7 @@ extension ZonPlayer {
             didSet {
                 if enableConsoleLog {
                     guard !monitors.contains(where: { $0 is Logger }) else { return }
-                    monitors.append(Logger())
+                    monitors.append(Logger(queue: logQueue))
                 } else {
                     monitors.removeAll { $0 is Logger }
                 }
@@ -37,7 +37,11 @@ extension ZonPlayer {
          So we should not apply audio session under main queue.
          */
         private lazy var _sessionQueue: DispatchQueue = {
-            .init(label: "com.zeroonet.player.session", qos: .userInitiated)
+            .init(label: "com.zonplayer.session", qos: .userInitiated)
+        }()
+
+        lazy var logQueue: DispatchQueue = {
+            .init(label: "com.zonplayer.log")
         }()
     }
 }
@@ -49,6 +53,7 @@ extension ZonPlayer.Manager {
     ) -> ZonPlayable {
         do {
             let url = try setter.url.asURL()
+            let observer = CallbackCompositer(observer: setter, monitors: monitors, callbackQueue: logQueue)
             return Player(
                 url: url,
                 context: .init(
@@ -58,7 +63,7 @@ extension ZonPlayer.Manager {
                 ),
                 session: setter.session,
                 cache: setter.cache,
-                observer: CallbackCompositer(observer: setter, monitors: monitors),
+                observer: observer,
                 remoteControl: setter.remoteControl,
                 view: view
             )

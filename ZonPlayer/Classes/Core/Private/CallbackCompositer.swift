@@ -6,12 +6,17 @@
 //
 
 final class CallbackCompositer: ZPObservable {
-    var callbackQueue: DispatchQueue = .init(label: "com.zeroonet.player.compositecallback")
+    var callbackQueue: DispatchQueue
     let observer: ZPObservable
     let monitors: [ZPMonitorable]
-    init(observer: ZPObservable, monitors: [ZPMonitorable]) {
+    init(
+        observer: ZPObservable,
+        monitors: [ZPMonitorable],
+        callbackQueue: DispatchQueue
+    ) {
         self.observer = observer
         self.monitors = monitors
+        self.callbackQueue = callbackQueue
     }
 
     lazy var waitToPlay: ZPDelegate<(ZonPlayable, ZPWaitingReason), Void>? = {

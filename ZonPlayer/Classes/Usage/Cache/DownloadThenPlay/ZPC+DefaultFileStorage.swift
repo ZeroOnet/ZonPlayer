@@ -8,22 +8,17 @@
 extension ZPC {
     public final class DefaultFileStorage {
         public let config: Config
-        public init(config: Config = .default) {
+        public init(config: Config = .config(components: "DownloadThenPlay")) {
             self.config = config
-            _prepare()
         }
-
-        private lazy var _ioQueue: DispatchQueue = {
-            .init(label: "com.zeroonet.player.io")
-        }()
     }
 }
 
 extension ZPC.DefaultFileStorage: ZPFileStorable {
-    public func create(file: File, with url: URL, completion: @escaping (Result<File, ZonPlayer.Error>) -> Void) {
+    public func create(file: File, with url: RemoteURL, completion: @escaping (Result<File, ZonPlayer.Error>) -> Void) {
         switch fileURL(url: url) {
         case .success(let storeURL):
-            _ioQueue.async {
+            config.ioQueue.async {
                 do {
                     if FileManager.default.fileExists(atPath: storeURL.path) {
                         try FileManager.default.removeItem(at: storeURL)
@@ -39,7 +34,7 @@ extension ZPC.DefaultFileStorage: ZPFileStorable {
         }
     }
 
-    public func read(with url: URL) -> Result<File?, ZonPlayer.Error> {
+    public func read(with url: RemoteURL) -> Result<File?, ZonPlayer.Error> {
         switch fileURL(url: url) {
         case .success(let fileURL):
             if FileManager.default.fileExists(atPath: fileURL.path) {
@@ -52,20 +47,20 @@ extension ZPC.DefaultFileStorage: ZPFileStorable {
         }
     }
 
-    public func fileURL(url: URL) -> Result<URL, ZonPlayer.Error> {
-        let fileName = config.fileName.map(url: url)
+    public func fileURL(url: RemoteURL) -> Result<FileURL, ZonPlayer.Error> {
+        let fileURL = config.fileURL(with: url)
         let dir = config.cacheDirectory
 
         if FileManager.default.fileExists(atPath: dir.path) {
-            return .success(dir.appendingPathComponent(fileName, isDirectory: false))
+            return .success(fileURL)
         } else {
             return .failure(.cacheFailed(.createCacheDirectoryFailed(dir)))
         }
     }
 
-    public func delete(with url: URL, completion: (() -> Void)?) {
+    public func delete(with url: RemoteURL, completion: (() -> Void)?) {
         guard let existURL = try? fileURL(url: url).get() else { completion?(); return }
-        _ioQueue.async {
+        config.ioQueue.async {
             try? FileManager.default.removeItem(at: existURL)
             completion?()
         }
@@ -73,18 +68,9 @@ extension ZPC.DefaultFileStorage: ZPFileStorable {
 
     public func deleteAll(completion: (() -> Void)?) {
         let dir = config.cacheDirectory
-        _ioQueue.async {
+        config.ioQueue.async {
             try? FileManager.default.removeItem(at: dir)
             completion?()
         }
-    }
-}
-
-extension ZPC.DefaultFileStorage {
-    private func _prepare() {
-        let fileManager = FileManager.default
-        let path = config.cacheDirectory.path
-        guard !fileManager.fileExists(atPath: path) else { return }
-        try? fileManager.createDirectory(atPath: path, withIntermediateDirectories: true)
     }
 }

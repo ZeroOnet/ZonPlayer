@@ -5,7 +5,7 @@
 //  Created by 李文康 on 2023/11/3.
 //
 
-final class DummyPlayer {}
+struct DummyPlayer {}
 
 extension DummyPlayer: ZPControllable {
     func takeSnapshot(at time: TimeInterval?, completion: @escaping (UIImage?) -> Void) {}

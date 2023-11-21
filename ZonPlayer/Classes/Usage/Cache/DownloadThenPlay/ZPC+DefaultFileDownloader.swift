@@ -27,7 +27,11 @@ extension ZPC {
         ) -> ZPCCancellable {
             let callback = ZPDelegate<Result<Void, ZonPlayer.Error>, Void>()
             callback.delegate(on: self) { _, result in completion(result) }
-            let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeout)
+            let request = URLRequest(
+                url: url,
+                cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
+                timeoutInterval: timeout
+            )
             let context = DownloadTask.Context(url: url, request: request, destination: destination, callback: callback)
             let sessionTask = _session.downloadTask(with: request)
             let result = _delegate.addDownloadTask(with: sessionTask, context: context)
@@ -44,10 +48,10 @@ extension ZPC {
                 delegate: _delegate,
                 delegateQueue: nil
             )
-            result.sessionDescription = "com.zeroonet.player.downloader.session"
+            result.sessionDescription = "com.zonplayer.downloader.session"
             return result
         }()
 
-        private lazy var _delegate: SessionDelegate = { .init() }()
+        private lazy var _delegate: DownloadSessionDelegate = { .init() }()
     }
 }

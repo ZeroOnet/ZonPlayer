@@ -56,7 +56,7 @@ final class Player: NSObject {
     private var _remoteController: RemoteController?
 
     private lazy var _screenshotQueue: DispatchQueue = {
-        DispatchQueue(label: "com.zeroonet.player.screenshot", qos: .background)
+        DispatchQueue(label: "com.zonplayer.screenshot", qos: .background)
     }()
 
     // swiftlint:disable:next block_based_kvo

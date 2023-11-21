@@ -5,6 +5,7 @@
 //  Created by 李文康 on 2023/11/3.
 //
 
+// From https://github.com/Alamofire/Alamofire/blob/3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad/Source/Protected.swift#L84
 @propertyWrapper
 final class Protected<T> {
     private let lock = NSLock()

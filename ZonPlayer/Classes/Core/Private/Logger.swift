@@ -5,8 +5,11 @@
 //  Created by 李文康 on 2023/11/3.
 //
 
-final class Logger: ZPMonitorable {
-    let queue = DispatchQueue(label: "com.zeroonet.player.logger", qos: .utility)
+struct Logger: ZPMonitorable {
+    let queue: DispatchQueue
+    init(queue: DispatchQueue) {
+        self.queue = queue
+    }
 
     func player(_ player: ZonPlayable, didWaitToPlay reason: ZPWaitingReason) {
         _print("did wait to play: \(reason)")
@@ -29,7 +32,7 @@ final class Logger: ZPMonitorable {
     }
 
     func player(_ player: ZonPlayable, playDuration duration: TimeInterval) {
-        _print("playback duration is \(duration)")
+        _print("playback duration is \(duration)s")
     }
 
     func play(_ player: ZonPlayable, backgroundPlay status: Bool) {

@@ -1,11 +1,11 @@
 //
-//  SessionDelegate.swift
+//  DownloadSessionDelegate.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/7.
 //
 
-final class SessionDelegate: NSObject {
+final class DownloadSessionDelegate: NSObject {
     func addDownloadTask(
         with sessionTask: URLSessionDownloadTask,
         context: DownloadTask.Context
@@ -31,7 +31,7 @@ final class SessionDelegate: NSObject {
     private let _lock = NSLock()
 }
 
-extension SessionDelegate: URLSessionDownloadDelegate {
+extension DownloadSessionDelegate: URLSessionDownloadDelegate {
     func urlSession(
         _ session: URLSession,
         downloadTask: URLSessionDownloadTask,
