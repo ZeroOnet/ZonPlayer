@@ -70,6 +70,7 @@ extension HomeScene {
     @objc
     private func _cleanCacheAction() {
         ZPC.DefaultFileStorage().deleteAll()
+        ZPC.DefaultStreamingSource().cleanCache()
     }
 
     private func _loadData() {

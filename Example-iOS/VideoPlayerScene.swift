@@ -62,6 +62,7 @@ extension VideoPlayerScene {
 
     private func _buildVideoPlayer() {
         _player = ZonPlayer.player(_url)
+            .cache(ZonPlayer.Cache.Streaming())
             .onDuration(self) { wlf, payload in
                 wlf.totalTimeLabel.text = wlf._timeString(value: payload.1)
             }
