@@ -9,6 +9,9 @@ target 'Example-iOS' do
 
   target 'Tests' do
     inherit! :search_paths
+
+    pod 'Nimble', '10.0.0'
+    pod 'Quick', '5.0.1'
   end
 end
 
