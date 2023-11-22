@@ -7,9 +7,6 @@
 
 struct Logger: ZPMonitorable {
     let queue: DispatchQueue
-    init(queue: DispatchQueue) {
-        self.queue = queue
-    }
 
     func player(_ player: ZonPlayable, didWaitToPlay reason: ZPWaitingReason) {
         _print("did wait to play: \(reason)")

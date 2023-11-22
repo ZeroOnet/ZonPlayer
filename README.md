@@ -88,7 +88,7 @@ github "ZeroOnet/ZonPlayer" ~> 1.0.0
 
 ## Swift Package Manager
 - File > Swift Packages > Add Package Dependency
-- Add git@github.com:ZeroOnet/ZonPlayer.git
+- Add `git@github.com:ZeroOnet/ZonPlayer.git`
 - Select "Up to Next Major" with "1.0.0"
 
 # Author

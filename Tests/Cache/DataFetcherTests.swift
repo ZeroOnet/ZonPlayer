@@ -84,10 +84,10 @@ final class DataFetcherTests: QuickSpec {
                 let fetcher = DataFetcher(storage: storage, requester: requester, loadingRequest: request)
                 fetcher.fetch()
                 requester.didReceive(data: remoteData, range: NSRange(location: storageDataOne.count, length: remoteData.count))
-                fetcher.onCompleted.delegate(on: self) { wlf, _ in
-                    waitUntil(timeout: .seconds(5)) { done in
-                        expect { dataRequest.data == mergedData }.to(beTrue())
-                        done()
+                waitUntil(timeout: .seconds(5)) { done in
+                    fetcher.onCompleted.delegate(on: self) { wlf, _ in
+                            expect { dataRequest.data == mergedData }.to(beTrue())
+                            done()
                     }
                 }
                 self._fetchers.append(fetcher)

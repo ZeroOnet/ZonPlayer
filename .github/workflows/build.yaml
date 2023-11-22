@@ -1,0 +1,32 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  run-test:
+    runs-on: macos-12
+    strategy:
+      matrix:
+        destination: ["iOS Simulator,name=iPhone 14"]
+        swift-version: [5.0]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.2
+          bundler-cache: true
+      - uses: actions/cache@v2
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      - name: Swift Lint
+        run: brew install swiftlint && swiftlint lint --strict
+      - name: Pod Install
+        run: bundle exec pod install
+      - name: Run Unit Tests
+        env:
+          DESTINATION: platform=${{ matrix.destination }}
+          SWIFT_VERSION: ${{ matrix.swift-version }}
+        run: bundle exec fastlane test_ci
