@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/ZeroOnet/ZonPlayer/main/images/logo.png" alt="ZonPlayer" title="ZonPlayer" width="500"/>
+<img src="images/logo.png" alt="ZonPlayer" title="ZonPlayer" width="500"/>
 </p>
 
 <p align="center">
