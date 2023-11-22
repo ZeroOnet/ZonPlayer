@@ -1,0 +1,89 @@
+fastlane_version "2.217.0"
+
+default_platform :ios
+
+platform :ios do
+  desc "Runs all the tests"
+  lane :tests do
+    test(destination: "platform=iOS Simulator,name=iPhone 14", swift_version: "5.0")
+  end
+
+  lane :test_ci do
+    if ENV["DESTINATION"].include? "watchOS" then
+        build(destination: ENV["DESTINATION"], swift_version: ENV["SWIFT_VERSION"])
+    else
+        test(destination: ENV["DESTINATION"], swift_version: ENV["SWIFT_VERSION"])
+    end
+  end
+
+  lane :test do |options|
+    scan(
+      scheme: "Example-iOS",
+      clean: true,
+      xcargs: "SWIFT_VERSION=#{options[:swift_version]}",
+      destination: options[:destination]
+    )
+  end
+
+  lane :build do |options|
+    gym(
+      workspace: "ZonPlayer.xcworkspace",
+      configuration: "Debug",
+      scheme: "Example-iOS",
+      xcargs: "SWIFT_VERSION=#{options[:swift_version]}",
+      destination: options[:destination]
+    )
+  end
+
+  desc "Lint"
+  lane :lint do
+    pod_lib_lint
+    spm
+  end
+
+  desc "Release new version"
+  lane :release do |options|
+    target_version = options[:version]
+    raise "The version is missed. Use `fastlane release version:{version_number}`.`" if target_version.nil?
+
+    ensure_git_branch
+    ensure_git_status_clean
+
+    skip_tests =  options[:skip_tests]
+    tests unless skip_tests
+
+    lint
+
+    sync_build_number_to_git
+    increment_version_number(version_number: target_version)
+    version_bump_podspec(path: "ZonPlayer.podspec", version_number: target_version)
+
+    log = extract_current_change_log(version: target_version)
+    release_log = update_change_log(log: log)
+
+    git_commit_all(message: "Bump version to #{target_version}")
+
+    Actions.sh("git tag -s #{target_version} -m ''")
+
+    push_to_git_remote
+
+    set_github_release(
+      repository_name: "ZeroOnet/ZonPlayer",
+      api_token: ENV['GITHUB_TOKEN'],
+      name: release_log[:title],
+      tag_name: target_version,
+      description: release_log[:text],
+      upload_assets: ["build/ZonPlayer-#{target_version}.zip"]
+    )
+
+    pod_push
+  end
+
+  after_all do |lane|
+
+  end
+
+  error do |lane, exception|
+
+  end
+end

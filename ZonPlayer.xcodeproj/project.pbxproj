@@ -11,8 +11,22 @@
 		4C3D074E4C0255C573AB074B /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC58F710BE8A38D8EB85AFB4 /* Pods_Tests.framework */; };
 		8DEC093B248F8294002D1391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DEC093A248F8294002D1391 /* Assets.xcassets */; };
 		8DEC093E248F8294002D1391 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEC093C248F8294002D1391 /* LaunchScreen.storyboard */; };
-		8DEC094A248F8383002D1391 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEC0949248F8383002D1391 /* Tests.swift */; };
 		C8251832CEA121F5E8633BD5 /* Pods_Example_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EAC9455D942F0F82A1CDC0E /* Pods_Example_iOS.framework */; };
+		FA094C112B0B0E3200B2F195 /* InvalidInitializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C102B0B0E3200B2F195 /* InvalidInitializationTests.swift */; };
+		FA094C132B0B2A0600B2F195 /* ControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C122B0B2A0600B2F195 /* ControllerTests.swift */; };
+		FA094C152B0B2AEB00B2F195 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C142B0B2AEB00B2F195 /* Utils.swift */; };
+		FA094C182B0B2EFF00B2F195 /* DownloadThenPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C172B0B2EFF00B2F195 /* DownloadThenPlayTests.swift */; };
+		FA094C1A2B0B319800B2F195 /* FileStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C192B0B319800B2F195 /* FileStorageTests.swift */; };
+		FA094C1C2B0B3A8C00B2F195 /* FileDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C1B2B0B3A8C00B2F195 /* FileDownloaderTests.swift */; };
+		FA094C1E2B0B41A000B2F195 /* DataStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C1D2B0B41A000B2F195 /* DataStorageTests.swift */; };
+		FA094C202B0B709700B2F195 /* DataRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C1F2B0B709700B2F195 /* DataRequesterTests.swift */; };
+		FA35FA5A2B0C49C700CA5795 /* RecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35FA592B0C49C700CA5795 /* RecordTests.swift */; };
+		FA35FA5E2B0C7B5C00CA5795 /* DataFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35FA5D2B0C7B5C00CA5795 /* DataFetcherTests.swift */; };
+		FA55387D2AFA0A3F003AA11C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55387C2AFA0A3F003AA11C /* AppDelegate.swift */; };
+		FA55387F2AFA0A72003AA11C /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55387E2AFA0A72003AA11C /* HomeScene.swift */; };
+		FA5538812AFA10CD003AA11C /* VideoPlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5538802AFA10CD003AA11C /* VideoPlayerScene.swift */; };
+		FA5538832AFA150A003AA11C /* AudioPlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5538822AFA150A003AA11C /* AudioPlayerScene.swift */; };
+		FA5538852AFA1592003AA11C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5538842AFA1592003AA11C /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +53,26 @@
 		8DEC093D248F8294002D1391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DEC093F248F8294002D1391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DEC0947248F8383002D1391 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DEC0949248F8383002D1391 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		8DEC094B248F8383002D1391 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC58F710BE8A38D8EB85AFB4 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED542671D5FA06579DC1651 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4B92168C78F460DC68D746C /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D86851A3C63A6781369AA506 /* Pods-Tests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.adhoc.xcconfig"; path = "Target Support Files/Pods-Tests/Pods-Tests.adhoc.xcconfig"; sourceTree = "<group>"; };
+		FA094C102B0B0E3200B2F195 /* InvalidInitializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidInitializationTests.swift; sourceTree = "<group>"; };
+		FA094C122B0B2A0600B2F195 /* ControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerTests.swift; sourceTree = "<group>"; };
+		FA094C142B0B2AEB00B2F195 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FA094C172B0B2EFF00B2F195 /* DownloadThenPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadThenPlayTests.swift; sourceTree = "<group>"; };
+		FA094C192B0B319800B2F195 /* FileStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorageTests.swift; sourceTree = "<group>"; };
+		FA094C1B2B0B3A8C00B2F195 /* FileDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloaderTests.swift; sourceTree = "<group>"; };
+		FA094C1D2B0B41A000B2F195 /* DataStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTests.swift; sourceTree = "<group>"; };
+		FA094C1F2B0B709700B2F195 /* DataRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequesterTests.swift; sourceTree = "<group>"; };
+		FA35FA592B0C49C700CA5795 /* RecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTests.swift; sourceTree = "<group>"; };
+		FA35FA5D2B0C7B5C00CA5795 /* DataFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherTests.swift; sourceTree = "<group>"; };
+		FA55387C2AFA0A3F003AA11C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA55387E2AFA0A72003AA11C /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		FA5538802AFA10CD003AA11C /* VideoPlayerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerScene.swift; sourceTree = "<group>"; };
+		FA5538822AFA150A003AA11C /* AudioPlayerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerScene.swift; sourceTree = "<group>"; };
+		FA5538842AFA1592003AA11C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +130,13 @@
 			isa = PBXGroup;
 			children = (
 				245EAB51298795D800AA2FC1 /* main.swift */,
+				FA55387C2AFA0A3F003AA11C /* AppDelegate.swift */,
+				FA55387E2AFA0A72003AA11C /* HomeScene.swift */,
+				FA5538822AFA150A003AA11C /* AudioPlayerScene.swift */,
+				FA5538802AFA10CD003AA11C /* VideoPlayerScene.swift */,
 				8DEC093A248F8294002D1391 /* Assets.xcassets */,
 				8DEC093C248F8294002D1391 /* LaunchScreen.storyboard */,
+				FA5538842AFA1592003AA11C /* Main.storyboard */,
 				8DEC093F248F8294002D1391 /* Info.plist */,
 			);
 			path = "Example-iOS";
@@ -112,7 +145,9 @@
 		8DEC0948248F8383002D1391 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				8DEC0949248F8383002D1391 /* Tests.swift */,
+				FA094C142B0B2AEB00B2F195 /* Utils.swift */,
+				FA094C162B0B2ED700B2F195 /* Cache */,
+				FA094C0D2B0B0DA200B2F195 /* Playback */,
 				8DEC094B248F8383002D1391 /* Info.plist */,
 			);
 			path = Tests;
@@ -129,6 +164,29 @@
 				D86851A3C63A6781369AA506 /* Pods-Tests.adhoc.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA094C0D2B0B0DA200B2F195 /* Playback */ = {
+			isa = PBXGroup;
+			children = (
+				FA094C102B0B0E3200B2F195 /* InvalidInitializationTests.swift */,
+				FA094C122B0B2A0600B2F195 /* ControllerTests.swift */,
+			);
+			path = Playback;
+			sourceTree = "<group>";
+		};
+		FA094C162B0B2ED700B2F195 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				FA094C172B0B2EFF00B2F195 /* DownloadThenPlayTests.swift */,
+				FA094C192B0B319800B2F195 /* FileStorageTests.swift */,
+				FA094C1B2B0B3A8C00B2F195 /* FileDownloaderTests.swift */,
+				FA35FA5D2B0C7B5C00CA5795 /* DataFetcherTests.swift */,
+				FA094C1D2B0B41A000B2F195 /* DataStorageTests.swift */,
+				FA094C1F2B0B709700B2F195 /* DataRequesterTests.swift */,
+				FA35FA592B0C49C700CA5795 /* RecordTests.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		FB7C5CBA6A16157E355A9CD4 /* Frameworks */ = {
@@ -196,6 +254,7 @@
 					};
 					8DEC0946248F8383002D1391 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1500;
 						TestTargetID = 8DEC092E248F8293002D1391;
 					};
 				};
@@ -224,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5538852AFA1592003AA11C /* Main.storyboard in Resources */,
 				8DEC093E248F8294002D1391 /* LaunchScreen.storyboard in Resources */,
 				8DEC093B248F8294002D1391 /* Assets.xcassets in Resources */,
 			);
@@ -290,6 +350,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA55387F2AFA0A72003AA11C /* HomeScene.swift in Sources */,
+				FA55387D2AFA0A3F003AA11C /* AppDelegate.swift in Sources */,
+				FA5538812AFA10CD003AA11C /* VideoPlayerScene.swift in Sources */,
+				FA5538832AFA150A003AA11C /* AudioPlayerScene.swift in Sources */,
 				245EAB52298795D800AA2FC1 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,7 +362,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DEC094A248F8383002D1391 /* Tests.swift in Sources */,
+				FA094C202B0B709700B2F195 /* DataRequesterTests.swift in Sources */,
+				FA094C112B0B0E3200B2F195 /* InvalidInitializationTests.swift in Sources */,
+				FA094C152B0B2AEB00B2F195 /* Utils.swift in Sources */,
+				FA094C182B0B2EFF00B2F195 /* DownloadThenPlayTests.swift in Sources */,
+				FA094C1A2B0B319800B2F195 /* FileStorageTests.swift in Sources */,
+				FA35FA5E2B0C7B5C00CA5795 /* DataFetcherTests.swift in Sources */,
+				FA35FA5A2B0C49C700CA5795 /* RecordTests.swift in Sources */,
+				FA094C1C2B0B3A8C00B2F195 /* FileDownloaderTests.swift in Sources */,
+				FA094C1E2B0B41A000B2F195 /* DataStorageTests.swift in Sources */,
+				FA094C132B0B2A0600B2F195 /* ControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +459,7 @@
 			baseConfigurationReference = 5EDFF8D9396E61026D20F367 /* Pods-Example-iOS.adhoc.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Example-iOS/Info.plist";
@@ -393,7 +467,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zeroonet.player.Example-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zonplayer.Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -406,6 +480,7 @@
 			baseConfigurationReference = D86851A3C63A6781369AA506 /* Pods-Tests.adhoc.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -414,7 +489,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeroonet.player.Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zonplayer.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -543,6 +618,7 @@
 			baseConfigurationReference = 3DB15EDE2A49483308A901AA /* Pods-Example-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Example-iOS/Info.plist";
@@ -550,7 +626,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zeroonet.player.Example-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zonplayer.Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -563,6 +639,7 @@
 			baseConfigurationReference = 10F739B0F779D828786D4188 /* Pods-Example-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Example-iOS/Info.plist";
@@ -570,7 +647,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.zeroonet.player.Example-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zonplayer.Example-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -583,6 +660,7 @@
 			baseConfigurationReference = CED542671D5FA06579DC1651 /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -591,9 +669,10 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeroonet.player.Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zonplayer.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example-iOS.app/Example-iOS";
@@ -605,6 +684,7 @@
 			baseConfigurationReference = D4B92168C78F460DC68D746C /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -613,7 +693,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeroonet.player.Tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zonplayer.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

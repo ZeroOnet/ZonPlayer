@@ -1,5 +1,5 @@
 included:
-  - ZonPlayer
+  - Sources
 
 disabled_rules: # rule identifiers to exclude from running
   - nesting # 禁用嵌套限制
@@ -53,6 +53,7 @@ identifier_name: # 变量命名规范，强制使用驼峰
     - _
   excluded:
     - id
+    - to
 
 trailing_closure:
   only_single_muted_parameter: true

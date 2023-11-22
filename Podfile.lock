@@ -1,16 +1,27 @@
 PODS:
-  - ZonPlayer (0.1.0)
+  - Nimble (10.0.0)
+  - Quick (5.0.1)
+  - ZonPlayer (1.0.0)
 
 DEPENDENCIES:
+  - Nimble (= 10.0.0)
+  - Quick (= 5.0.1)
   - ZonPlayer (from `./`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Nimble
+    - Quick
 
 EXTERNAL SOURCES:
   ZonPlayer:
     :path: "./"
 
 SPEC CHECKSUMS:
-  ZonPlayer: 928204bc6e2710ff8d2a8ffd71f0db517a91b3b7
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
+  ZonPlayer: f9f6c9b7f17eaee48166d24ae1b8d339a978d673
 
-PODFILE CHECKSUM: 688e378dd7f500bb3bf47dcb011332751b27a003
+PODFILE CHECKSUM: 1f5c8b894bed3c18a53b7568ecf2830b81e73e7a
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.14.3
