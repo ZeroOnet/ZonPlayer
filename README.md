@@ -1,4 +1,14 @@
-# ZonPlayer
+<p align="center">
+<img src="https://raw.githubusercontent.com/ZeroOnet/ZonPlayer/main/images/logo.png" alt="ZonPlayer" title="ZonPlayer" width="500"/>
+</p>
+
+<p align="center">
+<a href="https://github.com/ZeroOnet/ZonPlayer/actions/workflows/build.yaml"><img src="https://github.com/ZeroOnet/ZonPlayer/actions/workflows/build.yaml/badge.svg"></a>
+<a href="https://cocoapods.org/pods/ZonPlayer"><img src="http://img.shields.io/cocoapods/v/ZonPlayer.svg?style=flat"></a>
+<a href="https://github.com/ZeroOnet/ZonPlayer"><img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg"></a>
+<a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg"></a>
+<a href="https://raw.githubusercontent.com/ZeroOnet/ZonPlayer/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-black"></a>
+</p>
 
 ZonPlayer is a player library base on AVPlayer with cache and remote control support in iOS. For convenience, we defined interfaces can be called by chain.
 
