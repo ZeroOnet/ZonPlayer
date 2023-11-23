@@ -4,8 +4,7 @@
 
 <p align="center">
 <a href="https://github.com/ZeroOnet/ZonPlayer/actions/workflows/build.yaml"><img src="https://github.com/ZeroOnet/ZonPlayer/actions/workflows/build.yaml/badge.svg"></a>
-<a href="https://codecov.io/gh/ZeroOnet/ZonPlayer"><img src="https://codecov.io/gh/ZeroOnet/ZonPlayer/graph/badge.svg?token=3YD2FBEW4N"/>
- </a>
+<a href="https://codecov.io/gh/ZeroOnet/ZonPlayer"><img src="https://codecov.io/gh/ZeroOnet/ZonPlayer/graph/badge.svg?token=3YD2FBEW4N"/></a>
 <a href="https://cocoapods.org/pods/ZonPlayer"><img src="http://img.shields.io/cocoapods/v/ZonPlayer.svg?style=flat"></a>
 <a href="https://github.com/ZeroOnet/ZonPlayer"><img src="https://img.shields.io/badge/Carthage-compatible-brightgreen.svg"></a>
 <a href="https://swift.org/package-manager/"><img src="https://img.shields.io/badge/SwiftPM-compatible-brightgreen.svg"></a>
