@@ -39,10 +39,12 @@ jobs:
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData/
 
-      - name: Run Unit Tests - ${{ matrix.destination }}
+      - name: Run Unit Tests
+        env:
+          DESTINATION: platform=${{ matrix.destination }}
+          SWIFT_VERSION: ${{ matrix.swift-version }}
         run: |
-          set -o pipefail
-          xcodebuild test -workspace "ZonPlayer.xcworkspace" -scheme "Example-iOS" -destination "platform=${{ matrix.destination }}" -configuration Debug CODE_SIGNING_ALLOWED=NO -enableCodeCoverage YES
+          bundle exec fastlane test_ci
           bundle exec slather
 
       - name: Upload coverage reports to Codecov
