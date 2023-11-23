@@ -10,28 +10,41 @@ jobs:
         destination: ["iOS Simulator,name=iPhone 14"]
         swift-version: [5.0]
     steps:
-      - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1.2
           bundler-cache: true
-      - uses: actions/cache@v2
+
+      - name: Check Cache
+        uses: actions/cache@v2
         id: cocoapods-cache
         with:
           path: Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-pods-
+
       - name: Swift Lint
         run: brew install swiftlint && swiftlint lint --strict
+
       - name: Pod Install
         if: steps.cocoapods-cache.outputs.cache-hit != 'true'
         run: bundle exec pod install
-      - name: Run Unit Tests
-        env:
-          DESTINATION: platform=${{ matrix.destination }}
-          SWIFT_VERSION: ${{ matrix.swift-version }}
-        run: bundle exec fastlane test_ci
+
+      - name: Clean Xcode DerivedData
+        run: |
+          rm -rf ~/Library/Developer/Xcode/DerivedData/
+
+      - name: Run Unit Tests - ${{ matrix.destination }}
+        run: |
+          set -o pipefail
+          xcodebuild test -workspace "ZonPlayer.xcworkspace" -scheme "Example-iOS" -destination "platform=${{ matrix.destination }}" -configuration Debug CODE_SIGNING_ALLOWED=NO -enableCodeCoverage YES
+          bundle exec slather
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:

@@ -1,0 +1,5 @@
+coverage_service: cobertura_xml
+xcodeproj: ZonPlayer.xcodeproj
+workspace: ZonPlayer.workspace
+scheme: Example-iOS
+output_directory: ./
