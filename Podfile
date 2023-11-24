@@ -1,8 +1,9 @@
 platform :ios, '12.0'
-use_modular_headers!
-use_frameworks! linkage: :static
+use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git'
+
+install! 'cocoapods', :share_schemes_for_development_pods => ['ZonPlayer']
 
 target 'Example-iOS' do
   pod 'ZonPlayer', path: './'

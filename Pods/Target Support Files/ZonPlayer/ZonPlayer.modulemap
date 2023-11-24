@@ -1,0 +1,6 @@
+framework module ZonPlayer {
+  umbrella header "ZonPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

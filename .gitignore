@@ -79,7 +79,10 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-Pods/
+
+# Pods contain shared framework schemes for Carthage
+# Pods/
+
 #
 # Add this line if you want to avoid checking in source code from the Xcode workspace
 # *.xcworkspace
@@ -130,6 +133,3 @@ iOSInjectionProject/
 # **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.gitignore.io/api/macos,xcode,swift
-
-# shanbay
-.cache
