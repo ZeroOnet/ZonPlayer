@@ -2,4 +2,7 @@ coverage_service: cobertura_xml
 xcodeproj: ZonPlayer.xcodeproj
 workspace: ZonPlayer.workspace
 scheme: Example-iOS
+source_directory: Pods/ZonPlayer
+ignore: Example-iOS/*
 output_directory: ./
+binary_basename: ZonPlayer
