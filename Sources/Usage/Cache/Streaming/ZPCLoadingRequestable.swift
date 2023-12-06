@@ -9,7 +9,7 @@
  AVAssetResourceLoadingRequest,
  AVAssetResourceLoadingDataRequest,
  AVAssetResourceLoadingContentInformationRequest
- cannot create a instance, so define a protocol to make unit test be available.
+ cannot create a instance, so define a protocol to make unit test available.
  */
 public protocol ZPCLoadingRequestable: NSObject {
     var isFinished: Bool { get }

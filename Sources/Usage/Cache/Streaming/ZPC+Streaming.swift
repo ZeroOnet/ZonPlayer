@@ -8,7 +8,6 @@
 extension ZPC {
     /// Download during playback base on AVAssetResourceLoader.
     public final class Streaming: NSObject {
-        public private(set) var isCancelled: Bool = false
         public let source: ZPCStreamingSourceable
         public init(source: ZPCStreamingSourceable = DefaultStreamingSource()) {
             self.source = source

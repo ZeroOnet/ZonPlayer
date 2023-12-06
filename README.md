@@ -106,6 +106,12 @@ github "ZeroOnet/ZonPlayer" ~> 1.0.0
 
 ZeroOnet, zeroonetworkspace@gmail.com
 
+# Blogs
+[从头撸一个播放器 I —— ZonPlayer 需求分析及接口设计](https://zeroonet.com/2023/11/22/zonplayer-part-1/) <br>
+[从头撸一个播放器 II —— 音频会话、远程控制和播放器实现](https://zeroonet.com/2023/11/24/zonplayer-part-2/) <br>
+[从头撸一个播放器 III —— 缓存](https://zeroonet.com/2023/12/01/zonplayer-part-3/) <br>
+[从头撸一个播放器 IV(终) —— Github Action 与组件发布](https://zeroonet.com/2023/12/05/zonplayer-part-4/)
+
 # Reference
 [Alamofire](https://github.com/Alamofire/Alamofire)<br>
 [Kingfisher](https://github.com/onevcat/Kingfisher)<br>
