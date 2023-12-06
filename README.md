@@ -112,6 +112,16 @@ ZeroOnet, zeroonetworkspace@gmail.com
 [从头撸一个播放器 III —— 缓存](https://zeroonet.com/2023/12/01/zonplayer-part-3/) <br>
 [从头撸一个播放器 IV(终) —— Github Action 与组件发布](https://zeroonet.com/2023/12/05/zonplayer-part-4/)
 
+# Main Diagram
+
+```plantuml:test_class
+Class01 <|-- Class02
+Class03 *-- Class04
+Class05 o-- Class06
+Class07 .. Class08
+Class09 -- Class10
+```
+
 # Reference
 [Alamofire](https://github.com/Alamofire/Alamofire)<br>
 [Kingfisher](https://github.com/onevcat/Kingfisher)<br>
