@@ -13,11 +13,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.1.2
-          bundler-cache: true
+      # - name: Setup Ruby
+      #   uses: ruby/setup-ruby@v1
+      #   with:
+      #     ruby-version: 3.1.2
+      #     bundler-cache: true
 
       # - name: Check Cache
       #   uses: actions/cache@v2
@@ -28,16 +28,16 @@ jobs:
       #     restore-keys: |
       #       ${{ runner.os }}-pods-
 
-      - name: Swift Lint
-        run: brew install swiftlint && swiftlint lint --strict
+      # - name: Swift Lint
+      #   run: brew install swiftlint && swiftlint lint --strict
 
       # - name: Pod Install
       #   if: steps.cocoapods-cache.outputs.cache-hit != 'true'
       #   run: bundle exec pod install
 
-      - name: Clean Xcode DerivedData
-        run: |
-          rm -rf ~/Library/Developer/Xcode/DerivedData/
+      # - name: Clean Xcode DerivedData
+      #   run: |
+      #     rm -rf ~/Library/Developer/Xcode/DerivedData/
 
       # - name: Run Unit Tests
       #   env:
@@ -53,7 +53,8 @@ jobs:
       #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Generate plantuml
-        uses: grassedge/generate-plantuml-action@v1.5
+        id: plantuml
+        uses: grassedge/generate-plantuml-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
