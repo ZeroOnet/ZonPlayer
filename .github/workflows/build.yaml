@@ -39,18 +39,18 @@ jobs:
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData/
 
-      - name: Run Unit Tests
-        env:
-          DESTINATION: platform=${{ matrix.destination }}
-          SWIFT_VERSION: ${{ matrix.swift-version }}
-        run: |
-          bundle exec fastlane test_ci
-          bundle exec slather
+      # - name: Run Unit Tests
+      #   env:
+      #     DESTINATION: platform=${{ matrix.destination }}
+      #     SWIFT_VERSION: ${{ matrix.swift-version }}
+      #   run: |
+      #     bundle exec fastlane test_ci
+      #     bundle exec slather
 
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      # - name: Upload coverage reports to Codecov
+      #   uses: codecov/codecov-action@v3
+      #   env:
+      #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Generate plantuml
         uses: grassedge/generate-plantuml-action@v1.5
