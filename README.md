@@ -71,6 +71,9 @@ func play() {
 
 ```
 
+**Notice:** before using ZPC.Streaming, it is advisable to ensure that the URL supports random access to avoid potential unexpected issues. Below is the official documentation explanation for `isByteRangeAccessSupported`:
+> If this property is not true for resources that must be loaded incrementally, loading of the resource may fail. Such resources include anything that contains media data.
+
 # Requirements
 
 - iOS 12.0 or later
