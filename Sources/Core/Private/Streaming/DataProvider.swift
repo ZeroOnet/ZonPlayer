@@ -27,7 +27,7 @@ final class DataProvider: ZPCStreamingDataProvidable {
     }
 
     func removeLoadingRequest(_ loadingRequest: ZPCLoadingRequestable) {
-        _pendingFetchers.first { $0.loadingRequest == loadingRequest }?.finishWithCancellation()
+        _pendingFetchers.removeAll { $0.loadingRequest == loadingRequest }
     }
 
     private var _pendingFetchers: [DataFetcher] = []

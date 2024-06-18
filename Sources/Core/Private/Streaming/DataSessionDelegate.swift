@@ -12,10 +12,6 @@ final class DataSessionDelegate: NSObject {
     let onData = ZPDelegate<(URLSessionTask, Data), Void>()
     let onFinished = ZPDelegate<URLSessionTask, Void>()
     let onFailed = ZPDelegate<(URLSessionTask, ZonPlayer.Error), Void>()
-
-    @Protected private var _buffer = Data()
-
-    private let _bufferSize = 10 * 1024
 }
 
 extension DataSessionDelegate: URLSessionDataDelegate {
@@ -46,46 +42,41 @@ extension DataSessionDelegate: URLSessionDataDelegate {
         completionHandler: @escaping (URLSession.ResponseDisposition) -> Void
     ) {
         if let metaData = response.__zon_metaData {
-            onMetaData.call((dataTask, metaData))
+            onMetaData((dataTask, metaData))
             completionHandler(.allow)
         } else {
-            onFailed.call((dataTask, .cacheFailed(.invalidStreamingResponse(response))))
+            onFailed((dataTask, .cacheFailed(.invalidStreamingResponse(response))))
             completionHandler(.cancel)
         }
     }
 
+    /// We should not response segmented data like this:
+    /// 
+    /// ```swift
+    /// if $0.count > _bufferSize {
+    ///        onData.call((dataTask, $0))
+    ///       $0 = Data()
+    /// }
+    /// ```
+    ///
+    /// Especially in poor network conditions, the video display may exhibit strange artifacts or corruption. 
+    /// Additionally, even under normal network conditions, cached files may become damaged.
     func urlSession(
         _ session: URLSession,
         dataTask: URLSessionDataTask,
         didReceive data: Data
-    ) {
-        $_buffer.write {
-            $0.append(data)
-
-            if $0.count > _bufferSize {
-                onData.call((dataTask, $0))
-                $0 = Data()
-            }
-        }
-    }
+    ) { onData((dataTask, data)) }
 
     func urlSession(
         _ session: URLSession,
         task: URLSessionTask,
         didCompleteWithError error: Error?
     ) {
-        $_buffer.write {
-            if $0.count > 0 && error == nil {
-                onData.call((task, $0))
-                $0 = Data()
-            }
-        }
-
         if let originalError = error {
             let error = ZonPlayer.Error.cacheFailed(.streamingRequestFailed(task, originalError))
-            onFailed.call((task, error))
+            onFailed((task, error))
         } else {
-            onFinished.call(task)
+            onFinished(task)
         }
     }
 }
