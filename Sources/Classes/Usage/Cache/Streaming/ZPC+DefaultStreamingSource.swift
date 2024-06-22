@@ -105,9 +105,6 @@ ZonPlayer Streaming Cache <<< \(url.unsafelyUnwrapped)
 extension ZPC.DefaultStreamingSource {
     private struct _SaveToDiskPlugin: ZPCStreamingPluggable {
         let storage: ZPCDataStorable
-        init(storage: ZPCDataStorable) {
-            self.storage = storage
-        }
 
         func didReceive(
             _ data: Data,

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ZonPlayer'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A library for player in iOS.'
   s.homepage         = 'https://github.com/ZeroOnet/ZonPlayer'
   s.license          = { :type => "MIT", :file => "LICENSE" }
@@ -13,4 +13,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
 
   s.source_files = 'Sources/**/*.{swift}'
+  s.resource = 'Sources/**/*.xcprivacy'
 end
