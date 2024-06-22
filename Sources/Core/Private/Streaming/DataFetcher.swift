@@ -18,6 +18,13 @@ final class DataFetcher {
         _fullfillMetaDataIfNeeded()
     }
 
+    deinit {
+        if !loadingRequest.isFinished {
+            let error = ZonPlayer.Error.cacheFailed(.streamingRequestCancelled(requester.url))
+            loadingRequest.finishLoading(with: error)
+        }
+    }
+
     func fetch() {
         guard let dataRequest = loadingRequest.theDataRequest else { return }
         var offset = Int(dataRequest.requestedOffset)
@@ -36,14 +43,6 @@ final class DataFetcher {
             }
         } else {
             _checkSource(for: NSRange(location: offset, length: length))
-        }
-    }
-
-    func finishWithCancellation() {
-        if !loadingRequest.isFinished {
-            // Important: make request finish loading but keep downloading.
-            let error = ZonPlayer.Error.cacheFailed(.streamingRequestCancelled(requester.url))
-            loadingRequest.finishLoading(with: error)
         }
     }
 
