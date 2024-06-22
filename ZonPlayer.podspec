@@ -13,4 +13,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '12.0'
 
   s.source_files = 'Sources/**/*.{swift}'
+  s.resource = 'Sources/**/*.xcprivacy'
 end
