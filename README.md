@@ -74,6 +74,38 @@ func play() {
 **Notice:** before using ZPC.Streaming, it is advisable to ensure that the URL supports random access to avoid potential unexpected issues. Below is the official documentation explanation for `isByteRangeAccessSupported`:
 > If this property is not true for resources that must be loaded incrementally, loading of the resource may fail. Such resources include anything that contains media data.
 
+# Compatibility
+
+In iOS 18.0.1, we encountered an issue where video playback sometimes has no sound, occasionally accompanied by video stuttering. The example code is as follows:
+
+```swift
+
+func seekAndPause(to time: TimeInterval) {
+    _player?.seek(to: time) { [weak self] _ in
+        self?._player.pause()
+    }
+}
+
+let time: TimeInterval = 10 // Any time
+seekAndPause(to: time)
+seekAndPause(to: time) // Call repeatedly
+```
+
+The official documentation describes the `completionHandler` parameter for `AVPlayer().seek` is:
+> The completion handler for any prior seek request that is still in process will be invoked immediately with the finished parameter set to false.
+> If the new request completes without being interrupted by another seek request or by any other operation the specified completion handler will be invoked with the finished parameter set to true.
+
+Eventually, we discovered that when the `completionHandler` invocation flag is set to false, playback control encounters this issue. Thus, the fix is quite simple:
+
+```swift
+func seekAndPause(to time: TimeInterval) {
+    _player?.seek(to: time) { [weak self] in
+        guard $0 else { return }
+        self?._player.pause()
+    }
+}
+```
+
 # Requirements
 
 - iOS 12.0 or later
