@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   run-test:
-    runs-on: macos-12
+    runs-on: macos-13
     strategy:
       matrix:
         destination: ["iOS Simulator,name=iPhone 14"]
@@ -48,6 +48,6 @@ jobs:
           bundle exec slather
 
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
