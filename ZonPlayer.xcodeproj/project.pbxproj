@@ -20,6 +20,7 @@
 		FA094C1C2B0B3A8C00B2F195 /* FileDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C1B2B0B3A8C00B2F195 /* FileDownloaderTests.swift */; };
 		FA094C1E2B0B41A000B2F195 /* DataStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C1D2B0B41A000B2F195 /* DataStorageTests.swift */; };
 		FA094C202B0B709700B2F195 /* DataRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C1F2B0B709700B2F195 /* DataRequesterTests.swift */; };
+		FA241FF22E2655CA00BF2C16 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA241FF12E2655CA00BF2C16 /* SwiftUIView.swift */; };
 		FA35FA5A2B0C49C700CA5795 /* RecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35FA592B0C49C700CA5795 /* RecordTests.swift */; };
 		FA35FA5E2B0C7B5C00CA5795 /* DataFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35FA5D2B0C7B5C00CA5795 /* DataFetcherTests.swift */; };
 		FA55387D2AFA0A3F003AA11C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA55387C2AFA0A3F003AA11C /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		FA094C1B2B0B3A8C00B2F195 /* FileDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloaderTests.swift; sourceTree = "<group>"; };
 		FA094C1D2B0B41A000B2F195 /* DataStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTests.swift; sourceTree = "<group>"; };
 		FA094C1F2B0B709700B2F195 /* DataRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequesterTests.swift; sourceTree = "<group>"; };
+		FA241FF12E2655CA00BF2C16 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		FA35FA592B0C49C700CA5795 /* RecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTests.swift; sourceTree = "<group>"; };
 		FA35FA5D2B0C7B5C00CA5795 /* DataFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherTests.swift; sourceTree = "<group>"; };
 		FA55387C2AFA0A3F003AA11C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				FA55387E2AFA0A72003AA11C /* HomeScene.swift */,
 				FA5538822AFA150A003AA11C /* AudioPlayerScene.swift */,
 				FA5538802AFA10CD003AA11C /* VideoPlayerScene.swift */,
+				FA241FF12E2655CA00BF2C16 /* SwiftUIView.swift */,
 				8DEC093A248F8294002D1391 /* Assets.xcassets */,
 				8DEC093C248F8294002D1391 /* LaunchScreen.storyboard */,
 				FA5538842AFA1592003AA11C /* Main.storyboard */,
@@ -388,6 +391,7 @@
 			files = (
 				FA55387F2AFA0A72003AA11C /* HomeScene.swift in Sources */,
 				FA55387D2AFA0A3F003AA11C /* AppDelegate.swift in Sources */,
+				FA241FF22E2655CA00BF2C16 /* SwiftUIView.swift in Sources */,
 				FA5538812AFA10CD003AA11C /* VideoPlayerScene.swift in Sources */,
 				FA5538832AFA150A003AA11C /* AudioPlayerScene.swift in Sources */,
 				245EAB52298795D800AA2FC1 /* main.swift in Sources */,
@@ -500,6 +504,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Example-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -660,6 +665,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Example-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -682,6 +688,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Example-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
