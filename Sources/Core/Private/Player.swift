@@ -76,7 +76,7 @@ final class Player: NSObject {
         switch kvoCase {
         case .duration:
             let duration = item.duration.seconds
-            guard _duration != duration else { return }
+            guard !duration.isNaN, _duration != duration else { return }
             _duration = duration
             _remoteController?.update { $0.duration(duration) }
             _callback { $0.duration?.call(($1, duration)) }
