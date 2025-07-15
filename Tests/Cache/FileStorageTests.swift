@@ -12,7 +12,7 @@ final class FileStorageTests: QuickSpec {
             it("Invalid cache directory") {
                 let config = ZPC.Config(
                     cacheDirectory: URL(string: "https://abc").unsafelyUnwrapped,
-                    fileName: ZPC.FileNameMD5BaseOnURL(),
+                    fileName: ZPC.FileNameSHA256BaseOnURL(),
                     ioQueue: .init(label: "")
                 )
                 let storage = ZPC.DefaultFileStorage(config: config)
