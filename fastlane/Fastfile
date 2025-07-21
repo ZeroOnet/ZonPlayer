@@ -20,7 +20,7 @@ platform :ios do
     scan(
       scheme: "Example-iOS",
       clean: true,
-      xcargs: "SWIFT_VERSION=#{options[:swift_version]}",
+      xcargs: "SWIFT_VERSION=#{options[:swift_version]} SWIFT_STRICT_CONCURRENCY=minimal OTHER_SWIFT_FLAGS="$(inherited) -Xfrontend -warn-concurrency"",
       destination: options[:destination]
     )
   end
