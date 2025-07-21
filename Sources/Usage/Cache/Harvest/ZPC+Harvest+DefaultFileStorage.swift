@@ -6,7 +6,7 @@
 //
 
 extension ZPC.Harvest {
-    public final class DefaultFileStorage {
+    public final class DefaultFileStorage: @unchecked Sendable {
         public let config: ZPC.Config
         public init(config: ZPC.Config = .config(components: "DownloadThenPlay")) {
             self.config = config

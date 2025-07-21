@@ -254,7 +254,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = "Shanbay iOS";
 				TargetAttributes = {
 					8DEC092E248F8293002D1391 = {

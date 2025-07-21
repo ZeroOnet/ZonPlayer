@@ -13,7 +13,7 @@ import AVKit
 struct SwiftUIView: View {
     @State private var scale: ZonPlayerView.Scale = .resizeAspectFill
     @ObservedObject var player: ZonPlayer.SwiftUI
-    init(url: URLConvertible) {
+    init(url: URLConvertible & Sendable) {
         self.player = .init(url: url)
     }
 
