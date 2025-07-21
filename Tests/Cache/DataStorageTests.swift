@@ -7,7 +7,7 @@
 //
 
 final class DataStorageTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test data storage") {
             it("Set and get meta data") {
                 let url = URL(string: "https://test/metadata").unsafelyUnwrapped

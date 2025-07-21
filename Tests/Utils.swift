@@ -12,7 +12,7 @@
 @_exported import Quick
 
 extension XCTestCase {
-    func __zon_triggerUnexpectedError() {
+    static func __zon_triggerUnexpectedError() {
         XCTFail("Unexpected error occurred.")
     }
 }

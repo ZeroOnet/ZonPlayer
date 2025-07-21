@@ -7,7 +7,7 @@
 //
 
 final class FileDownloaderTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test file downloader") {
             it("Download cancelled") {
                 waitUntil(timeout: .seconds(1)) { done in
@@ -64,6 +64,6 @@ final class FileDownloaderTests: QuickSpec {
         }
     }
 
-    private let _downloadDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    private var _downloaders: [ZPC.Harvest.FileDownloadable] = []
+    private static let _downloadDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    private static var _downloaders: [ZPC.Harvest.FileDownloadable] = []
 }

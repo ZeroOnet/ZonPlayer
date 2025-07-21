@@ -7,16 +7,16 @@
 //
 
 final class InvalidInitializationTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test player initialization") {
             it("Invalid url") {
                 waitUntil { done in
                     let invalidURL = ""
                     let player = ZonPlayer
                         .player(invalidURL)
-                        .onError(self) { wlf, payload in
+                        .onError(_delegate) { _, payload in
                             guard case .invalidURL = payload.1 else {
-                                wlf.__zon_triggerUnexpectedError()
+                                self.__zon_triggerUnexpectedError()
                                 return
                             }
                             done()
@@ -37,7 +37,7 @@ final class InvalidInitializationTests: QuickSpec {
                     let player = ZonPlayer
                         .player(self._url)
                         .session(InvalidSession())
-                        .onError(self) { wlf, payload in
+                        .onError(_delegate) { _, payload in
                             guard case .sessionError = payload.1 else {
                                 self.__zon_triggerUnexpectedError()
                                 return
@@ -60,9 +60,9 @@ final class InvalidInitializationTests: QuickSpec {
                     let player = ZonPlayer
                         .player(self._url)
                         .cache(InvalidCache())
-                        .onError(self) { wlf, payload in
+                        .onError(_delegate) { _, payload in
                             guard case .cacheFailed(.downloadFailed) = payload.1 else {
-                                wlf.__zon_triggerUnexpectedError()
+                                self.__zon_triggerUnexpectedError()
                                 return
                             }
                             done()
@@ -74,6 +74,7 @@ final class InvalidInitializationTests: QuickSpec {
         }
     }
 
-    private var _players: [ZonPlayable] = []
-    private let _url = "https://media-audio1.baydn.com/creeper/listening/33aede75f51823e9f7242cc65d09bc45.8c3bc6434a2d9c9b61f7fe28b519a841.mp3"
+    private static var _delegate = ZonPlayer.Delegate<(ZonPlayable, ZonPlayer.Error), Void>()
+    private static var _players: [ZonPlayable] = []
+    private static let _url = "https://media-audio1.baydn.com/creeper/listening/33aede75f51823e9f7242cc65d09bc45.8c3bc6434a2d9c9b61f7fe28b519a841.mp3"
 }

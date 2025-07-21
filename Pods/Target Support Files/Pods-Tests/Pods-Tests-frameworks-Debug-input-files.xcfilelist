@@ -1,3 +1,8 @@
 ${PODS_ROOT}/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CwlCatchException/CwlCatchException.framework
+${BUILT_PRODUCTS_DIR}/CwlCatchExceptionSupport/CwlCatchExceptionSupport.framework
+${BUILT_PRODUCTS_DIR}/CwlMachBadInstructionHandler/CwlMachBadInstructionHandler.framework
+${BUILT_PRODUCTS_DIR}/CwlPosixPreconditionTesting/CwlPosixPreconditionTesting.framework
+${BUILT_PRODUCTS_DIR}/CwlPreconditionTesting/CwlPreconditionTesting.framework
 ${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework
 ${BUILT_PRODUCTS_DIR}/Quick/Quick.framework

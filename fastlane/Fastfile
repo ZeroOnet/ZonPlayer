@@ -5,7 +5,7 @@ default_platform :ios
 platform :ios do
   desc "Runs all the tests"
   lane :tests do
-    test(destination: "platform=iOS Simulator,name=iPhone 14", swift_version: "5.0")
+    test(destination: "platform=iOS Simulator,name=iPhone 16", swift_version: "5.9")
   end
 
   lane :test_ci do

@@ -7,7 +7,7 @@
 //
 
 final class FileStorageTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test file storage") {
             it("Invalid cache directory") {
                 let config = ZPC.Config(

@@ -7,7 +7,7 @@
 //
 
 final class HarvestTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test download then play") {
             it("Downloaded file") {
                 waitUntil(timeout: .seconds(20)) { done in
@@ -23,5 +23,5 @@ final class HarvestTests: QuickSpec {
         }
     }
 
-    private let _cache = ZPC.Harvest()
+    private static let _cache = ZPC.Harvest()
 }

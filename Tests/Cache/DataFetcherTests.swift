@@ -9,7 +9,7 @@
 @testable import ZonPlayer
 
 final class DataFetcherTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test data fetcher") {
             it("Fullfill meta data") {
                 let url = URL(string: "abcd").unsafelyUnwrapped
@@ -85,9 +85,9 @@ final class DataFetcherTests: QuickSpec {
                 fetcher.fetch()
                 requester.didReceive(data: remoteData, range: NSRange(location: storageDataOne.count, length: remoteData.count))
                 waitUntil(timeout: .seconds(5)) { done in
-                    fetcher.onCompleted.delegate(on: self) { wlf, _ in
-                            expect { dataRequest.data == mergedData }.to(beTrue())
-                            done()
+                    fetcher.onCompleted.delegate(on: _delegate) { _, _ in
+                        expect { dataRequest.data == mergedData }.to(beTrue())
+                        done()
                     }
                 }
                 self._fetchers.append(fetcher)
@@ -95,7 +95,8 @@ final class DataFetcherTests: QuickSpec {
         }
     }
 
-    private var _fetchers: [DataFetcher] = []
+    private static var _delegate = ZonPlayer.Delegate<(DataFetcher, Result<Void, ZonPlayer.Error>), Void>()
+    private static var _fetchers: [DataFetcher] = []
 }
 
 extension DataFetcherTests {

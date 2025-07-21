@@ -9,7 +9,7 @@
 @testable import ZonPlayer
 
 final class RecordTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test cache record") {
             it("Independent fragments") {
                 let rangeOne = NSRange(location: 0, length: 10)
@@ -58,7 +58,7 @@ final class RecordTests: QuickSpec {
         }
     }
 
-    private func _record(fragments: [NSRange]) -> Record {
+    private static func _record(fragments: [NSRange]) -> Record {
         var result = Record()
         fragments.forEach { result.addFragment($0) }
         return result
