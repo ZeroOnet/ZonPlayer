@@ -30,6 +30,12 @@ post_install do |installer|
 
   project.targets.each do |target|
     target.build_configurations.each do |config|
+      if ['Quick', 'Nimble'].include? target.name
+        target.build_configurations.each do |config|
+          config.build_settings['SWIFT_STRICT_CONCURRENCY'] = 'minimal'
+        end
+      end
+
       pods_project_deployment = installer.pods_project.build_settings(config.name)['IPHONEOS_DEPLOYMENT_TARGET']
       if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f <= pods_project_deployment.to_f
         config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
