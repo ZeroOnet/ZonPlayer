@@ -7,22 +7,24 @@
 
 import CryptoKit
 
-public protocol ZPCFileNameConvertible {
-    /// Convert url to file name.
-    ///
-    /// - Important: File name must contain valid extension to help player playback, eg: .mp3, .mp4. 
-    /// ZPC.Config treated url path extension as file extension by default.
-    func map(url: URL) -> String
+extension ZPC {
+    public protocol FileNameConvertible {
+        /// Convert url to file name.
+        ///
+        /// - Important: File name must contain valid extension to help player playback, eg: .mp3, .mp4.
+        /// ZPC.Config treated url path extension as file extension by default.
+        func map(url: URL) -> String
+    }
 }
 
 extension ZPC {
     public struct Config {
         public let cacheDirectory: URL
-        public let fileName: ZPCFileNameConvertible
+        public let fileName: FileNameConvertible
         public let ioQueue: DispatchQueue
         public init(
             cacheDirectory: URL,
-            fileName: ZPCFileNameConvertible,
+            fileName: FileNameConvertible,
             ioQueue: DispatchQueue
         ) {
             self.cacheDirectory = cacheDirectory
@@ -74,7 +76,7 @@ extension ZPC {
         }
     }
 
-    public struct FileNameSHA256BaseOnURL: ZPCFileNameConvertible {
+    public struct FileNameSHA256BaseOnURL: FileNameConvertible {
         public init() {}
 
         public func map(url: URL) -> String {

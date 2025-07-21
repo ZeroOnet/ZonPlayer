@@ -7,35 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00B8933BDBBA612700DE9AF7D6E68F4E /* ZPFileStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9100A48935FC88759595F97AED51BB24 /* ZPFileStorable.swift */; };
 		027294E71CB21B347B401244B81822E7 /* BeWithin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8015D0BB35ED18B858B74C6E8656EB00 /* BeWithin.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		02BBC2661AAEBEE2F3BA1DAB463CD858 /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC6462E381516F628FFACAB514CBF7E /* Protected.swift */; };
+		03CB05A9BB7C2DD4CE1C2F38A3F2CFB8 /* ZPC+Streaming+DefaultDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422C523F1D3147E27F066857D93C1D12 /* ZPC+Streaming+DefaultDataStorage.swift */; };
 		03F5D2905758599E19230460C1A24883 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447626370CDD31CDCC3656C6E0B3BA05 /* Errors.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		05941828EFE3AB390D794BC1A8467AE0 /* ZPC+MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768DAC594A8204B01F82B4240A30000C /* ZPC+MetaData.swift */; };
 		05AC77328FC63B99AC76187A26ED079D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67D5FC3912AA12AA16711C8CC0ACECC /* Foundation.framework */; };
-		07CE73D52CE92D88191C0BEAC8BE6C6F /* DummyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEC38A3F559418A0FC18606F40F453B /* DummyPlayer.swift */; };
 		088BF64CE75CF63AFCB09C94886DCBF9 /* NMBExceptionCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A7CD7566A962848ACAFAE01FAC08AA6 /* NMBExceptionCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09E736A923F3E7823C236B8F01F3D695 /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F99FA0960BE24312A4603668FD6CFA /* HaveCount.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		0CB4647C5197EF22CD91A00AF1D0CD92 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F29C4A7FD2710C3F1AF0C2196578E /* DataProvider.swift */; };
 		0CFD54ABF3AA9751875519446EAA7829 /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E919903C10E88C8DB75C2CD00A266948 /* FailureMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		0FB5F6137CF005962679A9208BA2B313 /* ZPSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9768B727DEE0AA8D6C51D446AED1E6E /* ZPSettable.swift */; };
-		13473E54DAE7E28F75F8FDE14FBB8F51 /* DummyDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7791CD2205C8DDE8627FB70684638C3A /* DummyDataStorage.swift */; };
+		121C8EE77656BF243405F09DDCE81A07 /* ZPC+Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EACC746784750199E2B8897BC0925D /* ZPC+Streaming.swift */; };
+		1334D607B29D6193E9D9CE5AB45AA480 /* ZonPlayer+WaitingReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92A69B72F742B6EAC4237C2CD5EDF97 /* ZonPlayer+WaitingReason.swift */; };
 		142F16DCAA00D26DD3DC7164C259D40F /* QCKDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 43D9B7DA298758F3F8912543839CC426 /* QCKDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		153A1241AF150115F2C4738DEF45BDA2 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3353F9F9D76BAE1D0354F31473C9199 /* Context.swift */; };
 		15E49FB52671DEF2BB2BC689B804E3A5 /* ToSucceed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51320337A23D4A8E10E00BFD67B8D043 /* ToSucceed.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		1618192997BD75151759644353A61258 /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215339C71BDBD5B494E9EFD44005158 /* NimbleEnvironment.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		16930ED3C34E24B86373F396E9B500AC /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844435B050856A3A90F2F2DC5D10C71E /* Equal.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		1942B9196A474FF77BDC629D0D3B6F62 /* Nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 33FD12F984B4BA8B5D001D0AFD13F708 /* Nimble-dummy.m */; };
-		1A1126C28F2D458F27419869097547AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67D5FC3912AA12AA16711C8CC0ACECC /* Foundation.framework */; };
 		1A763F6F3F035F0101B67E488ECDA560 /* Equal+Tuple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16671DF91816B7CC8BAA2964E1E6414C /* Equal+Tuple.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		1A78A8CC781E08E451F048570F777A61 /* DownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052C593845578792C5B3686069DD3168 /* DownloadTask.swift */; };
 		1AAD9F08345F07DD6923F71EE43E92C2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7B68F52215E885EFA97D805F95A786 /* XCTest.framework */; };
 		1B9462BE07F4914975F0FE0AE1816184 /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12262F224D0D0A168C398C49F628A15 /* AllPass.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		1EA3838420041B9027C2F75F74DF20E2 /* ZonPlayer+RemoteCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B181FBAF41247E4243F6A6074CFA90 /* ZonPlayer+RemoteCommand.swift */; };
-		1ECA6289F26289F99C397DCE89301B01 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2D306072C7A1F3BFFC56BCBEBB04DC /* DataFetcher.swift */; };
+		1E2CB22162613A3B723C5C112FD4AEBD /* ZonPlayer+RemoteCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CA0351642221691AB70F9C85D2797E /* ZonPlayer+RemoteCommand.swift */; };
 		1F0F6C3B6B9C3C4A6777FEC2D050AFAA /* QuickSpecBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 60403D3F19863854702A6361D7F61850 /* QuickSpecBase.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2042A54B6F8E487A54263D32A4867009 /* ZPFileDownloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5FFF80B16C02F6ED58DB6EC1A73C5F /* ZPFileDownloadable.swift */; };
 		216740B518344B6255A88145A7D9D6EE /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5852911233E16D8DBA632AAF28C4C0 /* BeNil.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		21E2F1FF2C93A507A837100C11EF3B0A /* ZPCDataStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7C10162637E5EAA7A0C26B9E04A992 /* ZPCDataStorable.swift */; };
 		2263427A2B37D03ADB25001A1C87106F /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53261F42083B42E49E80904A433DE8A /* World.swift */; };
 		23F67F97C5FA29F05ED1222B4EE8DE60 /* CwlBadInstructionException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9331718C3E375B9305AE6782A65CC4 /* CwlBadInstructionException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		243AA4923B273EBD55B6010943CAFBD1 /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9CC327536739702EE1B8865E38BED6 /* EndWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -43,68 +35,74 @@
 		265DCA26A4DE33E0D4BB6781E259E4D0 /* SatisfyAnyOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C0C122235EDD894313B02C03C7C538 /* SatisfyAnyOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		268E4E9CE844A2F186FF13D1B12C089C /* MatcherProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27895722ECA9E17BA1DC28F822F97B9 /* MatcherProtocols.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		272585D586FD030156830D03A14774A8 /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4A8507ACE009C2C0F45E1FDED202C7 /* NMBExpectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		27CF1D50935721BE1A6DA9EDE834065C /* ZonPlayer+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296598D56F8E54E007FF1D9E51B274E2 /* ZonPlayer+Session.swift */; };
-		27EDD912E12DEE71DCD01D64EE623279 /* DataRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91DA90C1367E9A909A6E6B76FDA9580 /* DataRequester.swift */; };
 		299B98541E247F297B4C6A6C8CADF745 /* NMBStringify.h in Headers */ = {isa = PBXBuildFile; fileRef = 369990B25C94966B37B0E376A2FE93C0 /* NMBStringify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BAEEA22EF02DC6B168F86CCD9CBB8EB /* SourceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D25C0FCCF8F6E3E59CF4F94C8C060 /* SourceLocation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		2D71E124944977C51F4A46F83DFEF5A1 /* QuickObjCRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 622317B228B6CF5C9D75DA1008B0F2B8 /* QuickObjCRuntime.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2D9587959B8014A4B8B002D193DB20AC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BF5F4DEC6FF8F855E298C07C347C7 /* Logger.swift */; };
 		2E41CBCDB7538964E0BD2DD796626677 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E026C7DAC445C7C813121DE7F03837 /* Async.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		2F2C04AA7A343AA0A5C3447D28C96FFB /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50385054529E509CEE4B2AB05ED21D /* DataTask.swift */; };
-		2FE83512DBB8CD7ED0BA7BFF2CA26698 /* ZPC+Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726D1357B0A84E3286466ADEA6AF417 /* ZPC+Streaming.swift */; };
 		3061A34EFFDB723AA6EEFCDA3A492CE7 /* ExampleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FAC3D0F71CAC2AEF632440A982DF9D /* ExampleMetadata.swift */; };
 		333CBC9C833AC000B8A19E010498164A /* Pods-Example-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A4E9C03CD26EB371DA139C727FFF35 /* Pods-Example-iOS-dummy.m */; };
-		335DAD13A04BD8791DECC90093343B41 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF2A85B97B8C69F3AAB79869D7529E2 /* Builder.swift */; };
 		344394AD2109A9FC267088A6610E94C1 /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD87F111AA17D3829427C832EB042273 /* ErrorUtility.swift */; };
 		34A70E7C751672151C4C300BAD08A096 /* XCTestSuite+QuickTestSuiteBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB908657F2C86943C6660C8F0130CEB /* XCTestSuite+QuickTestSuiteBuilder.m */; };
+		3522BA81D30A0098702F2682CB924335 /* DownloadSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333C7D4ED8CECFFE234CD63E703BDE0 /* DownloadSessionDelegate.swift */; };
 		352F6B4561880025D55E61FCBB3B0B6E /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523F3CB4F893F0BF3631D865BEEC2B4 /* AdapterProtocols.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		3592FDF49AC84E71CA84FB9703C50328 /* DownloadSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBEF25026D84A9C1BFE04365A3C2A9A /* DownloadSessionDelegate.swift */; };
-		369AD496D1BE60135D3DED41D473B1CC /* ZonPlayer+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2AC696DA0D5FBDA1883744769B8A89 /* ZonPlayer+Manager.swift */; };
+		35AA180C611890D46563EF9BB5BB6B1F /* ZonPlayer+Controllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A705168EEA28F9B06C955840F26D19D /* ZonPlayer+Controllable.swift */; };
 		374CC2FE62D07AA43D540D6528EDD815 /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 32395E85CAF13637932ACEECADC2D96D /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		396BBC1A5E95C1308AE2511FE6706525 /* ZonPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C486DD60E945C9085B7E190CBAE6DFE /* ZonPlayerView.swift */; };
+		37D7DEC4661F747B04350F0CE029B772 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34569094CE941B7A227E07155BCFA47C /* URLConvertible.swift */; };
+		3A18ADFC7F4CAE56D750A5389318BCFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67D5FC3912AA12AA16711C8CC0ACECC /* Foundation.framework */; };
 		3E24A841C3265FE0A0DC1B74773249E8 /* BeVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5273DD569D843C265AF46176F4A534FD /* BeVoid.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		3E9DBCA29363A72BA45969BFF838140E /* ZonPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F50648B94E0C61B1F96D9A12480D13 /* ZonPlayer.swift */; };
+		409B43561523020148F7F29E1B4C37E7 /* ZonPlayer+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F770755C3DB6B114FB050E46FFD1386 /* ZonPlayer+Delegate.swift */; };
 		43CB90F5D056A6781FB2D47AAB73D7D7 /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDFBC1CEF007E69BBCFDEFF88615F2C /* QuickSelectedTestSuiteBuilder.swift */; };
+		443906341B5B33237374B3DCD57ECE04 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A2D9183A3EA714160E70CADBE1140B /* DataProvider.swift */; };
 		45D5E0E5BC86323EC2D7F88D4C15E486 /* CwlMachBadInstructionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6A8AE2D5EF989F29A4FFB4EB7D52A8 /* CwlMachBadInstructionHandler.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		496DF3F76B4C5563F7493138CBE86CC7 /* URL+FileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AECA1C81ADFA2CA35D84DC7FF1902B2 /* URL+FileName.swift */; };
 		4A08D5D3708EB5C184DF55A6129D88D2 /* BeAnInstanceOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = B534FC537F198D4CB2269C659A93783F /* BeAnInstanceOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		4AE72A1DDD3D708BBB0212265D43E3D2 /* ZonPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3864CB082776CCDF99E5A4C186F82891 /* ZonPlayer-dummy.m */; };
 		4CBFBCE9CFC5A2BE4AEE6635BE4299FA /* ThrowAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85254BDDFDC46F27B70DCBF181ADE6FF /* ThrowAssertion.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		4EAFA3CE65EEACB6D17B6F043C6CA1A3 /* Quick-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AD1B7F0757B5057BCF6D7D1F6B0B7BD1 /* Quick-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FFD32A6124222A9056E2278C46D0091 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67D5FC3912AA12AA16711C8CC0ACECC /* Foundation.framework */; };
-		5128326A7117565F028BBD9DDB1A251C /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F2840D64E7671A9AF59A108BE3FEBB /* URLConvertible.swift */; };
-		5197BB6C28B92909AB0D548593AF4BDB /* ZonPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B68B4BD3790FF4B750F914CAAED13B2 /* ZonPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51AA692002047F81B275A93472C42795 /* SatisfyAllOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE08781F30AAAA4776BC4A79E3FA9F40 /* SatisfyAllOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		53451E03465FB99CC2B31163903336E3 /* BeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA4F4C4573FD9589D1CA0CA3DD18A0C /* BeResult.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		5548F6B4EABA9E2C093B72DCDCFFA6C2 /* ZonPlayer+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A1CCA45293308B4688F3809242B858 /* ZonPlayer+Error.swift */; };
 		58D43A64D85E2B34AF4EB0F74819D2EC /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C826AD498684E411DD1C792748D889C /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		59EE6097953FDF7A17F534DC6F95C836 /* ZPCDataRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2828992F1FCE7225AE2D7DB6A41B23DA /* ZPCDataRequestable.swift */; };
 		5A84B4BD35A3C1F10F3540BEFB70DE8E /* BeAKindOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B95333BD525E87BFF22C57ED6E20FD5 /* BeAKindOf.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		5B47284ABB81DA171858D94F5DBE7537 /* mach_excServer.c in Sources */ = {isa = PBXBuildFile; fileRef = 8470BE37EE9259F9FDADDFC80764A837 /* mach_excServer.c */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		5BFE6AE9AC8E50C7F83E79166B10E383 /* QCKDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 230259C7BBC0AB021F9278A064AADAC1 /* QCKDSL.m */; };
+		5C4617861DAE980C4FF5E0EEA2A69C90 /* ZonPlayerView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277410C41357B3112000F90AB3DF871C /* ZonPlayerView+SwiftUI.swift */; };
 		5CB2BA731DA43EAE57FDCA43C3CEC56D /* NMBExceptionCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 81CA9AA102BC399952DACFC1F5740345 /* NMBExceptionCapture.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		5D286BAB59D38A85323C34F274D9A73C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7112EC1E0ABCB474F37DA1D03A077A7 /* Player.swift */; };
+		5D3FF8B97E8EE0A9EBB042135C13E166 /* ZonPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7190D3888C57D4514EFEF552429350 /* ZonPlayer-dummy.m */; };
 		5EA18450D8FA25C2A26CAA4A8C2D539E /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8E70599736912CA1DB7FCDD472F2B2 /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6114A80C5AAF1CAB1AE0981E287667B7 /* ZPCStreamingSourceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65000B17B0FDB606C3B00067712F348 /* ZPCStreamingSourceable.swift */; };
 		63657E16730333612F91601572681D57 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE338476557D8F2CF2B6E987F5A31CA /* DSL.swift */; };
+		64AE0D79A53328F34D0E5FD31189A48F /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A922F6E0D78310E0C859BB2A63985213 /* DataFetcher.swift */; };
 		64C0B937EBEA98A74BF92C09FD4FC0E7 /* mach_excServer.h in Headers */ = {isa = PBXBuildFile; fileRef = E25EB083AA8985DFFE745FCF5758009A /* mach_excServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		654F909781FC06A8217821E86B7D6188 /* DataSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136AD3300E5FF7AB3C8D19215C356B8E /* DataSessionDelegate.swift */; };
-		67A739A9899C4E7642D5C34AEC0A854C /* ZPCLoadingRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A38FF8829296E93E4B5C2E8BD3FC7 /* ZPCLoadingRequestable.swift */; };
+		657AD914D75B56B4184B18A6A982D314 /* ZonPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE2E18E7E46AB4943A752B50ED9EFEF /* ZonPlayerView.swift */; };
 		6AAB4AF2139F51879A0C9B69BAC8B014 /* BeginWithPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7893AC67AE4B488BC3E9604A46413A06 /* BeginWithPrefix.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		6C92D9E59C2B845A2739EBBA6D74C3BF /* ZPC+Harvest+DefaultFileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EB729B0FB79F2B4FF2F41D3B7770DD /* ZPC+Harvest+DefaultFileStorage.swift */; };
 		6F067D6266C4D5002BF0C9FEF23A4C81 /* Await.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40955816DD54EA848880AD2815A76921 /* Await.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		6FE3E099982F7FB985602612F97C48C1 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F3FC4B011F2F9ECD1BC7AA40D9FDB /* Builder.swift */; };
 		709CE1CE6A93A65313A6E5791041958B /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6AA1575C0AD81F762039746AFAECDC /* Stringers.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		71517BF277D33B51F0E41805AFFF2752 /* QCKConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CE28DB5FFB584E123C56C4345A73E7 /* QCKConfiguration.swift */; };
-		72FDFEB24B5FF63DA7B1F3E0AAAA4551 /* NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF253508B448291E607D221A2F5F375 /* NowPlayingInfo.swift */; };
 		732068D12B71E83C50482D79E62C128C /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 254558E5834898D2301B3E8C4F620311 /* QuickSpec.m */; };
 		739DCCF19C00FC5BDE2F5FB6A321C182 /* Behavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F6B7AC8B7979F25F17036731EE339D /* Behavior.swift */; };
 		73A69BA750A5F02F18AB17222CF57FC0 /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3ED266DDE9C244816DD6A53157F8745 /* World+DSL.swift */; };
+		73E93917984AF07B2CDDDC4D891B0BF2 /* ZPC+Harvest+DefaultFileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAF38D763851E130615FC3427EE76C2 /* ZPC+Harvest+DefaultFileDownloader.swift */; };
 		7592F1465540B00D16C7A59146700CAC /* ContainElementSatisfying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC299AC522B25A61A3FAF124FF83FC /* ContainElementSatisfying.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		77AAB6C7C7489C810A29C17516E41B09 /* CwlCatchException.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EFA1693908150CAAB677FEAB89AEC2D /* CwlCatchException.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		785CB92110B9ADB39C65C640B4858EA5 /* RemoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB582D5F33FFE8B0EB0F273021794B1 /* RemoteController.swift */; };
 		79C3008EEB60433F53CA2D85C25A7CD4 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9317EF9B3052FC9D544E30801F901 /* Expectation.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		7AE814638DF2BA7E26B1A92DFA366A98 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB836F954501FFEA0AA8E87E8856D7A7 /* Filter.swift */; };
+		7CE310C022AA4B4630B1F4F93CADD44D /* ZonPlayer+Settable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4FFBC8DC456E3F74C220346B9258EB /* ZonPlayer+Settable.swift */; };
 		7D349EF2B28FB3952C290282BCC54521 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF56DC23988E5C892B0834949D740C5 /* BeEmpty.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		7E5AB13AED44A4ED9BA46B429EA59444 /* ZPC+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96711C4D22DE7D56925B4365A704B98 /* ZPC+Config.swift */; };
 		814D58C4A66A159279C73248A735EFAA /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31245591C4C010F1303DAC1BC9804C1 /* BeCloseTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		83AFEF3DE993C6CE8268D2836217D788 /* ZPCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AB6CC4C158BA9C0934D2E5F2514C4E /* ZPCacheable.swift */; };
+		83DE1BE5130599DFCBCECD38D21E3D70 /* ZonPlayer+RemoteControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EA492BA532864FCF642A69758694F /* ZonPlayer+RemoteControllable.swift */; };
+		85E2F53DD73F92B269DAAA13363FA89F /* ZonPlayer+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607EDB9F773E90996A82BA929ABBD25B /* ZonPlayer+Session.swift */; };
 		86022E312FF6C6F3ABC3DA28814A7155 /* Pods-Example-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6706FA1DAE847215C92C4C3393051C /* Pods-Example-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86025D2604AA1AEBDD4829A27D9C46AD /* ZonPlayer+Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE276A484C919030CD46E6B97286206 /* ZonPlayer+Manager.swift */; };
 		868302AEC62D3568BB7993D2616A0D96 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B896AB55261B6E62E0FC506B92A8EC /* AssertionRecorder.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		868E30FB0AEB56632F6D70997083CA2C /* MatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAC25BC63EBD14D35CDE94813660768 /* MatchError.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		8744DB4D9434D22D2A555BABC87F2CD3 /* DataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678BB9716256F9E9AB444D6725E3964 /* DataTask.swift */; };
+		87C7D9ABF5B5F27120CA46C243AEA121 /* CallbackCompositer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14DAF2604E3970E2758AF1717D73D4 /* CallbackCompositer.swift */; };
 		8916EBBDC636FF9BB8D11A5C4ADC27EC /* Nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FC0C54E76B49BF11F64E24F0931846C /* Nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C734464E9BFFCF64F0F0985E77376BF /* CwlDarwinDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34F47D81171E27AF285CDD1AF9F659C /* CwlDarwinDefinitions.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		8E0946AFFEC896A3C65C42A385CA8FF1 /* QuickTestObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350B976ED907275DDED563482009AFD2 /* QuickTestObservation.swift */; };
@@ -114,98 +112,92 @@
 		93D3F99C44CD7B7AFB1D1E0E1338979E /* XCTestObservationCenter+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0C6AC202911FB7A52FE099B9B734 /* XCTestObservationCenter+Register.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		9484E89D102631E5ABFD26CE3D18EB68 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813F3776773A4275874BC369BB34A01 /* ExampleGroup.swift */; };
 		97F8E865E6B2C7AF2B8E2759F0D8FC93 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB88DCC04205DB0A61C17B66FFA0AE97 /* Predicate.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		992FEDEB25C3E47A85CB9D6762390126 /* ZPCStreamingPluggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5802847B53A2C80C4BBF5D59581D67 /* ZPCStreamingPluggable.swift */; };
 		9B5C8FADB77B97510186F83619C3BC92 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A91DF9E678606788A96C9150D53EA6 /* Expression.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		9B9205E5A7FAE72D9E7D69DBBB7B2C2B /* ZPSessionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC045E89072EF48D19FAEDCEDD07DEFB /* ZPSessionable.swift */; };
 		A0E6B3E09ED93A74039C83505486F586 /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEE4FA5F5FF28F88648CF9EF3B4C39 /* BeGreaterThanOrEqualTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		A150986510F670C85AC54CA591E562BB /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298044D1245C4BD022B7F13791639E75 /* DSL+Wait.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		A3930D5CB84AD5A2D7894425FC687A23 /* ThrowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41AA0E2939FB981CED2EFF1B98A57B3 /* ThrowError.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		A40E93039D9A4004F9655CCFFD5248E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67D5FC3912AA12AA16711C8CC0ACECC /* Foundation.framework */; };
 		A467C0E8E6F25C8A94BB544BB6D4D514 /* HooksPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC4D3688977E2D961A8F985B1FC0F73 /* HooksPhase.swift */; };
-		A59C1B02A7DE821513B72C39BC604C62 /* ZPGettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8240C2E6D3E90725C05978A6B9E7E66F /* ZPGettable.swift */; };
 		A673C9B8269535FC5081A2F148D2AC66 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937CE363DBBFE4523820E40E9D3F9A0 /* BeginWith.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		A67A17C69B7B8D51057A3EDCA41C1B29 /* Quick.h in Headers */ = {isa = PBXBuildFile; fileRef = E7639378BFCFD4BC8587A03243C01A64 /* Quick.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6C450D1E12F1B8AEFB2D1D725838F6D /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE221BFCA2870DA4C198740C7CB6A4 /* Logger.swift */; };
 		A820D9D4684AC4527E1FD32CF9CD0030 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5F8634034723707BA489895B2AC37A /* BeLessThan.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		A8629C6954D5AD872D1E9D8BBE7B6527 /* ZPCCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92BC4BCE500358DA1D0E76B3EEE18B5 /* ZPCCancellable.swift */; };
-		AA21F8033824877C15A25FFBA5651D08 /* ZonPlayer+WaitingReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A058DDC99B029AA903CC078AE597454 /* ZonPlayer+WaitingReason.swift */; };
-		AF37EEA3911287B9FF60B0F93B2A57A6 /* ZPC+DefaultFileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC80150E3CC410EE120762D1700FC458 /* ZPC+DefaultFileDownloader.swift */; };
+		A964CFC6A6FA42795824CA782365F759 /* ZonPlayer+Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E54D4B7BA69A6C933F3AACD825758D /* ZonPlayer+Observable.swift */; };
+		AA752015C37AF2F3A6166F6B8714B9C0 /* ZonPlayer+Gettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94983F23C30384E988B03FEA5E39A304 /* ZonPlayer+Gettable.swift */; };
+		B217AE99CAEF38106FAED5DC717B8D1E /* DataSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F9FF12BCF9495D941FD07193C77049 /* DataSessionDelegate.swift */; };
+		B3962086940BFD07DFFC7308DB593943 /* DummyDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E06CBEAFDB129D116B53560F79ED02 /* DummyDataStorage.swift */; };
 		B3EA641C8A7769B96C65E2C2FF732033 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516931D0E6A9461B9C20990FA366E1F9 /* Match.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B4145EFC296D3117CD190F3887287572 /* CwlMachBadInstructionHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 23E11C41EA8F304D43F144554949AEFF /* CwlMachBadInstructionHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B698B937228916B466B8D9B083A871D0 /* String+C99ExtendedIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14A4B16D42CCCBE3D21CBDE4FFC9AA4 /* String+C99ExtendedIdentifier.swift */; };
 		B6A7FA0CD5DFC77495B041716B5846A5 /* BeIdenticalTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115813CA22C723977B41201CF3B4C44A /* BeIdenticalTo.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		B71FB4DE76D377DEFBB598BF6266709E /* QuickTestSuite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289E9ACE73C6629DAAEA21D42495B76E /* QuickTestSuite.swift */; };
+		B81B7C53A63E06CB4018ACA5C5436141 /* ZonPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 20E6695A48CB694823A142234B38EF86 /* ZonPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB264E63DD9138EC1D5B1ED89A912115 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = F938352019A345C16FB1B238782235D2 /* Context.swift */; };
 		BD5A08223F721A5C9CD541987CFDA1E5 /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3CEFA5153F8ACE3EA7629E00B17B8F /* NSBundle+CurrentTestBundle.swift */; };
 		BE1018BDDF1DC1E2F63A868B86805526 /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBFBBA48C11C5DAD16F0C15F64297B /* RaisesException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		BEC0EFF5BE5E1CE982C060EDACF9FC76 /* CwlCatchException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A30FEA2214E06D065AE8997736B53 /* CwlCatchException.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		C0FEE05BE48AC67A16C5FB69ADB1C1EF /* ZPC+DefaultFileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABE43E91AFDA932B2750BF21EEE4C8B /* ZPC+DefaultFileStorage.swift */; };
-		C24DE4811FFC944F2AD146D1773D190C /* RemoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2FF49A7FF1FAAFDB7ECD48A6C7C0F /* RemoteController.swift */; };
-		C27D461299BBF61F3AC48B747506A388 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B436D054D8FC2E577E4E7F591942BD0C /* Player.swift */; };
+		C30E7F209021B1133A68B2261915EF77 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD6644ADC6E4D4B0EC5C9B09F877FC2 /* Record.swift */; };
+		C501E8D64D593A57BA76346E4C6E490B /* ZonPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6327C9A9C6D7C379921DAE3FC461289F /* ZonPlayable.swift */; };
 		C83DF4B73E1B3516E44F8F5137BADC1C /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 146368AEAABF8595E8E93C61E0C41999 /* Pods-Tests-dummy.m */; };
-		C878C0C95E7222276D5A4C7B1F52DD32 /* ZPC+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7515E3E4F8CBB18098DA82CBE5E05160 /* ZPC+Config.swift */; };
+		CA16F57DDF2C9DC1FBC8086F2FF214F8 /* ZonPlayer+Monitorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C425613E9486391F64FE90D873C8BFD5 /* ZonPlayer+Monitorable.swift */; };
 		CAEA48651B58949653843F77C25924F5 /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBA466E9150F71DE3C4A76DB140D8 /* SuiteHooks.swift */; };
 		CBEF0E5B15E2029774D8F9AA63EB3067 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EB0871827E9D45D4B63C66C93F292B /* PostNotification.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		CD072BA8C30A1B72059FC2B175E5CFFB /* ZPC+DownloadThenPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069CC1B866415AD982B5FBCB5DC8452 /* ZPC+DownloadThenPlay.swift */; };
-		CEA9C4E7697629CFF0FB25066AB8D51F /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE806E95FB3F98664208815EC928946 /* Record.swift */; };
 		CF4C70CC904E2D5D7EF73EED793F5EFE /* CwlCatchException.m in Sources */ = {isa = PBXBuildFile; fileRef = 654A3ADC4BC6E05E9BDC2D8F858A74BA /* CwlCatchException.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D11EB6FAE971B91715D05D0C24C722D3 /* Callsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF200F89D143FA102042E6D285D5B6B2 /* Callsite.swift */; };
 		D2452C186379ACC7811C5D053E23DCC5 /* ExpectationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB3B3904CE5F831A2214803D978A197 /* ExpectationMessage.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		D36C83FDFE6C4B5A8B1BED806BF87016 /* ZPControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811CF849FD05193C8AD636D040F0DC1A /* ZPControllable.swift */; };
 		D3860FE0DB146D78F8EBC711C76EB866 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDC6B9AB35B53FC579C731AE67FD846 /* Example.swift */; };
 		D3EB85DFE6E304B70B8E719745ECD716 /* QuickConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E6BB1E6C30B81EDB33EC7FDB6C205C79 /* QuickConfiguration.m */; };
+		D3F21627D3D5AF7E23589D6C948FFDB8 /* ZPC+Streaming+Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BBE1F316455D6ED4ECDCFB788146F6 /* ZPC+Streaming+Requestable.swift */; };
+		D45F6FDBB3094B2C31385376724C52A6 /* ZPC+Streaming+DefaultStreamingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885A7BA52C7DD53B7320E68349D9B702 /* ZPC+Streaming+DefaultStreamingSource.swift */; };
 		D49D1747E8E54F575821111C0A0EE417 /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4149CC5C4007BD87DFDB7E2114AE830D /* Contain.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		D5A5FEED2716051112AD2C4CD4C870CB /* CwlCatchBadInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C39466E1E06F0DE2D25E4D0D4E6169 /* CwlCatchBadInstruction.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		D6795FC6BBE6DA8F5B2B5DF5A9FA513C /* ZPC+DefaultDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB709D28B53CB51BEBB2D7073081CC /* ZPC+DefaultDataStorage.swift */; };
-		D75C206F3D8A42C0FC9454C43329ABD2 /* ZPC+DefaultStreamingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FD0077F0E3F2FBAB694F6379AC8F8A /* ZPC+DefaultStreamingSource.swift */; };
-		DA75C88277C4D2B85CF1F72FB8F341F2 /* CallbackCompositer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1BF629F368C4B5073B1F259AB4F27A /* CallbackCompositer.swift */; };
-		DA8216BEBBE2451B809F114EF1D74917 /* ZonPlayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F383D82316F2456AE1134C5267698C6 /* ZonPlayable.swift */; };
-		DAE05DAE6181CEB99E0D16CE067C3844 /* ZPMonitorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD0D38D8F783B542BB3445E173C3E8A /* ZPMonitorable.swift */; };
-		DD412A7456A2FE6D26C6F70E5761B72E /* ZPRemoteControllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B847B6210B7AB49389F3A4CA4042F761 /* ZPRemoteControllable.swift */; };
 		DE5404323D3CF5CD951E87386F2FD944 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16B8BD1EFF8AB8B6940E1EC149FD38A /* DSL.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		DE5FA98806E7DD51BC1505E4215B0582 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D67D5FC3912AA12AA16711C8CC0ACECC /* Foundation.framework */; };
 		E0A3DA16EB91DBDA9F63B25ECC82AE43 /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D566AD1F3A57C62675DCFF1174ADF8 /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		E29B58C28BF22AC6A3CD514D8E2D08E2 /* ZonPlayer+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39940DCA179C553B3C6F44AB19EF81B9 /* ZonPlayer+Cache.swift */; };
 		E35682BB7797DB256A5B90C9D3AA7640 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F00FC1EB20AC2CA0B5B083F84159A5 /* Closures.swift */; };
 		E4BCFDF07A3BF3BB621E9E08F8CB3169 /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2362FBD489CCE1D540C808716D1EB8C4 /* ExampleHooks.swift */; };
 		E5D882778EBB1BDB668C8991FF62180D /* Quick-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F6D4322ABB010AB0EEC279249B17918 /* Quick-dummy.m */; };
-		E722221C4E439053CA9DE20376147760 /* ZPObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03D68A2F0966890ABFE02E643E1789 /* ZPObservable.swift */; };
+		EA3338C2ED4EA28B09F26F661BF50CED /* ZonPlayer+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B350F41F82DD19A6D60BB14E1F8F121 /* ZonPlayer+Error.swift */; };
+		EBC341A1A60F6F2C59AAE1AF15C049D7 /* ZPC+Streaming+MetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E82C62C9FDF0F20F1DDFE4B4166D8 /* ZPC+Streaming+MetaData.swift */; };
 		ED888EE05F236EDFF8DC7D26141B0B37 /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = 97522C7BBA1F97437715C74303E5A686 /* NMBStringify.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		EDD6D5CF041525BE8B2539B01A9978CF /* ZPC+Harvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F002428C9BDF0E7866B393004144DD /* ZPC+Harvest.swift */; };
 		EEE86DA8FB9871CEBBCC7CCAC045097D /* DispatchTimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE268F672F0856752F99A6370C6545F1 /* DispatchTimeInterval.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		EFE2B971A3523184A4AFD53F621DE0D2 /* ZonPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E2583C61C30D31B2203A5CF205A16 /* ZonPlayer.swift */; };
 		EFF456F003832525EE2AC293717916DC /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4A2AFFEAE1D8A8E4479F656ADF2D2 /* NimbleXCTestHandler.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
-		F0AC67725FCF248D6CCFD61B4C51E204 /* ZPCStreamingDataProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAD6DA92C5B50ACFAF9B7D3E89D11EA /* ZPCStreamingDataProvidable.swift */; };
-		F1F5177672ED8533DFF9F61503DED3BE /* ZPDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB57A3BE381993322FB9CB0A541FA7A7 /* ZPDelegate.swift */; };
 		F3AD5A8D2685347A20F5583AAC53FE90 /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B5A37C0A10198805DA6175B2EB342 /* BeLessThanOrEqual.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		F3F59BA88F08387A7D43D9A952D5C36D /* NowPlayingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B84BBC9CF263D2F6DD671B00EF19185 /* NowPlayingInfo.swift */; };
+		F6CDEB0212B981685ECC1180F2068C62 /* ZonPlayer+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EB94BA4B35015419DC6BD34C9220FF /* ZonPlayer+SwiftUI.swift */; };
 		F7B4E218FC0DC1CC96DF3E90874694D2 /* QuickConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204E01215147E1CFDB134360F8F1938E /* QuickConfiguration.swift */; };
 		F9DFD4422022DEE775196ACDA5996939 /* Pods-Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B5E480225049C0BA2446F9100E0DFF1 /* Pods-Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA32394A682BDC085F7F0994897BD421 /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090D7BCE58F5A67C1B30F59637E0EE53 /* AssertionDispatcher.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
 		FB9FB1DB20C8FC4845D73F944D72325F /* QuickSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = F75E74A600C812323367AD98A7E46500 /* QuickSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FFD16185AB84A632D1FB3FC7D522088A /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1DBF08E7876107F38CF0447EF296DC /* Protected.swift */; };
+		FC28405E5B85988515A6CF8177F7E2C8 /* ZonPlayer+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269FF3AD5A40BA8D627DB722BA93F40 /* ZonPlayer+Cache.swift */; };
+		FD823E9317BB140F748FE0FE761350FB /* DownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F581438DC31D9AB7F0E9F1CB5C75631 /* DownloadTask.swift */; };
+		FD88C7E859A9CC8E16FC29AD1913026B /* DataRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C4ADF57F63309BE46C8F6767219AF3 /* DataRequester.swift */; };
+		FF4E3A2E386EA14A61F6D5D98A7288A0 /* DummyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40459DD355B0A9785B188CC0083164 /* DummyPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		ADE740A71B19CE0DB5CC488DD4878DDB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C82891EAB7293DBEE916B21F57E8474D;
-			remoteInfo = Quick;
-		};
-		C46EA0C068709F2E8CC5993CE6E92286 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B448AC191110D164125F599EA0AC2249;
-			remoteInfo = "Pods-Example-iOS";
-		};
-		D0EF085EE15839F41179F63B2A76A892 /* PBXContainerItemProxy */ = {
+		20F1528CF38475AD09F12BDF0F055AF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6F13695E06195A78EA8A95F8C7ED0D2F;
 			remoteInfo = Nimble;
 		};
-		E8C1DA8F44381A22BD79CF3D072F2AC1 /* PBXContainerItemProxy */ = {
+		44D4A8C8744964654EC6DFEEBF529068 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B448AC191110D164125F599EA0AC2249;
+			remoteInfo = "Pods-Example-iOS";
+		};
+		6D8D06D224915B846BED8D68BE200EBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C82891EAB7293DBEE916B21F57E8474D;
+			remoteInfo = Quick;
+		};
+		ABDEB0C0C314BB520FF14A2B0659784F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -215,215 +207,207 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02EACC746784750199E2B8897BC0925D /* ZPC+Streaming.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Streaming.swift"; sourceTree = "<group>"; };
 		042751488F4CA7587E364171AA16F2B2 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		052C593845578792C5B3686069DD3168 /* DownloadTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DownloadTask.swift; sourceTree = "<group>"; };
-		066E424723059722D480ACE99C47544D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		08D321D284A2B18001F028F70B1C72C3 /* Pods-Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-frameworks.sh"; sourceTree = "<group>"; };
+		08F50648B94E0C61B1F96D9A12480D13 /* ZonPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZonPlayer.swift; sourceTree = "<group>"; };
 		090D7BCE58F5A67C1B30F59637E0EE53 /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		0A6115706ED27012A9F43E253D3D3DD7 /* QuickSpecBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpecBase.m; path = Sources/QuickObjCRuntime/QuickSpecBase.m; sourceTree = "<group>"; };
 		0B2A30FEA2214E06D065AE8997736B53 /* CwlCatchException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchException.swift; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchException/CwlCatchException.swift; sourceTree = "<group>"; };
 		0BB908657F2C86943C6660C8F0130CEB /* XCTestSuite+QuickTestSuiteBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestSuite+QuickTestSuiteBuilder.m"; path = "Sources/QuickObjectiveC/XCTestSuite+QuickTestSuiteBuilder.m"; sourceTree = "<group>"; };
 		0CC868F0C837CD14674BAB0E8717323D /* Pods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0D5E2583C61C30D31B2203A5CF205A16 /* ZonPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZonPlayer.swift; sourceTree = "<group>"; };
 		0D631E9908483F9525A6B3F36F16CC61 /* Quick */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Quick; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E2D306072C7A1F3BFFC56BCBEBB04DC /* DataFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		0F4A8507ACE009C2C0F45E1FDED202C7 /* NMBExpectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBExpectation.swift; path = Sources/Nimble/Adapters/NMBExpectation.swift; sourceTree = "<group>"; };
 		115813CA22C723977B41201CF3B4C44A /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
-		136AD3300E5FF7AB3C8D19215C356B8E /* DataSessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataSessionDelegate.swift; sourceTree = "<group>"; };
+		13EB729B0FB79F2B4FF2F41D3B7770DD /* ZPC+Harvest+DefaultFileStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Harvest+DefaultFileStorage.swift"; sourceTree = "<group>"; };
 		146368AEAABF8595E8E93C61E0C41999 /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
-		15D20B3C61518510BD8ACC760FDC6B0D /* ZonPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZonPlayer.release.xcconfig; sourceTree = "<group>"; };
 		16671DF91816B7CC8BAA2964E1E6414C /* Equal+Tuple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Equal+Tuple.swift"; path = "Sources/Nimble/Matchers/Equal+Tuple.swift"; sourceTree = "<group>"; };
 		16F99FA0960BE24312A4603668FD6CFA /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
+		19FFA9428C898461F2FE78A186405FD0 /* ZonPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZonPlayer.modulemap; sourceTree = "<group>"; };
+		1A705168EEA28F9B06C955840F26D19D /* ZonPlayer+Controllable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Controllable.swift"; sourceTree = "<group>"; };
 		1B6A8AE2D5EF989F29A4FFB4EB7D52A8 /* CwlMachBadInstructionHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CwlMachBadInstructionHandler.m; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/CwlMachBadInstructionHandler.m; sourceTree = "<group>"; };
-		1BDB709D28B53CB51BEBB2D7073081CC /* ZPC+DefaultDataStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+DefaultDataStorage.swift"; sourceTree = "<group>"; };
+		1BB582D5F33FFE8B0EB0F273021794B1 /* RemoteController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RemoteController.swift; sourceTree = "<group>"; };
 		1FC0C54E76B49BF11F64E24F0931846C /* Nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-umbrella.h"; sourceTree = "<group>"; };
 		204E01215147E1CFDB134360F8F1938E /* QuickConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickConfiguration.swift; path = Sources/Quick/Configuration/QuickConfiguration.swift; sourceTree = "<group>"; };
 		2074BFE7E55D0389276746C750BCDC73 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		20E6695A48CB694823A142234B38EF86 /* ZonPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZonPlayer-umbrella.h"; sourceTree = "<group>"; };
 		21C0C122235EDD894313B02C03C7C538 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
+		220F678527BB4CA420D0BFC7E8303BFE /* ZonPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZonPlayer.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		224E6677994A186A3F07DEAB355BBDFB /* ZonPlayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZonPlayer-Info.plist"; sourceTree = "<group>"; };
 		230259C7BBC0AB021F9278A064AADAC1 /* QCKDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QCKDSL.m; path = Sources/QuickObjectiveC/DSL/QCKDSL.m; sourceTree = "<group>"; };
 		2362FBD489CCE1D540C808716D1EB8C4 /* ExampleHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleHooks.swift; path = Sources/Quick/Hooks/ExampleHooks.swift; sourceTree = "<group>"; };
 		23E11C41EA8F304D43F144554949AEFF /* CwlMachBadInstructionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlMachBadInstructionHandler.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/include/CwlMachBadInstructionHandler.h; sourceTree = "<group>"; };
-		24F2840D64E7671A9AF59A108BE3FEBB /* URLConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		254558E5834898D2301B3E8C4F620311 /* QuickSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpec.m; path = Sources/QuickObjectiveC/QuickSpec.m; sourceTree = "<group>"; };
-		2828992F1FCE7225AE2D7DB6A41B23DA /* ZPCDataRequestable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPCDataRequestable.swift; sourceTree = "<group>"; };
+		260BF5F4DEC6FF8F855E298C07C347C7 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		277410C41357B3112000F90AB3DF871C /* ZonPlayerView+SwiftUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayerView+SwiftUI.swift"; sourceTree = "<group>"; };
 		289E9ACE73C6629DAAEA21D42495B76E /* QuickTestSuite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickTestSuite.swift; path = Sources/Quick/QuickTestSuite.swift; sourceTree = "<group>"; };
-		296598D56F8E54E007FF1D9E51B274E2 /* ZonPlayer+Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Session.swift"; sourceTree = "<group>"; };
 		298044D1245C4BD022B7F13791639E75 /* DSL+Wait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DSL+Wait.swift"; path = "Sources/Nimble/DSL+Wait.swift"; sourceTree = "<group>"; };
 		2AECA1C81ADFA2CA35D84DC7FF1902B2 /* URL+FileName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URL+FileName.swift"; path = "Sources/Quick/URL+FileName.swift"; sourceTree = "<group>"; };
-		2BA2FF49A7FF1FAAFDB7ECD48A6C7C0F /* RemoteController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RemoteController.swift; sourceTree = "<group>"; };
 		2C9CC327536739702EE1B8865E38BED6 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
 		2CF56DC23988E5C892B0834949D740C5 /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
 		2E9331718C3E375B9305AE6782A65CC4 /* CwlBadInstructionException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlBadInstructionException.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlBadInstructionException.swift; sourceTree = "<group>"; };
-		2F3A38FF8829296E93E4B5C2E8BD3FC7 /* ZPCLoadingRequestable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPCLoadingRequestable.swift; sourceTree = "<group>"; };
-		2F5FFF80B16C02F6ED58DB6EC1A73C5F /* ZPFileDownloadable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPFileDownloadable.swift; sourceTree = "<group>"; };
 		32395E85CAF13637932ACEECADC2D96D /* QuickConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickConfiguration.h; path = Sources/QuickObjectiveC/Configuration/QuickConfiguration.h; sourceTree = "<group>"; };
+		33EB94BA4B35015419DC6BD34C9220FF /* ZonPlayer+SwiftUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+SwiftUI.swift"; sourceTree = "<group>"; };
 		33FD12F984B4BA8B5D001D0AFD13F708 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
+		34569094CE941B7A227E07155BCFA47C /* URLConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
+		34F9FF12BCF9495D941FD07193C77049 /* DataSessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataSessionDelegate.swift; sourceTree = "<group>"; };
 		350B976ED907275DDED563482009AFD2 /* QuickTestObservation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickTestObservation.swift; path = Sources/Quick/QuickTestObservation.swift; sourceTree = "<group>"; };
 		369990B25C94966B37B0E376A2FE93C0 /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
 		36B9A690187603178EF941A9F0D80E13 /* Pods-Example-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-iOS-Info.plist"; sourceTree = "<group>"; };
-		3864CB082776CCDF99E5A4C186F82891 /* ZonPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZonPlayer-dummy.m"; sourceTree = "<group>"; };
-		39940DCA179C553B3C6F44AB19EF81B9 /* ZonPlayer+Cache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Cache.swift"; sourceTree = "<group>"; };
 		3B4E2AF01C07390467B2A032C1081912 /* BeLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLogical.swift; path = Sources/Nimble/Matchers/BeLogical.swift; sourceTree = "<group>"; };
+		3B84BBC9CF263D2F6DD671B00EF19185 /* NowPlayingInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NowPlayingInfo.swift; sourceTree = "<group>"; };
 		3CE338476557D8F2CF2B6E987F5A31CA /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Quick/DSL/DSL.swift; sourceTree = "<group>"; };
 		3DB3B3904CE5F831A2214803D978A197 /* ExpectationMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpectationMessage.swift; path = Sources/Nimble/ExpectationMessage.swift; sourceTree = "<group>"; };
 		3EFA1693908150CAAB677FEAB89AEC2D /* CwlCatchException.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CwlCatchException.h; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchException.h; sourceTree = "<group>"; };
 		40955816DD54EA848880AD2815A76921 /* Await.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Await.swift; path = Sources/Nimble/Utils/Await.swift; sourceTree = "<group>"; };
 		4149CC5C4007BD87DFDB7E2114AE830D /* Contain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Sources/Nimble/Matchers/Contain.swift; sourceTree = "<group>"; };
-		42A1CCA45293308B4688F3809242B858 /* ZonPlayer+Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Error.swift"; sourceTree = "<group>"; };
+		422C523F1D3147E27F066857D93C1D12 /* ZPC+Streaming+DefaultDataStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Streaming+DefaultDataStorage.swift"; sourceTree = "<group>"; };
 		43D9B7DA298758F3F8912543839CC426 /* QCKDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QCKDSL.h; path = Sources/QuickObjectiveC/DSL/QCKDSL.h; sourceTree = "<group>"; };
 		447626370CDD31CDCC3656C6E0B3BA05 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/Nimble/Utils/Errors.swift; sourceTree = "<group>"; };
 		45F6B7AC8B7979F25F17036731EE339D /* Behavior.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Behavior.swift; path = Sources/Quick/Behavior.swift; sourceTree = "<group>"; };
-		46EB2E00001D70 /* AdHoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = AdHoc.xcconfig; path = ../Configurations/AdHoc.xcconfig; sourceTree = "<group>"; };
-		46EB2E00001D80 /* Debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../Configurations/Debug.xcconfig; sourceTree = "<group>"; };
-		46EB2E00001D90 /* Release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../Configurations/Release.xcconfig; sourceTree = "<group>"; };
+		4678BB9716256F9E9AB444D6725E3964 /* DataTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataTask.swift; sourceTree = "<group>"; };
+		46EB2E00001C70 /* AdHoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = AdHoc.xcconfig; path = ../Configurations/AdHoc.xcconfig; sourceTree = "<group>"; };
+		46EB2E00001C80 /* Debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = ../Configurations/Debug.xcconfig; sourceTree = "<group>"; };
+		46EB2E00001C90 /* Release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = ../Configurations/Release.xcconfig; sourceTree = "<group>"; };
 		49D566AD1F3A57C62675DCFF1174ADF8 /* DSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSL.m; path = Sources/NimbleObjectiveC/DSL.m; sourceTree = "<group>"; };
 		4B5ECB9D7EF3AF7D8F37CE57A988CD83 /* Nimble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nimble.release.xcconfig; sourceTree = "<group>"; };
-		4B68B4BD3790FF4B750F914CAAED13B2 /* ZonPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZonPlayer-umbrella.h"; sourceTree = "<group>"; };
 		4C965F64744CB14D8F6E2C2BBB97F4DD /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Nimble.modulemap; sourceTree = "<group>"; };
 		4E433C75FE626134E57A5486A3BD39E4 /* Pods-Example-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4F770755C3DB6B114FB050E46FFD1386 /* ZonPlayer+Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Delegate.swift"; sourceTree = "<group>"; };
 		50FAC3D0F71CAC2AEF632440A982DF9D /* ExampleMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleMetadata.swift; path = Sources/Quick/ExampleMetadata.swift; sourceTree = "<group>"; };
 		51320337A23D4A8E10E00BFD67B8D043 /* ToSucceed.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToSucceed.swift; path = Sources/Nimble/Matchers/ToSucceed.swift; sourceTree = "<group>"; };
 		516931D0E6A9461B9C20990FA366E1F9 /* Match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Match.swift; path = Sources/Nimble/Matchers/Match.swift; sourceTree = "<group>"; };
 		51BA9038051E613E9BCC9972FB613CD3 /* Quick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quick.release.xcconfig; sourceTree = "<group>"; };
 		5273DD569D843C265AF46176F4A534FD /* BeVoid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeVoid.swift; path = Sources/Nimble/Matchers/BeVoid.swift; sourceTree = "<group>"; };
+		5333C7D4ED8CECFFE234CD63E703BDE0 /* DownloadSessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DownloadSessionDelegate.swift; sourceTree = "<group>"; };
 		5368FE179894121B072DD96785C4D12C /* Pods-Example-iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Example-iOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		547B2169445E647C19163025E63165C8 /* ZonPlayer */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZonPlayer; path = ZonPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5523F3CB4F893F0BF3631D865BEEC2B4 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
+		56A3D25C2F2467728038E98D6C375CAC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		5813F3776773A4275874BC369BB34A01 /* ExampleGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleGroup.swift; path = Sources/Quick/ExampleGroup.swift; sourceTree = "<group>"; };
 		586B5A37C0A10198805DA6175B2EB342 /* BeLessThanOrEqual.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThanOrEqual.swift; path = Sources/Nimble/Matchers/BeLessThanOrEqual.swift; sourceTree = "<group>"; };
 		5B92C9CC722809C5B84E642916E835EC /* Pods-Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tests-Info.plist"; sourceTree = "<group>"; };
 		5B95333BD525E87BFF22C57ED6E20FD5 /* BeAKindOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAKindOf.swift; path = Sources/Nimble/Matchers/BeAKindOf.swift; sourceTree = "<group>"; };
 		5C8E70599736912CA1DB7FCDD472F2B2 /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
-		5CF2A85B97B8C69F3AAB79869D7529E2 /* Builder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		5FE2E18E7E46AB4943A752B50ED9EFEF /* ZonPlayerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZonPlayerView.swift; sourceTree = "<group>"; };
 		60403D3F19863854702A6361D7F61850 /* QuickSpecBase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpecBase.h; path = Sources/QuickObjCRuntime/include/QuickSpecBase.h; sourceTree = "<group>"; };
-		60B181FBAF41247E4243F6A6074CFA90 /* ZonPlayer+RemoteCommand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+RemoteCommand.swift"; sourceTree = "<group>"; };
+		607EDB9F773E90996A82BA929ABBD25B /* ZonPlayer+Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Session.swift"; sourceTree = "<group>"; };
 		622317B228B6CF5C9D75DA1008B0F2B8 /* QuickObjCRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickObjCRuntime.h; path = Sources/QuickObjCRuntime/include/QuickObjCRuntime.h; sourceTree = "<group>"; };
 		62D71B6CC2D63C9EDD34FE342BD5BBF6 /* Pods-Example-iOS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Example-iOS"; path = Pods_Example_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6327C9A9C6D7C379921DAE3FC461289F /* ZonPlayable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZonPlayable.swift; sourceTree = "<group>"; };
 		64B896AB55261B6E62E0FC506B92A8EC /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
 		654A3ADC4BC6E05E9BDC2D8F858A74BA /* CwlCatchException.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CwlCatchException.m; path = Carthage/Checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/CwlCatchException.m; sourceTree = "<group>"; };
 		67A91DF9E678606788A96C9150D53EA6 /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/Nimble/Expression.swift; sourceTree = "<group>"; };
-		67EDC4C0B6BB282284D0446863D69CB5 /* ZonPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZonPlayer.debug.xcconfig; sourceTree = "<group>"; };
-		6A058DDC99B029AA903CC078AE597454 /* ZonPlayer+WaitingReason.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+WaitingReason.swift"; sourceTree = "<group>"; };
-		6ABE43E91AFDA932B2750BF21EEE4C8B /* ZPC+DefaultFileStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+DefaultFileStorage.swift"; sourceTree = "<group>"; };
-		6AE806E95FB3F98664208815EC928946 /* Record.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		6B2FDA6BA346CFB8685A28BC7F0F0F38 /* Pods-Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Tests.modulemap"; sourceTree = "<group>"; };
+		6B350F41F82DD19A6D60BB14E1F8F121 /* ZonPlayer+Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Error.swift"; sourceTree = "<group>"; };
 		6B5E480225049C0BA2446F9100E0DFF1 /* Pods-Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-umbrella.h"; sourceTree = "<group>"; };
 		6BAC25BC63EBD14D35CDE94813660768 /* MatchError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchError.swift; path = Sources/Nimble/Matchers/MatchError.swift; sourceTree = "<group>"; };
 		6C5852911233E16D8DBA632AAF28C4C0 /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
 		6D6706FA1DAE847215C92C4C3393051C /* Pods-Example-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Example-iOS-umbrella.h"; sourceTree = "<group>"; };
-		6E1BF629F368C4B5073B1F259AB4F27A /* CallbackCompositer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CallbackCompositer.swift; sourceTree = "<group>"; };
 		6E6AA1575C0AD81F762039746AFAECDC /* Stringers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stringers.swift; path = Sources/Nimble/Utils/Stringers.swift; sourceTree = "<group>"; };
-		6F383D82316F2456AE1134C5267698C6 /* ZonPlayable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZonPlayable.swift; sourceTree = "<group>"; };
+		6FAF38D763851E130615FC3427EE76C2 /* ZPC+Harvest+DefaultFileDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Harvest+DefaultFileDownloader.swift"; sourceTree = "<group>"; };
+		70CA0351642221691AB70F9C85D2797E /* ZonPlayer+RemoteCommand.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+RemoteCommand.swift"; sourceTree = "<group>"; };
 		718ABA2E524F929C4106CFE711012B87 /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Quick.modulemap; sourceTree = "<group>"; };
-		7515E3E4F8CBB18098DA82CBE5E05160 /* ZPC+Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Config.swift"; sourceTree = "<group>"; };
 		755D25C0FCCF8F6E3E59CF4F94C8C060 /* SourceLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceLocation.swift; path = Sources/Nimble/Utils/SourceLocation.swift; sourceTree = "<group>"; };
 		766A5EA3A362FFD45458AAB04D1B9FB4 /* Quick-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-prefix.pch"; sourceTree = "<group>"; };
-		768DAC594A8204B01F82B4240A30000C /* ZPC+MetaData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+MetaData.swift"; sourceTree = "<group>"; };
-		7791CD2205C8DDE8627FB70684638C3A /* DummyDataStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DummyDataStorage.swift; sourceTree = "<group>"; };
 		7893AC67AE4B488BC3E9604A46413A06 /* BeginWithPrefix.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWithPrefix.swift; path = Sources/Nimble/Matchers/BeginWithPrefix.swift; sourceTree = "<group>"; };
+		7A0E82C62C9FDF0F20F1DDFE4B4166D8 /* ZPC+Streaming+MetaData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Streaming+MetaData.swift"; sourceTree = "<group>"; };
 		7A7CD7566A962848ACAFAE01FAC08AA6 /* NMBExceptionCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBExceptionCapture.h; path = Sources/NimbleObjectiveC/NMBExceptionCapture.h; sourceTree = "<group>"; };
 		7AE197136F8E380A9F1E7D06BD9D0FAF /* Nimble-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-prefix.pch"; sourceTree = "<group>"; };
-		7C50385054529E509CEE4B2AB05ED21D /* DataTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataTask.swift; sourceTree = "<group>"; };
 		7C826AD498684E411DD1C792748D889C /* Nimble.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nimble.h; path = Sources/Nimble/Nimble.h; sourceTree = "<group>"; };
 		7CDC6B9AB35B53FC579C731AE67FD846 /* Example.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Example.swift; path = Sources/Quick/Example.swift; sourceTree = "<group>"; };
+		7D24C5944FEF0A5683F3189E5F3A2867 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		7F6D4322ABB010AB0EEC279249B17918 /* Quick-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Quick-dummy.m"; sourceTree = "<group>"; };
 		8015D0BB35ED18B858B74C6E8656EB00 /* BeWithin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeWithin.swift; path = Sources/Nimble/Matchers/BeWithin.swift; sourceTree = "<group>"; };
 		80C1A88BD47B036C3DDFAF15BECBADDA /* Pods-Example-iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Example-iOS-frameworks.sh"; sourceTree = "<group>"; };
-		80C604CC6A4B6262EB348B47B807DD82 /* ZonPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZonPlayer-prefix.pch"; sourceTree = "<group>"; };
-		811CF849FD05193C8AD636D040F0DC1A /* ZPControllable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPControllable.swift; sourceTree = "<group>"; };
 		816ADD332F4B117869233698097F8975 /* Pods-Example-iOS.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example-iOS.adhoc.xcconfig"; sourceTree = "<group>"; };
 		81CA9AA102BC399952DACFC1F5740345 /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Sources/NimbleObjectiveC/NMBExceptionCapture.m; sourceTree = "<group>"; };
-		8240C2E6D3E90725C05978A6B9E7E66F /* ZPGettable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPGettable.swift; sourceTree = "<group>"; };
 		8270027ACBF7A64C2B453CCBFE155E90 /* Nimble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nimble.debug.xcconfig; sourceTree = "<group>"; };
-		836E39BB24556855CEE2E5C968EDE8B6 /* ZonPlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZonPlayer.modulemap; sourceTree = "<group>"; };
 		844435B050856A3A90F2F2DC5D10C71E /* Equal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Equal.swift; path = Sources/Nimble/Matchers/Equal.swift; sourceTree = "<group>"; };
+		8461DF5EF1F84CC61C75248D79508013 /* ZonPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZonPlayer.release.xcconfig; sourceTree = "<group>"; };
 		8470BE37EE9259F9FDADDFC80764A837 /* mach_excServer.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mach_excServer.c; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.c; sourceTree = "<group>"; };
 		84CC299AC522B25A61A3FAF124FF83FC /* ContainElementSatisfying.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContainElementSatisfying.swift; path = Sources/Nimble/Matchers/ContainElementSatisfying.swift; sourceTree = "<group>"; };
 		85254BDDFDC46F27B70DCBF181ADE6FF /* ThrowAssertion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowAssertion.swift; path = Sources/Nimble/Matchers/ThrowAssertion.swift; sourceTree = "<group>"; };
 		85C9317EF9B3052FC9D544E30801F901 /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
 		880EBA466E9150F71DE3C4A76DB140D8 /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Sources/Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
+		885A7BA52C7DD53B7320E68349D9B702 /* ZPC+Streaming+DefaultStreamingSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Streaming+DefaultStreamingSource.swift"; sourceTree = "<group>"; };
 		88CE28DB5FFB584E123C56C4345A73E7 /* QCKConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QCKConfiguration.swift; path = Sources/Quick/Configuration/QCKConfiguration.swift; sourceTree = "<group>"; };
-		8C486DD60E945C9085B7E190CBAE6DFE /* ZonPlayerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZonPlayerView.swift; sourceTree = "<group>"; };
+		8BC6462E381516F628FFACAB514CBF7E /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Protected.swift; sourceTree = "<group>"; };
 		8F7B68F52215E885EFA97D805F95A786 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9100A48935FC88759595F97AED51BB24 /* ZPFileStorable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPFileStorable.swift; sourceTree = "<group>"; };
+		8FD6644ADC6E4D4B0EC5C9B09F877FC2 /* Record.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
 		9215339C71BDBD5B494E9EFD44005158 /* NimbleEnvironment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleEnvironment.swift; path = Sources/Nimble/Adapters/NimbleEnvironment.swift; sourceTree = "<group>"; };
-		93FD0077F0E3F2FBAB694F6379AC8F8A /* ZPC+DefaultStreamingSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+DefaultStreamingSource.swift"; sourceTree = "<group>"; };
-		94AB6CC4C158BA9C0934D2E5F2514C4E /* ZPCacheable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPCacheable.swift; sourceTree = "<group>"; };
+		94983F23C30384E988B03FEA5E39A304 /* ZonPlayer+Gettable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Gettable.swift"; sourceTree = "<group>"; };
 		97522C7BBA1F97437715C74303E5A686 /* NMBStringify.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBStringify.m; path = Sources/NimbleObjectiveC/NMBStringify.m; sourceTree = "<group>"; };
 		9AA80CEA9B4992D8F9368CEE01A42094 /* BeGreaterThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThan.swift; path = Sources/Nimble/Matchers/BeGreaterThan.swift; sourceTree = "<group>"; };
+		9C4FFBC8DC456E3F74C220346B9258EB /* ZonPlayer+Settable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Settable.swift"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9EEC38A3F559418A0FC18606F40F453B /* DummyPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DummyPlayer.swift; sourceTree = "<group>"; };
+		9F581438DC31D9AB7F0E9F1CB5C75631 /* DownloadTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DownloadTask.swift; sourceTree = "<group>"; };
 		A12262F224D0D0A168C398C49F628A15 /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		A16B8BD1EFF8AB8B6940E1EC149FD38A /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Nimble/DSL.swift; sourceTree = "<group>"; };
 		A1E026C7DAC445C7C813121DE7F03837 /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Sources/Nimble/Matchers/Async.swift; sourceTree = "<group>"; };
 		A2A4E9C03CD26EB371DA139C727FFF35 /* Pods-Example-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Example-iOS-dummy.m"; sourceTree = "<group>"; };
-		A3EE221BFCA2870DA4C198740C7CB6A4 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		ABC77B31F96426B75C133CE479CD8276 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		AC80150E3CC410EE120762D1700FC458 /* ZPC+DefaultFileDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+DefaultFileDownloader.swift"; sourceTree = "<group>"; };
+		A7C4ADF57F63309BE46C8F6767219AF3 /* DataRequester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataRequester.swift; sourceTree = "<group>"; };
+		A922F6E0D78310E0C859BB2A63985213 /* DataFetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
+		AB40459DD355B0A9785B188CC0083164 /* DummyPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DummyPlayer.swift; sourceTree = "<group>"; };
 		AD1B7F0757B5057BCF6D7D1F6B0B7BD1 /* Quick-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-umbrella.h"; sourceTree = "<group>"; };
 		AF3CEFA5153F8ACE3EA7629E00B17B8F /* NSBundle+CurrentTestBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBundle+CurrentTestBundle.swift"; path = "Sources/Quick/NSBundle+CurrentTestBundle.swift"; sourceTree = "<group>"; };
 		AFF54D298B2C82D72EB8C6E7A6400D4F /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B069CC1B866415AD982B5FBCB5DC8452 /* ZPC+DownloadThenPlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+DownloadThenPlay.swift"; sourceTree = "<group>"; };
 		B14A4B16D42CCCBE3D21CBDE4FFC9AA4 /* String+C99ExtendedIdentifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+C99ExtendedIdentifier.swift"; path = "Sources/Quick/String+C99ExtendedIdentifier.swift"; sourceTree = "<group>"; };
-		B37F29C4A7FD2710C3F1AF0C2196578E /* DataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
-		B436D054D8FC2E577E4E7F591942BD0C /* Player.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		B3E06CBEAFDB129D116B53560F79ED02 /* DummyDataStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DummyDataStorage.swift; sourceTree = "<group>"; };
 		B534FC537F198D4CB2269C659A93783F /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
-		B65000B17B0FDB606C3B00067712F348 /* ZPCStreamingSourceable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPCStreamingSourceable.swift; sourceTree = "<group>"; };
-		B847B6210B7AB49389F3A4CA4042F761 /* ZPRemoteControllable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPRemoteControllable.swift; sourceTree = "<group>"; };
-		B91DA90C1367E9A909A6E6B76FDA9580 /* DataRequester.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataRequester.swift; sourceTree = "<group>"; };
-		BA5802847B53A2C80C4BBF5D59581D67 /* ZPCStreamingPluggable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPCStreamingPluggable.swift; sourceTree = "<group>"; };
+		B7112EC1E0ABCB474F37DA1D03A077A7 /* Player.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		B92A69B72F742B6EAC4237C2CD5EDF97 /* ZonPlayer+WaitingReason.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+WaitingReason.swift"; sourceTree = "<group>"; };
 		BAE263041362D074978BB3B577DF0A05 /* Nimble */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB5D7CE0E6246798ABFD9DAAE4915E71 /* Nimble-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nimble-Info.plist"; sourceTree = "<group>"; };
 		BBA4F4C4573FD9589D1CA0CA3DD18A0C /* BeResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeResult.swift; path = Sources/Nimble/Matchers/BeResult.swift; sourceTree = "<group>"; };
-		BCBEF25026D84A9C1BFE04365A3C2A9A /* DownloadSessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DownloadSessionDelegate.swift; sourceTree = "<group>"; };
-		BCF253508B448291E607D221A2F5F375 /* NowPlayingInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NowPlayingInfo.swift; sourceTree = "<group>"; };
 		BD44BD4583ED1F78116D6AFC2F53708D /* Pods-Example-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Example-iOS.modulemap"; sourceTree = "<group>"; };
+		BE14DAF2604E3970E2758AF1717D73D4 /* CallbackCompositer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CallbackCompositer.swift; sourceTree = "<group>"; };
 		BF200F89D143FA102042E6D285D5B6B2 /* Callsite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Callsite.swift; path = Sources/Quick/Callsite.swift; sourceTree = "<group>"; };
 		C0DEE4FA5F5FF28F88648CF9EF3B4C39 /* BeGreaterThanOrEqualTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThanOrEqualTo.swift; path = Sources/Nimble/Matchers/BeGreaterThanOrEqualTo.swift; sourceTree = "<group>"; };
-		C3353F9F9D76BAE1D0354F31473C9199 /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		C34F47D81171E27AF285CDD1AF9F659C /* CwlDarwinDefinitions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlDarwinDefinitions.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlDarwinDefinitions.swift; sourceTree = "<group>"; };
 		C3D4A2AFFEAE1D8A8E4479F656ADF2D2 /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
+		C425613E9486391F64FE90D873C8BFD5 /* ZonPlayer+Monitorable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Monitorable.swift"; sourceTree = "<group>"; };
 		C4C39466E1E06F0DE2D25E4D0D4E6169 /* CwlCatchBadInstruction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CwlCatchBadInstruction.swift; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlPreconditionTesting/CwlCatchBadInstruction.swift; sourceTree = "<group>"; };
 		C53261F42083B42E49E80904A433DE8A /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = Sources/Quick/World.swift; sourceTree = "<group>"; };
-		C64BCA83450A0AA8ED86067C7B1A7568 /* ZonPlayer-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZonPlayer-Info.plist"; sourceTree = "<group>"; };
 		C851CC15E8E0E35CE23A1222E105A809 /* ElementsEqual.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementsEqual.swift; path = Sources/Nimble/Matchers/ElementsEqual.swift; sourceTree = "<group>"; };
-		CA2AC696DA0D5FBDA1883744769B8A89 /* ZonPlayer+Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Manager.swift"; sourceTree = "<group>"; };
-		CBD0D38D8F783B542BB3445E173C3E8A /* ZPMonitorable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPMonitorable.swift; sourceTree = "<group>"; };
-		CC045E89072EF48D19FAEDCEDD07DEFB /* ZPSessionable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPSessionable.swift; sourceTree = "<group>"; };
-		CC7C10162637E5EAA7A0C26B9E04A992 /* ZPCDataStorable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPCDataStorable.swift; sourceTree = "<group>"; };
+		C8A2D9183A3EA714160E70CADBE1140B /* DataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		CD2EA492BA532864FCF642A69758694F /* ZonPlayer+RemoteControllable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+RemoteControllable.swift"; sourceTree = "<group>"; };
 		CD87F111AA17D3829427C832EB042273 /* ErrorUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUtility.swift; path = Sources/Quick/ErrorUtility.swift; sourceTree = "<group>"; };
 		CDDFBC1CEF007E69BBCFDEFF88615F2C /* QuickSelectedTestSuiteBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickSelectedTestSuiteBuilder.swift; path = Sources/Quick/QuickSelectedTestSuiteBuilder.swift; sourceTree = "<group>"; };
+		CE7190D3888C57D4514EFEF552429350 /* ZonPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZonPlayer-dummy.m"; sourceTree = "<group>"; };
+		D1719FB6DBA449082405F9C270581FE7 /* ZonPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZonPlayer.debug.xcconfig; sourceTree = "<group>"; };
+		D269FF3AD5A40BA8D627DB722BA93F40 /* ZonPlayer+Cache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Cache.swift"; sourceTree = "<group>"; };
 		D2FBFBBA48C11C5DAD16F0C15F64297B /* RaisesException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RaisesException.swift; path = Sources/Nimble/Matchers/RaisesException.swift; sourceTree = "<group>"; };
 		D41AA0E2939FB981CED2EFF1B98A57B3 /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
 		D67D5FC3912AA12AA16711C8CC0ACECC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D726D1357B0A84E3286466ADEA6AF417 /* ZPC+Streaming.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Streaming.swift"; sourceTree = "<group>"; };
-		DA8BD3E755CC84F5D43E47997D2887AB /* ZonPlayer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZonPlayer.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DB836F954501FFEA0AA8E87E8856D7A7 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Quick/Filter.swift; sourceTree = "<group>"; };
 		DB88DCC04205DB0A61C17B66FFA0AE97 /* Predicate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Predicate.swift; path = Sources/Nimble/Matchers/Predicate.swift; sourceTree = "<group>"; };
-		DE03D68A2F0966890ABFE02E643E1789 /* ZPObservable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPObservable.swift; sourceTree = "<group>"; };
+		DBE276A484C919030CD46E6B97286206 /* ZonPlayer+Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Manager.swift"; sourceTree = "<group>"; };
 		DF776FF666679B4CB34B0A18B1F5B307 /* Quick-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Quick-Info.plist"; sourceTree = "<group>"; };
+		E1BBE1F316455D6ED4ECDCFB788146F6 /* ZPC+Streaming+Requestable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Streaming+Requestable.swift"; sourceTree = "<group>"; };
 		E1F00FC1EB20AC2CA0B5B083F84159A5 /* Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Closures.swift; path = Sources/Quick/Hooks/Closures.swift; sourceTree = "<group>"; };
 		E25EB083AA8985DFFE745FCF5758009A /* mach_excServer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mach_excServer.h; path = Carthage/Checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/mach_excServer.h; sourceTree = "<group>"; };
 		E27895722ECA9E17BA1DC28F822F97B9 /* MatcherProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherProtocols.swift; path = Sources/Nimble/Matchers/MatcherProtocols.swift; sourceTree = "<group>"; };
 		E2EB0871827E9D45D4B63C66C93F292B /* PostNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostNotification.swift; path = Sources/Nimble/Matchers/PostNotification.swift; sourceTree = "<group>"; };
 		E2FF0C6AC202911FB7A52FE099B9B734 /* XCTestObservationCenter+Register.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestObservationCenter+Register.m"; path = "Sources/NimbleObjectiveC/XCTestObservationCenter+Register.m"; sourceTree = "<group>"; };
 		E6BB1E6C30B81EDB33EC7FDB6C205C79 /* QuickConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickConfiguration.m; path = Sources/QuickObjectiveC/Configuration/QuickConfiguration.m; sourceTree = "<group>"; };
+		E717273C7AA1A73D8B62272A14662EA4 /* ZonPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZonPlayer-prefix.pch"; sourceTree = "<group>"; };
 		E7639378BFCFD4BC8587A03243C01A64 /* Quick.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Quick.h; path = Sources/QuickObjectiveC/Quick.h; sourceTree = "<group>"; };
+		E78F3FC4B011F2F9ECD1BC7AA40D9FDB /* Builder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		E919903C10E88C8DB75C2CD00A266948 /* FailureMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FailureMessage.swift; path = Sources/Nimble/FailureMessage.swift; sourceTree = "<group>"; };
-		E92BC4BCE500358DA1D0E76B3EEE18B5 /* ZPCCancellable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPCCancellable.swift; sourceTree = "<group>"; };
 		E937CE363DBBFE4523820E40E9D3F9A0 /* BeginWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Sources/Nimble/Matchers/BeginWith.swift; sourceTree = "<group>"; };
-		EB57A3BE381993322FB9CB0A541FA7A7 /* ZPDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPDelegate.swift; sourceTree = "<group>"; };
+		E96711C4D22DE7D56925B4365A704B98 /* ZPC+Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Config.swift"; sourceTree = "<group>"; };
 		EBC4D3688977E2D961A8F985B1FC0F73 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
 		EE08781F30AAAA4776BC4A79E3FA9F40 /* SatisfyAllOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAllOf.swift; path = Sources/Nimble/Matchers/SatisfyAllOf.swift; sourceTree = "<group>"; };
 		EE08E0320A162677B8AC78130216AAE3 /* Pods-Tests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.adhoc.xcconfig"; sourceTree = "<group>"; };
-		EEAD6DA92C5B50ACFAF9B7D3E89D11EA /* ZPCStreamingDataProvidable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPCStreamingDataProvidable.swift; sourceTree = "<group>"; };
 		EF5F8634034723707BA489895B2AC37A /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
 		F31245591C4C010F1303DAC1BC9804C1 /* BeCloseTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeCloseTo.swift; path = Sources/Nimble/Matchers/BeCloseTo.swift; sourceTree = "<group>"; };
 		F3ED266DDE9C244816DD6A53157F8745 /* World+DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "World+DSL.swift"; path = "Sources/Quick/DSL/World+DSL.swift"; sourceTree = "<group>"; };
 		F5F413DD4538290D258E4DAA70DC345B /* Pods-Example-iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Example-iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F75E74A600C812323367AD98A7E46500 /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
-		F9768B727DEE0AA8D6C51D446AED1E6E /* ZPSettable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZPSettable.swift; sourceTree = "<group>"; };
-		FB1DBF08E7876107F38CF0447EF296DC /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Protected.swift; sourceTree = "<group>"; };
+		F7F002428C9BDF0E7866B393004144DD /* ZPC+Harvest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZPC+Harvest.swift"; sourceTree = "<group>"; };
+		F938352019A345C16FB1B238782235D2 /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		F9E54D4B7BA69A6C933F3AACD825758D /* ZonPlayer+Observable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ZonPlayer+Observable.swift"; sourceTree = "<group>"; };
 		FC58C416800CAE19053054936A1C0B9F /* Pods-Example-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Example-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		FC95D668E217CFBB25845AA15162348B /* Pods-Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Tests"; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD89D255CE96F4B06B98FE303E825DDF /* Quick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quick.debug.xcconfig; sourceTree = "<group>"; };
@@ -448,11 +432,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		62A9FA9A1609886D65D7E264CFB23864 /* Frameworks */ = {
+		23DE74E53D3E578723FC32F1573AE8BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A1126C28F2D458F27419869097547AC /* Foundation.framework in Frameworks */,
+				3A18ADFC7F4CAE56D750A5389318BCFF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +459,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		027D21444C5A082C9ADDB72924D25736 /* Usage */ = {
+			isa = PBXGroup;
+			children = (
+				34569094CE941B7A227E07155BCFA47C /* URLConvertible.swift */,
+				08F50648B94E0C61B1F96D9A12480D13 /* ZonPlayer.swift */,
+				4F770755C3DB6B114FB050E46FFD1386 /* ZonPlayer+Delegate.swift */,
+				6B350F41F82DD19A6D60BB14E1F8F121 /* ZonPlayer+Error.swift */,
+				33EB94BA4B35015419DC6BD34C9220FF /* ZonPlayer+SwiftUI.swift */,
+				5FE2E18E7E46AB4943A752B50ED9EFEF /* ZonPlayerView.swift */,
+				277410C41357B3112000F90AB3DF871C /* ZonPlayerView+SwiftUI.swift */,
+				3A1772AFDCBF9417F1BE011D03CBBF09 /* Cache */,
+				301F676DF38EE3D5B274C61012C8646A /* Player */,
+				35466565AE2CDCF924C0A9EB049F0008 /* RemoteControl */,
+				591BF8A32C9B43DC4CB10478D9BA11AF /* Session */,
+			);
+			name = Usage;
+			path = Sources/Usage;
+			sourceTree = "<group>";
+		};
+		13355AF43E00FC782D4740003E1DCA4E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				19FFA9428C898461F2FE78A186405FD0 /* ZonPlayer.modulemap */,
+				CE7190D3888C57D4514EFEF552429350 /* ZonPlayer-dummy.m */,
+				224E6677994A186A3F07DEAB355BBDFB /* ZonPlayer-Info.plist */,
+				E717273C7AA1A73D8B62272A14662EA4 /* ZonPlayer-prefix.pch */,
+				20E6695A48CB694823A142234B38EF86 /* ZonPlayer-umbrella.h */,
+				D1719FB6DBA449082405F9C270581FE7 /* ZonPlayer.debug.xcconfig */,
+				8461DF5EF1F84CC61C75248D79508013 /* ZonPlayer.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/ZonPlayer";
+			sourceTree = "<group>";
+		};
 		14663555BFC9D8228B23F8DA0E5EC5BD /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,73 +596,55 @@
 			path = Nimble;
 			sourceTree = "<group>";
 		};
-		1B3A69D5FF7DA196E0A87C178607BA44 /* Player */ = {
+		301F676DF38EE3D5B274C61012C8646A /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				6F383D82316F2456AE1134C5267698C6 /* ZonPlayable.swift */,
-				6A058DDC99B029AA903CC078AE597454 /* ZonPlayer+WaitingReason.swift */,
-				811CF849FD05193C8AD636D040F0DC1A /* ZPControllable.swift */,
-				8240C2E6D3E90725C05978A6B9E7E66F /* ZPGettable.swift */,
-				DE03D68A2F0966890ABFE02E643E1789 /* ZPObservable.swift */,
-				F9768B727DEE0AA8D6C51D446AED1E6E /* ZPSettable.swift */,
+				6327C9A9C6D7C379921DAE3FC461289F /* ZonPlayable.swift */,
+				1A705168EEA28F9B06C955840F26D19D /* ZonPlayer+Controllable.swift */,
+				94983F23C30384E988B03FEA5E39A304 /* ZonPlayer+Gettable.swift */,
+				F9E54D4B7BA69A6C933F3AACD825758D /* ZonPlayer+Observable.swift */,
+				9C4FFBC8DC456E3F74C220346B9258EB /* ZonPlayer+Settable.swift */,
+				B92A69B72F742B6EAC4237C2CD5EDF97 /* ZonPlayer+WaitingReason.swift */,
 			);
 			name = Player;
 			path = Player;
 			sourceTree = "<group>";
 		};
-		2764C035EE5F977B5A8CE6058EF91623 /* DownloadThenPlay */ = {
+		35466565AE2CDCF924C0A9EB049F0008 /* RemoteControl */ = {
 			isa = PBXGroup;
 			children = (
-				AC80150E3CC410EE120762D1700FC458 /* ZPC+DefaultFileDownloader.swift */,
-				6ABE43E91AFDA932B2750BF21EEE4C8B /* ZPC+DefaultFileStorage.swift */,
-				B069CC1B866415AD982B5FBCB5DC8452 /* ZPC+DownloadThenPlay.swift */,
-				E92BC4BCE500358DA1D0E76B3EEE18B5 /* ZPCCancellable.swift */,
-				2F5FFF80B16C02F6ED58DB6EC1A73C5F /* ZPFileDownloadable.swift */,
-				9100A48935FC88759595F97AED51BB24 /* ZPFileStorable.swift */,
+				70CA0351642221691AB70F9C85D2797E /* ZonPlayer+RemoteCommand.swift */,
+				CD2EA492BA532864FCF642A69758694F /* ZonPlayer+RemoteControllable.swift */,
 			);
-			name = DownloadThenPlay;
-			path = DownloadThenPlay;
+			name = RemoteControl;
+			path = RemoteControl;
 			sourceTree = "<group>";
 		};
-		27A9BE914A2A118B6B4B162E9B17CE46 /* Core */ = {
+		366F8D962F86D94A6ADC4EEC822FCBC0 /* Streaming */ = {
 			isa = PBXGroup;
 			children = (
-				CA2AC696DA0D5FBDA1883744769B8A89 /* ZonPlayer+Manager.swift */,
-				CBD0D38D8F783B542BB3445E173C3E8A /* ZPMonitorable.swift */,
-				EA8911FF1AFE56E203D3FDFA4BCC7478 /* Private */,
-			);
-			name = Core;
-			path = Sources/Core;
-			sourceTree = "<group>";
-		};
-		36AED6B719D70D55C9435F38EF8A9B20 /* Streaming */ = {
-			isa = PBXGroup;
-			children = (
-				0E2D306072C7A1F3BFFC56BCBEBB04DC /* DataFetcher.swift */,
-				B37F29C4A7FD2710C3F1AF0C2196578E /* DataProvider.swift */,
-				B91DA90C1367E9A909A6E6B76FDA9580 /* DataRequester.swift */,
-				136AD3300E5FF7AB3C8D19215C356B8E /* DataSessionDelegate.swift */,
-				7C50385054529E509CEE4B2AB05ED21D /* DataTask.swift */,
-				7791CD2205C8DDE8627FB70684638C3A /* DummyDataStorage.swift */,
-				6AE806E95FB3F98664208815EC928946 /* Record.swift */,
+				A922F6E0D78310E0C859BB2A63985213 /* DataFetcher.swift */,
+				C8A2D9183A3EA714160E70CADBE1140B /* DataProvider.swift */,
+				A7C4ADF57F63309BE46C8F6767219AF3 /* DataRequester.swift */,
+				34F9FF12BCF9495D941FD07193C77049 /* DataSessionDelegate.swift */,
+				4678BB9716256F9E9AB444D6725E3964 /* DataTask.swift */,
+				B3E06CBEAFDB129D116B53560F79ED02 /* DummyDataStorage.swift */,
+				8FD6644ADC6E4D4B0EC5C9B09F877FC2 /* Record.swift */,
 			);
 			name = Streaming;
 			path = Streaming;
 			sourceTree = "<group>";
 		};
-		3D74A5AD78A9FE9FAC54B43A44FD6DB1 /* Support Files */ = {
+		3A1772AFDCBF9417F1BE011D03CBBF09 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				836E39BB24556855CEE2E5C968EDE8B6 /* ZonPlayer.modulemap */,
-				3864CB082776CCDF99E5A4C186F82891 /* ZonPlayer-dummy.m */,
-				C64BCA83450A0AA8ED86067C7B1A7568 /* ZonPlayer-Info.plist */,
-				80C604CC6A4B6262EB348B47B807DD82 /* ZonPlayer-prefix.pch */,
-				4B68B4BD3790FF4B750F914CAAED13B2 /* ZonPlayer-umbrella.h */,
-				67EDC4C0B6BB282284D0446863D69CB5 /* ZonPlayer.debug.xcconfig */,
-				15D20B3C61518510BD8ACC760FDC6B0D /* ZonPlayer.release.xcconfig */,
+				D269FF3AD5A40BA8D627DB722BA93F40 /* ZonPlayer+Cache.swift */,
+				E96711C4D22DE7D56925B4365A704B98 /* ZPC+Config.swift */,
+				E2BE6C4D54B14391F570474AC3FB17C0 /* Harvest  */,
+				BD33BDE86D3544B0917825CC27FDBC4A /* Streaming */,
 			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/ZonPlayer";
+			name = Cache;
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		3FBC8250D8902D858BF14BCFE2C4831B /* Support Files */ = {
@@ -662,12 +662,23 @@
 			path = "../Target Support Files/Quick";
 			sourceTree = "<group>";
 		};
-		46EB2E00001D60 /* Configurations */ = {
+		453CB7DBCA7BB59D7EF201581E3A3F6E /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E00001D70 /* AdHoc.xcconfig */,
-				46EB2E00001D80 /* Debug.xcconfig */,
-				46EB2E00001D90 /* Release.xcconfig */,
+				DBE276A484C919030CD46E6B97286206 /* ZonPlayer+Manager.swift */,
+				C425613E9486391F64FE90D873C8BFD5 /* ZonPlayer+Monitorable.swift */,
+				76F8F1C1BFB50D7F57C27C0775BBDB67 /* Private */,
+			);
+			name = Core;
+			path = Sources/Core;
+			sourceTree = "<group>";
+		};
+		46EB2E00001C60 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				46EB2E00001C70 /* AdHoc.xcconfig */,
+				46EB2E00001C80 /* Debug.xcconfig */,
+				46EB2E00001C90 /* Release.xcconfig */,
 			);
 			name = Configurations;
 			sourceTree = "<group>";
@@ -681,16 +692,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		606B7372BE1C827A416B6A03A4E75C5E /* ZonPlayer */ = {
+		591BF8A32C9B43DC4CB10478D9BA11AF /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				27A9BE914A2A118B6B4B162E9B17CE46 /* Core */,
-				ADB54C06DAF1D21454482DBD09B90CE0 /* Pod */,
-				3D74A5AD78A9FE9FAC54B43A44FD6DB1 /* Support Files */,
-				E955A0DD8DFADFC6BA98047B9278EFAF /* Usage */,
+				607EDB9F773E90996A82BA929ABBD25B /* ZonPlayer+Session.swift */,
 			);
-			name = ZonPlayer;
-			path = ..;
+			name = Session;
+			path = Session;
 			sourceTree = "<group>";
 		};
 		66031C2689FA63ED18EF3DFF1DDAA84E /* Pods-Tests */ = {
@@ -711,35 +719,31 @@
 			path = "Target Support Files/Pods-Tests";
 			sourceTree = "<group>";
 		};
-		722EDA97005CB0F3E878AA36610CA70B /* DownloadThenPlay */ = {
+		76F8F1C1BFB50D7F57C27C0775BBDB67 /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				BCBEF25026D84A9C1BFE04365A3C2A9A /* DownloadSessionDelegate.swift */,
-				052C593845578792C5B3686069DD3168 /* DownloadTask.swift */,
+				E78F3FC4B011F2F9ECD1BC7AA40D9FDB /* Builder.swift */,
+				BE14DAF2604E3970E2758AF1717D73D4 /* CallbackCompositer.swift */,
+				F938352019A345C16FB1B238782235D2 /* Context.swift */,
+				AB40459DD355B0A9785B188CC0083164 /* DummyPlayer.swift */,
+				260BF5F4DEC6FF8F855E298C07C347C7 /* Logger.swift */,
+				3B84BBC9CF263D2F6DD671B00EF19185 /* NowPlayingInfo.swift */,
+				B7112EC1E0ABCB474F37DA1D03A077A7 /* Player.swift */,
+				8BC6462E381516F628FFACAB514CBF7E /* Protected.swift */,
+				1BB582D5F33FFE8B0EB0F273021794B1 /* RemoteController.swift */,
+				AD7CD319AB234BAE7C1B10A53E1BEE63 /* Harvest  */,
+				366F8D962F86D94A6ADC4EEC822FCBC0 /* Streaming */,
 			);
-			name = DownloadThenPlay;
-			path = DownloadThenPlay;
+			name = Private;
+			path = Private;
 			sourceTree = "<group>";
 		};
 		77AC19B3ADC1C9CCB068B4876E336664 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				606B7372BE1C827A416B6A03A4E75C5E /* ZonPlayer */,
+				B976F3AE9BA7B10A9AF87A523DFD594E /* ZonPlayer */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		8CCFCBAC85D858B306516022AFC51959 /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				39940DCA179C553B3C6F44AB19EF81B9 /* ZonPlayer+Cache.swift */,
-				7515E3E4F8CBB18098DA82CBE5E05160 /* ZPC+Config.swift */,
-				94AB6CC4C158BA9C0934D2E5F2514C4E /* ZPCacheable.swift */,
-				2764C035EE5F977B5A8CE6058EF91623 /* DownloadThenPlay */,
-				DB76550C7BB92C9E80A2CF95A41A237E /* Streaming */,
-			);
-			name = Cache;
-			path = Cache;
 			sourceTree = "<group>";
 		};
 		9CD6E9346741C4B09B5C94340207FFE0 /* Quick */ = {
@@ -784,24 +788,14 @@
 			path = Quick;
 			sourceTree = "<group>";
 		};
-		ACCBDF8FD709756160E5E768A18E89A3 /* Session */ = {
+		AD7CD319AB234BAE7C1B10A53E1BEE63 /* Harvest  */ = {
 			isa = PBXGroup;
 			children = (
-				296598D56F8E54E007FF1D9E51B274E2 /* ZonPlayer+Session.swift */,
-				CC045E89072EF48D19FAEDCEDD07DEFB /* ZPSessionable.swift */,
+				5333C7D4ED8CECFFE234CD63E703BDE0 /* DownloadSessionDelegate.swift */,
+				9F581438DC31D9AB7F0E9F1CB5C75631 /* DownloadTask.swift */,
 			);
-			name = Session;
-			path = Session;
-			sourceTree = "<group>";
-		};
-		ADB54C06DAF1D21454482DBD09B90CE0 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				066E424723059722D480ACE99C47544D /* LICENSE */,
-				ABC77B31F96426B75C133CE479CD8276 /* README.md */,
-				DA8BD3E755CC84F5D43E47997D2887AB /* ZonPlayer.podspec */,
-			);
-			name = Pod;
+			name = "Harvest ";
+			path = "Harvest ";
 			sourceTree = "<group>";
 		};
 		B716C811F0F14528B6525E2277EA7060 /* Pods */ = {
@@ -811,6 +805,41 @@
 				9CD6E9346741C4B09B5C94340207FFE0 /* Quick */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B7FCB55D31DF775A068611E662854D7E /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7D24C5944FEF0A5683F3189E5F3A2867 /* LICENSE */,
+				56A3D25C2F2467728038E98D6C375CAC /* README.md */,
+				220F678527BB4CA420D0BFC7E8303BFE /* ZonPlayer.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		B976F3AE9BA7B10A9AF87A523DFD594E /* ZonPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				453CB7DBCA7BB59D7EF201581E3A3F6E /* Core */,
+				B7FCB55D31DF775A068611E662854D7E /* Pod */,
+				13355AF43E00FC782D4740003E1DCA4E /* Support Files */,
+				027D21444C5A082C9ADDB72924D25736 /* Usage */,
+			);
+			name = ZonPlayer;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		BD33BDE86D3544B0917825CC27FDBC4A /* Streaming */ = {
+			isa = PBXGroup;
+			children = (
+				02EACC746784750199E2B8897BC0925D /* ZPC+Streaming.swift */,
+				422C523F1D3147E27F066857D93C1D12 /* ZPC+Streaming+DefaultDataStorage.swift */,
+				885A7BA52C7DD53B7320E68349D9B702 /* ZPC+Streaming+DefaultStreamingSource.swift */,
+				7A0E82C62C9FDF0F20F1DDFE4B4166D8 /* ZPC+Streaming+MetaData.swift */,
+				E1BBE1F316455D6ED4ECDCFB788146F6 /* ZPC+Streaming+Requestable.swift */,
+			);
+			name = Streaming;
+			path = Streaming;
 			sourceTree = "<group>";
 		};
 		C2340D010408384394943D43F843C533 /* Pods-Example-iOS */ = {
@@ -843,22 +872,15 @@
 			);
 			sourceTree = "<group>";
 		};
-		DB76550C7BB92C9E80A2CF95A41A237E /* Streaming */ = {
+		E2BE6C4D54B14391F570474AC3FB17C0 /* Harvest  */ = {
 			isa = PBXGroup;
 			children = (
-				1BDB709D28B53CB51BEBB2D7073081CC /* ZPC+DefaultDataStorage.swift */,
-				93FD0077F0E3F2FBAB694F6379AC8F8A /* ZPC+DefaultStreamingSource.swift */,
-				768DAC594A8204B01F82B4240A30000C /* ZPC+MetaData.swift */,
-				D726D1357B0A84E3286466ADEA6AF417 /* ZPC+Streaming.swift */,
-				2828992F1FCE7225AE2D7DB6A41B23DA /* ZPCDataRequestable.swift */,
-				CC7C10162637E5EAA7A0C26B9E04A992 /* ZPCDataStorable.swift */,
-				2F3A38FF8829296E93E4B5C2E8BD3FC7 /* ZPCLoadingRequestable.swift */,
-				EEAD6DA92C5B50ACFAF9B7D3E89D11EA /* ZPCStreamingDataProvidable.swift */,
-				BA5802847B53A2C80C4BBF5D59581D67 /* ZPCStreamingPluggable.swift */,
-				B65000B17B0FDB606C3B00067712F348 /* ZPCStreamingSourceable.swift */,
+				F7F002428C9BDF0E7866B393004144DD /* ZPC+Harvest.swift */,
+				6FAF38D763851E130615FC3427EE76C2 /* ZPC+Harvest+DefaultFileDownloader.swift */,
+				13EB729B0FB79F2B4FF2F41D3B7770DD /* ZPC+Harvest+DefaultFileStorage.swift */,
 			);
-			name = Streaming;
-			path = Streaming;
+			name = "Harvest ";
+			path = "Harvest ";
 			sourceTree = "<group>";
 		};
 		E4C38F83711B71ABD0A32CF676F81E8F /* Products */ = {
@@ -873,73 +895,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E955A0DD8DFADFC6BA98047B9278EFAF /* Usage */ = {
-			isa = PBXGroup;
-			children = (
-				24F2840D64E7671A9AF59A108BE3FEBB /* URLConvertible.swift */,
-				0D5E2583C61C30D31B2203A5CF205A16 /* ZonPlayer.swift */,
-				42A1CCA45293308B4688F3809242B858 /* ZonPlayer+Error.swift */,
-				8C486DD60E945C9085B7E190CBAE6DFE /* ZonPlayerView.swift */,
-				EB57A3BE381993322FB9CB0A541FA7A7 /* ZPDelegate.swift */,
-				8CCFCBAC85D858B306516022AFC51959 /* Cache */,
-				1B3A69D5FF7DA196E0A87C178607BA44 /* Player */,
-				F487B82E8CE6EED950950FD2ADE64C48 /* RemoteControl */,
-				ACCBDF8FD709756160E5E768A18E89A3 /* Session */,
-			);
-			name = Usage;
-			path = Sources/Usage;
-			sourceTree = "<group>";
-		};
-		EA8911FF1AFE56E203D3FDFA4BCC7478 /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				5CF2A85B97B8C69F3AAB79869D7529E2 /* Builder.swift */,
-				6E1BF629F368C4B5073B1F259AB4F27A /* CallbackCompositer.swift */,
-				C3353F9F9D76BAE1D0354F31473C9199 /* Context.swift */,
-				9EEC38A3F559418A0FC18606F40F453B /* DummyPlayer.swift */,
-				A3EE221BFCA2870DA4C198740C7CB6A4 /* Logger.swift */,
-				BCF253508B448291E607D221A2F5F375 /* NowPlayingInfo.swift */,
-				B436D054D8FC2E577E4E7F591942BD0C /* Player.swift */,
-				FB1DBF08E7876107F38CF0447EF296DC /* Protected.swift */,
-				2BA2FF49A7FF1FAAFDB7ECD48A6C7C0F /* RemoteController.swift */,
-				722EDA97005CB0F3E878AA36610CA70B /* DownloadThenPlay */,
-				36AED6B719D70D55C9435F38EF8A9B20 /* Streaming */,
-			);
-			name = Private;
-			path = Private;
-			sourceTree = "<group>";
-		};
 		ECEC2F09F618698C7A41D23548B991F1 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				46EB2E00001D60 /* Configurations */,
+				46EB2E00001C60 /* Configurations */,
 				C2340D010408384394943D43F843C533 /* Pods-Example-iOS */,
 				66031C2689FA63ED18EF3DFF1DDAA84E /* Pods-Tests */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F487B82E8CE6EED950950FD2ADE64C48 /* RemoteControl */ = {
-			isa = PBXGroup;
-			children = (
-				60B181FBAF41247E4243F6A6074CFA90 /* ZonPlayer+RemoteCommand.swift */,
-				B847B6210B7AB49389F3A4CA4042F761 /* ZPRemoteControllable.swift */,
-			);
-			name = RemoteControl;
-			path = RemoteControl;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		311904E69C1FE1CF30FA088E9409F893 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5197BB6C28B92909AB0D548593AF4BDB /* ZonPlayer-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5F6ADD43271F338E484F12E8AEE2BC14 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -959,6 +927,14 @@
 				2D71E124944977C51F4A46F83DFEF5A1 /* QuickObjCRuntime.h in Headers */,
 				FB9FB1DB20C8FC4845D73F944D72325F /* QuickSpec.h in Headers */,
 				1F0F6C3B6B9C3C4A6777FEC2D050AFAA /* QuickSpecBase.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		896F7C797BF746A0D9E800394F0F170E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B81B7C53A63E06CB4018ACA5C5436141 /* ZonPlayer-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,12 +966,12 @@
 /* Begin PBXNativeTarget section */
 		6B1499053C8BB1BDA5B9CA31882B867C /* ZonPlayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 089096BC61EF1AE175F2ED6681B1D54A /* Build configuration list for PBXNativeTarget "ZonPlayer" */;
+			buildConfigurationList = 84D82FE212982B27CCD26B786D61BB9F /* Build configuration list for PBXNativeTarget "ZonPlayer" */;
 			buildPhases = (
-				311904E69C1FE1CF30FA088E9409F893 /* Headers */,
-				8733C95DEEA9E0C6A49EF47E09AA6AA3 /* Sources */,
-				62A9FA9A1609886D65D7E264CFB23864 /* Frameworks */,
-				92D9C3DA97274D883BE3CB872B7B2846 /* Resources */,
+				896F7C797BF746A0D9E800394F0F170E /* Headers */,
+				FEC303278CB192486EDD798D95BDA44A /* Sources */,
+				23DE74E53D3E578723FC32F1573AE8BC /* Frameworks */,
+				15382FB51202F24280B5863D329B487E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1036,9 +1012,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				5CF409482200BEE3B42C1445FF734501 /* PBXTargetDependency */,
-				6C3041FF63D1088E9469FF27B239F95F /* PBXTargetDependency */,
-				03239649E6D3FF6635EA47DDA26B1376 /* PBXTargetDependency */,
+				D3CBD064C040A023C3D297A53138B651 /* PBXTargetDependency */,
+				33AC3DE058DF00D17371AD12946B526A /* PBXTargetDependency */,
+				EE93C463AAD1417D3A7690CB34A441E1 /* PBXTargetDependency */,
 			);
 			name = "Pods-Tests";
 			productName = Pods_Tests;
@@ -1057,7 +1033,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				CF426903F6DBCBE82D6260EB9D7A13C0 /* PBXTargetDependency */,
+				F2B3C8A8E28D5E7FF553019142492668 /* PBXTargetDependency */,
 			);
 			name = "Pods-Example-iOS";
 			productName = Pods_Example_iOS;
@@ -1116,6 +1092,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		15382FB51202F24280B5863D329B487E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37B18886BED3D1F941F0D150DB43474F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1131,13 +1114,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7C6F3AC28E8880C0BE5403A2A395C4D0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		92D9C3DA97274D883BE3CB872B7B2846 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1269,68 +1245,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8733C95DEEA9E0C6A49EF47E09AA6AA3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				335DAD13A04BD8791DECC90093343B41 /* Builder.swift in Sources */,
-				DA75C88277C4D2B85CF1F72FB8F341F2 /* CallbackCompositer.swift in Sources */,
-				153A1241AF150115F2C4738DEF45BDA2 /* Context.swift in Sources */,
-				1ECA6289F26289F99C397DCE89301B01 /* DataFetcher.swift in Sources */,
-				0CB4647C5197EF22CD91A00AF1D0CD92 /* DataProvider.swift in Sources */,
-				27EDD912E12DEE71DCD01D64EE623279 /* DataRequester.swift in Sources */,
-				654F909781FC06A8217821E86B7D6188 /* DataSessionDelegate.swift in Sources */,
-				2F2C04AA7A343AA0A5C3447D28C96FFB /* DataTask.swift in Sources */,
-				3592FDF49AC84E71CA84FB9703C50328 /* DownloadSessionDelegate.swift in Sources */,
-				1A78A8CC781E08E451F048570F777A61 /* DownloadTask.swift in Sources */,
-				13473E54DAE7E28F75F8FDE14FBB8F51 /* DummyDataStorage.swift in Sources */,
-				07CE73D52CE92D88191C0BEAC8BE6C6F /* DummyPlayer.swift in Sources */,
-				A6C450D1E12F1B8AEFB2D1D725838F6D /* Logger.swift in Sources */,
-				72FDFEB24B5FF63DA7B1F3E0AAAA4551 /* NowPlayingInfo.swift in Sources */,
-				C27D461299BBF61F3AC48B747506A388 /* Player.swift in Sources */,
-				FFD16185AB84A632D1FB3FC7D522088A /* Protected.swift in Sources */,
-				CEA9C4E7697629CFF0FB25066AB8D51F /* Record.swift in Sources */,
-				C24DE4811FFC944F2AD146D1773D190C /* RemoteController.swift in Sources */,
-				5128326A7117565F028BBD9DDB1A251C /* URLConvertible.swift in Sources */,
-				DA8216BEBBE2451B809F114EF1D74917 /* ZonPlayable.swift in Sources */,
-				EFE2B971A3523184A4AFD53F621DE0D2 /* ZonPlayer.swift in Sources */,
-				E29B58C28BF22AC6A3CD514D8E2D08E2 /* ZonPlayer+Cache.swift in Sources */,
-				5548F6B4EABA9E2C093B72DCDCFFA6C2 /* ZonPlayer+Error.swift in Sources */,
-				369AD496D1BE60135D3DED41D473B1CC /* ZonPlayer+Manager.swift in Sources */,
-				1EA3838420041B9027C2F75F74DF20E2 /* ZonPlayer+RemoteCommand.swift in Sources */,
-				27CF1D50935721BE1A6DA9EDE834065C /* ZonPlayer+Session.swift in Sources */,
-				AA21F8033824877C15A25FFBA5651D08 /* ZonPlayer+WaitingReason.swift in Sources */,
-				4AE72A1DDD3D708BBB0212265D43E3D2 /* ZonPlayer-dummy.m in Sources */,
-				396BBC1A5E95C1308AE2511FE6706525 /* ZonPlayerView.swift in Sources */,
-				C878C0C95E7222276D5A4C7B1F52DD32 /* ZPC+Config.swift in Sources */,
-				D6795FC6BBE6DA8F5B2B5DF5A9FA513C /* ZPC+DefaultDataStorage.swift in Sources */,
-				AF37EEA3911287B9FF60B0F93B2A57A6 /* ZPC+DefaultFileDownloader.swift in Sources */,
-				C0FEE05BE48AC67A16C5FB69ADB1C1EF /* ZPC+DefaultFileStorage.swift in Sources */,
-				D75C206F3D8A42C0FC9454C43329ABD2 /* ZPC+DefaultStreamingSource.swift in Sources */,
-				CD072BA8C30A1B72059FC2B175E5CFFB /* ZPC+DownloadThenPlay.swift in Sources */,
-				05941828EFE3AB390D794BC1A8467AE0 /* ZPC+MetaData.swift in Sources */,
-				2FE83512DBB8CD7ED0BA7BFF2CA26698 /* ZPC+Streaming.swift in Sources */,
-				83AFEF3DE993C6CE8268D2836217D788 /* ZPCacheable.swift in Sources */,
-				A8629C6954D5AD872D1E9D8BBE7B6527 /* ZPCCancellable.swift in Sources */,
-				59EE6097953FDF7A17F534DC6F95C836 /* ZPCDataRequestable.swift in Sources */,
-				21E2F1FF2C93A507A837100C11EF3B0A /* ZPCDataStorable.swift in Sources */,
-				67A739A9899C4E7642D5C34AEC0A854C /* ZPCLoadingRequestable.swift in Sources */,
-				D36C83FDFE6C4B5A8B1BED806BF87016 /* ZPControllable.swift in Sources */,
-				F0AC67725FCF248D6CCFD61B4C51E204 /* ZPCStreamingDataProvidable.swift in Sources */,
-				992FEDEB25C3E47A85CB9D6762390126 /* ZPCStreamingPluggable.swift in Sources */,
-				6114A80C5AAF1CAB1AE0981E287667B7 /* ZPCStreamingSourceable.swift in Sources */,
-				F1F5177672ED8533DFF9F61503DED3BE /* ZPDelegate.swift in Sources */,
-				2042A54B6F8E487A54263D32A4867009 /* ZPFileDownloadable.swift in Sources */,
-				00B8933BDBBA612700DE9AF7D6E68F4E /* ZPFileStorable.swift in Sources */,
-				A59C1B02A7DE821513B72C39BC604C62 /* ZPGettable.swift in Sources */,
-				DAE05DAE6181CEB99E0D16CE067C3844 /* ZPMonitorable.swift in Sources */,
-				E722221C4E439053CA9DE20376147760 /* ZPObservable.swift in Sources */,
-				DD412A7456A2FE6D26C6F70E5761B72E /* ZPRemoteControllable.swift in Sources */,
-				9B9205E5A7FAE72D9E7D69DBBB7B2C2B /* ZPSessionable.swift in Sources */,
-				0FB5F6137CF005962679A9208BA2B313 /* ZPSettable.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9097709B6C48AFABFD510980E272631E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1339,32 +1253,86 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FEC303278CB192486EDD798D95BDA44A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FE3E099982F7FB985602612F97C48C1 /* Builder.swift in Sources */,
+				87C7D9ABF5B5F27120CA46C243AEA121 /* CallbackCompositer.swift in Sources */,
+				BB264E63DD9138EC1D5B1ED89A912115 /* Context.swift in Sources */,
+				64AE0D79A53328F34D0E5FD31189A48F /* DataFetcher.swift in Sources */,
+				443906341B5B33237374B3DCD57ECE04 /* DataProvider.swift in Sources */,
+				FD88C7E859A9CC8E16FC29AD1913026B /* DataRequester.swift in Sources */,
+				B217AE99CAEF38106FAED5DC717B8D1E /* DataSessionDelegate.swift in Sources */,
+				8744DB4D9434D22D2A555BABC87F2CD3 /* DataTask.swift in Sources */,
+				3522BA81D30A0098702F2682CB924335 /* DownloadSessionDelegate.swift in Sources */,
+				FD823E9317BB140F748FE0FE761350FB /* DownloadTask.swift in Sources */,
+				B3962086940BFD07DFFC7308DB593943 /* DummyDataStorage.swift in Sources */,
+				FF4E3A2E386EA14A61F6D5D98A7288A0 /* DummyPlayer.swift in Sources */,
+				2D9587959B8014A4B8B002D193DB20AC /* Logger.swift in Sources */,
+				F3F59BA88F08387A7D43D9A952D5C36D /* NowPlayingInfo.swift in Sources */,
+				5D286BAB59D38A85323C34F274D9A73C /* Player.swift in Sources */,
+				02BBC2661AAEBEE2F3BA1DAB463CD858 /* Protected.swift in Sources */,
+				C30E7F209021B1133A68B2261915EF77 /* Record.swift in Sources */,
+				785CB92110B9ADB39C65C640B4858EA5 /* RemoteController.swift in Sources */,
+				37D7DEC4661F747B04350F0CE029B772 /* URLConvertible.swift in Sources */,
+				C501E8D64D593A57BA76346E4C6E490B /* ZonPlayable.swift in Sources */,
+				3E9DBCA29363A72BA45969BFF838140E /* ZonPlayer.swift in Sources */,
+				FC28405E5B85988515A6CF8177F7E2C8 /* ZonPlayer+Cache.swift in Sources */,
+				35AA180C611890D46563EF9BB5BB6B1F /* ZonPlayer+Controllable.swift in Sources */,
+				409B43561523020148F7F29E1B4C37E7 /* ZonPlayer+Delegate.swift in Sources */,
+				EA3338C2ED4EA28B09F26F661BF50CED /* ZonPlayer+Error.swift in Sources */,
+				AA752015C37AF2F3A6166F6B8714B9C0 /* ZonPlayer+Gettable.swift in Sources */,
+				86025D2604AA1AEBDD4829A27D9C46AD /* ZonPlayer+Manager.swift in Sources */,
+				CA16F57DDF2C9DC1FBC8086F2FF214F8 /* ZonPlayer+Monitorable.swift in Sources */,
+				A964CFC6A6FA42795824CA782365F759 /* ZonPlayer+Observable.swift in Sources */,
+				1E2CB22162613A3B723C5C112FD4AEBD /* ZonPlayer+RemoteCommand.swift in Sources */,
+				83DE1BE5130599DFCBCECD38D21E3D70 /* ZonPlayer+RemoteControllable.swift in Sources */,
+				85E2F53DD73F92B269DAAA13363FA89F /* ZonPlayer+Session.swift in Sources */,
+				7CE310C022AA4B4630B1F4F93CADD44D /* ZonPlayer+Settable.swift in Sources */,
+				F6CDEB0212B981685ECC1180F2068C62 /* ZonPlayer+SwiftUI.swift in Sources */,
+				1334D607B29D6193E9D9CE5AB45AA480 /* ZonPlayer+WaitingReason.swift in Sources */,
+				5D3FF8B97E8EE0A9EBB042135C13E166 /* ZonPlayer-dummy.m in Sources */,
+				657AD914D75B56B4184B18A6A982D314 /* ZonPlayerView.swift in Sources */,
+				5C4617861DAE980C4FF5E0EEA2A69C90 /* ZonPlayerView+SwiftUI.swift in Sources */,
+				7E5AB13AED44A4ED9BA46B429EA59444 /* ZPC+Config.swift in Sources */,
+				EDD6D5CF041525BE8B2539B01A9978CF /* ZPC+Harvest.swift in Sources */,
+				73E93917984AF07B2CDDDC4D891B0BF2 /* ZPC+Harvest+DefaultFileDownloader.swift in Sources */,
+				6C92D9E59C2B845A2739EBBA6D74C3BF /* ZPC+Harvest+DefaultFileStorage.swift in Sources */,
+				121C8EE77656BF243405F09DDCE81A07 /* ZPC+Streaming.swift in Sources */,
+				03CB05A9BB7C2DD4CE1C2F38A3F2CFB8 /* ZPC+Streaming+DefaultDataStorage.swift in Sources */,
+				D45F6FDBB3094B2C31385376724C52A6 /* ZPC+Streaming+DefaultStreamingSource.swift in Sources */,
+				EBC341A1A60F6F2C59AAE1AF15C049D7 /* ZPC+Streaming+MetaData.swift in Sources */,
+				D3F21627D3D5AF7E23589D6C948FFDB8 /* ZPC+Streaming+Requestable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		03239649E6D3FF6635EA47DDA26B1376 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Quick;
-			target = C82891EAB7293DBEE916B21F57E8474D /* Quick */;
-			targetProxy = ADE740A71B19CE0DB5CC488DD4878DDB /* PBXContainerItemProxy */;
-		};
-		5CF409482200BEE3B42C1445FF734501 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Nimble;
-			target = 6F13695E06195A78EA8A95F8C7ED0D2F /* Nimble */;
-			targetProxy = D0EF085EE15839F41179F63B2A76A892 /* PBXContainerItemProxy */;
-		};
-		6C3041FF63D1088E9469FF27B239F95F /* PBXTargetDependency */ = {
+		33AC3DE058DF00D17371AD12946B526A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Example-iOS";
 			target = B448AC191110D164125F599EA0AC2249 /* Pods-Example-iOS */;
-			targetProxy = C46EA0C068709F2E8CC5993CE6E92286 /* PBXContainerItemProxy */;
+			targetProxy = 44D4A8C8744964654EC6DFEEBF529068 /* PBXContainerItemProxy */;
 		};
-		CF426903F6DBCBE82D6260EB9D7A13C0 /* PBXTargetDependency */ = {
+		D3CBD064C040A023C3D297A53138B651 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Nimble;
+			target = 6F13695E06195A78EA8A95F8C7ED0D2F /* Nimble */;
+			targetProxy = 20F1528CF38475AD09F12BDF0F055AF0 /* PBXContainerItemProxy */;
+		};
+		EE93C463AAD1417D3A7690CB34A441E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Quick;
+			target = C82891EAB7293DBEE916B21F57E8474D /* Quick */;
+			targetProxy = 6D8D06D224915B846BED8D68BE200EBE /* PBXContainerItemProxy */;
+		};
+		F2B3C8A8E28D5E7FF553019142492668 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ZonPlayer;
 			target = 6B1499053C8BB1BDA5B9CA31882B867C /* ZonPlayer */;
-			targetProxy = E8C1DA8F44381A22BD79CF3D072F2AC1 /* PBXContainerItemProxy */;
+			targetProxy = ABDEB0C0C314BB520FF14A2B0659784F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1482,47 +1450,6 @@
 			};
 			name = Release;
 		};
-		3004AE5ECCE5A118E739054A5538D535 /* AdHoc */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15D20B3C61518510BD8ACC760FDC6B0D /* ZonPlayer.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/ZonPlayer/ZonPlayer-prefix.pch";
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Target Support Files/ZonPlayer/ZonPlayer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ZonPlayer/ZonPlayer.modulemap";
-				PRODUCT_MODULE_NAME = ZonPlayer;
-				PRODUCT_NAME = ZonPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = AdHoc;
-		};
 		373AE2DFA84A146365A8887D25C75C62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8270027ACBF7A64C2B453CCBFE155E90 /* Nimble.debug.xcconfig */;
@@ -1561,7 +1488,7 @@
 		};
 		37C31099DFB7EB724C45687264D3511C /* AdHoc */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00001D70 /* AdHoc.xcconfig */;
+			baseConfigurationReference = 46EB2E00001C70 /* AdHoc.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1697,6 +1624,47 @@
 			};
 			name = Release;
 		};
+		5C49419157E55C42CC16C4B1EE5E0315 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8461DF5EF1F84CC61C75248D79508013 /* ZonPlayer.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/ZonPlayer/ZonPlayer-prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/ZonPlayer/ZonPlayer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ZonPlayer/ZonPlayer.modulemap";
+				PRODUCT_MODULE_NAME = ZonPlayer;
+				PRODUCT_NAME = ZonPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		5DD590925067C0AA2745025BA9758013 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 042751488F4CA7587E364171AA16F2B2 /* Pods-Tests.debug.xcconfig */;
@@ -1774,9 +1742,50 @@
 			};
 			name = Release;
 		};
+		747584FD2E227737E63708FD2AC46E75 /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8461DF5EF1F84CC61C75248D79508013 /* ZonPlayer.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/ZonPlayer/ZonPlayer-prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/ZonPlayer/ZonPlayer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/ZonPlayer/ZonPlayer.modulemap";
+				PRODUCT_MODULE_NAME = ZonPlayer;
+				PRODUCT_NAME = ZonPlayer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = AdHoc;
+		};
 		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00001D80 /* Debug.xcconfig */;
+			baseConfigurationReference = 46EB2E00001C80 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1841,46 +1850,6 @@
 			};
 			name = Debug;
 		};
-		9142275BEE1A69DD90743B9C35A0183B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67EDC4C0B6BB282284D0446863D69CB5 /* ZonPlayer.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = NO;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/ZonPlayer/ZonPlayer-prefix.pch";
-				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Target Support Files/ZonPlayer/ZonPlayer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ZonPlayer/ZonPlayer.modulemap";
-				PRODUCT_MODULE_NAME = ZonPlayer;
-				PRODUCT_NAME = ZonPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		999EBC5872B740002C401455BC5D3D52 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE08E0320A162677B8AC78130216AAE3 /* Pods-Tests.adhoc.xcconfig */;
@@ -1922,7 +1891,7 @@
 		};
 		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46EB2E00001D90 /* Release.xcconfig */;
+			baseConfigurationReference = 46EB2E00001C90 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -2020,9 +1989,9 @@
 			};
 			name = AdHoc;
 		};
-		DC221C33183D15F95266BF8B2BB1E669 /* Release */ = {
+		EC754B0B55A0A8560FCEC62AB303D3C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15D20B3C61518510BD8ACC760FDC6B0D /* ZonPlayer.release.xcconfig */;
+			baseConfigurationReference = D1719FB6DBA449082405F9C270581FE7 /* ZonPlayer.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2055,11 +2024,10 @@
 				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		F8711848634BE65E07939D19F7EC2F31 /* AdHoc */ = {
 			isa = XCBuildConfiguration;
@@ -2139,16 +2107,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		089096BC61EF1AE175F2ED6681B1D54A /* Build configuration list for PBXNativeTarget "ZonPlayer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3004AE5ECCE5A118E739054A5538D535 /* AdHoc */,
-				9142275BEE1A69DD90743B9C35A0183B /* Debug */,
-				DC221C33183D15F95266BF8B2BB1E669 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2175,6 +2133,16 @@
 				C099978B707DF7DF06FE709B996B6BDD /* AdHoc */,
 				FD9711E0F7E634539246482277B92678 /* Debug */,
 				251ED78770D040122926ED879AB398EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84D82FE212982B27CCD26B786D61BB9F /* Build configuration list for PBXNativeTarget "ZonPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				747584FD2E227737E63708FD2AC46E75 /* AdHoc */,
+				EC754B0B55A0A8560FCEC62AB303D3C1 /* Debug */,
+				5C49419157E55C42CC16C4B1EE5E0315 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,11 +6,15 @@
 //
 
 final class DataFetcher {
-    let onCompleted = ZPDelegate<(DataFetcher, Result<Void, ZonPlayer.Error>), Void>()
-    let storage: ZPCDataStorable
-    let requester: ZPCDataRequestable
-    let loadingRequest: ZPCLoadingRequestable
-    init(storage: ZPCDataStorable, requester: ZPCDataRequestable, loadingRequest: ZPCLoadingRequestable) {
+    let onCompleted = ZonPlayer.Delegate<(DataFetcher, Result<Void, ZonPlayer.Error>), Void>()
+    let storage: ZPC.Streaming.DataStorable
+    let requester: ZPC.Streaming.DataRequestable
+    let loadingRequest: ZPC.Streaming.LoadingRequestable
+    init(
+        storage: ZPC.Streaming.DataStorable,
+        requester: ZPC.Streaming.DataRequestable,
+        loadingRequest: ZPC.Streaming.LoadingRequestable
+    ) {
         self.storage = storage
         self.requester = requester
         self.loadingRequest = loadingRequest
@@ -72,7 +76,7 @@ extension DataFetcher {
         }
     }
 
-    private func _executeDataTasks(_ dataTasks: [ZPCDataTaskable]) {
+    private func _executeDataTasks(_ dataTasks: [ZPC.Streaming.DataTaskable]) {
         guard let firstTask = dataTasks.first else { return }
         let dataTasks = Array(dataTasks.dropFirst())
         firstTask.requestData { [weak self] result in
@@ -100,8 +104,8 @@ extension DataFetcher {
     }
 
     // swiftlint:disable:next cyclomatic_complexity
-    private func _dataTasks(for range: NSRange, with fragments: [NSRange]) -> [ZPCDataTaskable] {
-        var result: [ZPCDataTaskable] = []
+    private func _dataTasks(for range: NSRange, with fragments: [NSRange]) -> [ZPC.Streaming.DataTaskable] {
+        var result: [ZPC.Streaming.DataTaskable] = []
         let endOffset = range.location + range.length
         for cft in fragments {
             let intersectionRange = NSIntersectionRange(range, cft)
@@ -122,7 +126,7 @@ extension DataFetcher {
             // There is no cache.
             result.append(_remoteTask(for: range))
         } else {
-            var localAndRemoteSources: [ZPCDataTaskable] = []
+            var localAndRemoteSources: [ZPC.Streaming.DataTaskable] = []
             for (idx, element) in result.enumerated() {
                 let sourceRangeLocation = element.range.location
                 let rangeLocation = range.location
@@ -156,7 +160,7 @@ extension DataFetcher {
         return result
     }
 
-    private func _localTask(for range: NSRange) -> ZPCDataTaskable {
+    private func _localTask(for range: NSRange) -> ZPC.Streaming.DataTaskable {
         DataFromStorage(
             storage: storage,
             range: range,
@@ -165,7 +169,7 @@ extension DataFetcher {
         )
     }
 
-    private func _remoteTask(for range: NSRange) -> ZPCDataTaskable {
+    private func _remoteTask(for range: NSRange) -> ZPC.Streaming.DataTaskable {
         requester.dataTask(forRange: range, withLoadingRequest: loadingRequest)
     }
 }

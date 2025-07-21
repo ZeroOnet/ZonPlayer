@@ -1,17 +1,54 @@
 //
-//  ZPC+DownloadThenPlay.swift
+//  ZPC+Harvest.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/6.
 //
 
 extension ZPC {
-    public final class DownloadThenPlay: ZPCacheable {
-        public let downloader: ZPFileDownloadable
-        public let storage: ZPFileStorable
+    /// Download then play.
+    public final class Harvest: ZonPlayer.Cacheable {
+        public protocol Cancellable {
+            var isCancelled: Bool { get }
+
+            /// Cancel an in-process operation.
+            func cancel()
+        }
+
+        public protocol FileDownloadable {
+            var timeout: TimeInterval { get set }
+
+            @discardableResult
+            func download(
+                with url: URL,
+                destination: URL,
+                completion: @escaping (Result<Void, ZonPlayer.Error>) -> Void
+            ) -> Cancellable
+        }
+
+        public typealias FileURL = URL
+        public typealias RemoteURL = URL
+
+        public struct File {
+            public let location: FileURL
+            public init(location: FileURL) {
+                self.location = location
+            }
+        }
+
+        public protocol FileStorable {
+            func create(file: File, with url: RemoteURL, completion: @escaping (Result<File, ZonPlayer.Error>) -> Void)
+            func read(with url: RemoteURL) -> Result<File?, ZonPlayer.Error>
+            func fileURL(url: RemoteURL) -> Result<FileURL, ZonPlayer.Error>
+            func delete(with url: RemoteURL, completion: (() -> Void)?)
+            func deleteAll(completion: (() -> Void)?)
+        }
+
+        public let downloader: FileDownloadable
+        public let storage: FileStorable
         public init(
-            downloader: ZPFileDownloadable = DefaultFileDownloader(timeout: 30),
-            storage: ZPFileStorable = DefaultFileStorage()
+            downloader: FileDownloadable = DefaultFileDownloader(timeout: 30),
+            storage: FileStorable = DefaultFileStorage()
         ) {
             self.downloader = downloader
             self.storage = storage
@@ -52,5 +89,15 @@ extension ZPC {
                 completion(.failure(error))
             }
         }
+    }
+}
+
+extension ZPC.Harvest.FileStorable {
+    public func delete(with url: ZPC.Harvest.RemoteURL) {
+        delete(with: url, completion: nil)
+    }
+
+    public func deleteAll() {
+        deleteAll(completion: nil)
     }
 }

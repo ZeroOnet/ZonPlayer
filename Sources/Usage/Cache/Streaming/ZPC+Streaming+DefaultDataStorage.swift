@@ -1,16 +1,16 @@
 //
-//  ZPC+DefaultDataStorage.swift
+//  ZPC+Streaming+DefaultDataStorage.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/8.
 //
 
-extension ZPC {
-    public final class DefaultDataStorage: ZPCDataStorable {
+extension ZPC.Streaming {
+    public final class DefaultDataStorage: DataStorable {
         public let url: URL
-        public let config: Config
-        public let onError: ZPDelegate<ZonPlayer.Error, Void>
-        public init(url: URL, config: Config) {
+        public let config: ZPC.Config
+        public let onError: ZonPlayer.Delegate<ZonPlayer.Error, Void>
+        public init(url: URL, config: ZPC.Config) {
             self.url = url
             self.config = config
             self.onError = .init()
@@ -33,7 +33,7 @@ extension ZPC {
             config.ioQueue.async { completion(self._record?.fragments ?? []) }
         }
 
-        public func setMetaData(_ metaData: ZPC.MetaData) {
+        public func setMetaData(_ metaData: ZPC.Streaming.MetaData) {
             config.ioQueue.async {
                 do {
                     guard self._record?.metaData != metaData else { return }
@@ -49,7 +49,7 @@ extension ZPC {
             }
         }
 
-        public func getMetaData(completion: @escaping (ZPC.MetaData?) -> Void) {
+        public func getMetaData(completion: @escaping (ZPC.Streaming.MetaData?) -> Void) {
             config.ioQueue.async { completion(self._record?.metaData) }
         }
 
@@ -108,7 +108,7 @@ extension ZPC {
     }
 }
 
-extension ZPC.DefaultDataStorage {
+extension ZPC.Streaming.DefaultDataStorage {
     private func _prepare() {
         let filePath = _fileURL.path
         let recordPath = _recordURL.path

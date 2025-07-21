@@ -1,11 +1,11 @@
 //
-//  ZPC+MetaData.swift
+//  ZPC+Streaming+MetaData.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/14.
 //
 
-extension ZPC {
+extension ZPC.Streaming {
     public struct MetaData: Codable, Equatable {
         public let contentType: String
         public let isByteRangeAccessSupported: Bool

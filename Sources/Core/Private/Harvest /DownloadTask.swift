@@ -5,11 +5,11 @@
 //  Created by 李文康 on 2023/11/7.
 //
 
-final class DownloadTask: ZPCCancellable {
-    typealias Callback = ZPDelegate<Result<Void, ZonPlayer.Error>, Void>
+final class DownloadTask: ZPC.Harvest.Cancellable {
+    typealias Callback = ZonPlayer.Delegate<Result<Void, ZonPlayer.Error>, Void>
 
-    let onCancelled = ZPDelegate<Callback, Void>()
-    let onCompleted = ZPDelegate<(Result<Void, ZonPlayer.Error>, Callback), Void>()
+    let onCancelled = ZonPlayer.Delegate<Callback, Void>()
+    let onCompleted = ZonPlayer.Delegate<(Result<Void, ZonPlayer.Error>, Callback), Void>()
 
     private(set) var isCancelled: Bool = false
     let context: Context

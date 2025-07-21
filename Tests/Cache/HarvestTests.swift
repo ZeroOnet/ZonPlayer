@@ -1,12 +1,12 @@
 //
-//  DownloadThenPlayTests.swift
+//  HarvestTests.swift
 //  Tests
 //
 //  Created by 李文康 on 2023/11/20.
 //  Copyright © 2023 Shanbay iOS. All rights reserved.
 //
 
-final class DownloadThenPlayTests: QuickSpec {
+final class HarvestTests: QuickSpec {
     override func spec() {
         describe("Test download then play") {
             it("Downloaded file") {
@@ -23,5 +23,5 @@ final class DownloadThenPlayTests: QuickSpec {
         }
     }
 
-    private let _cache = ZPC.DownloadThenPlay()
+    private let _cache = ZPC.Harvest()
 }

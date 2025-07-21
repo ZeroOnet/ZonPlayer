@@ -5,10 +5,10 @@
 //  Created by 李文康 on 2023/11/13.
 //
 
-final class DataProvider: ZPCStreamingDataProvidable {
-    let storage: ZPCDataStorable
-    let requester: ZPCDataRequestable
-    init(storage: ZPCDataStorable, requester: ZPCDataRequestable) {
+final class DataProvider: ZPC.Streaming.DataProvidable {
+    let storage: ZPC.Streaming.DataStorable
+    let requester: ZPC.Streaming.DataRequestable
+    init(storage: ZPC.Streaming.DataStorable, requester: ZPC.Streaming.DataRequestable) {
         self.storage = storage
         self.requester = requester
 
@@ -17,7 +17,7 @@ final class DataProvider: ZPCStreamingDataProvidable {
         }
     }
 
-    func addLoadingRequest(_ loadingRequest: ZPCLoadingRequestable) {
+    func addLoadingRequest(_ loadingRequest: ZPC.Streaming.LoadingRequestable) {
         let fetcher = DataFetcher(storage: storage, requester: requester, loadingRequest: loadingRequest)
         fetcher.onCompleted.delegate(on: self) { wlf, payload in
             wlf._pendingFetchers.removeAll { $0.loadingRequest == payload.0.loadingRequest }
@@ -26,7 +26,7 @@ final class DataProvider: ZPCStreamingDataProvidable {
         _pendingFetchers.append(fetcher)
     }
 
-    func removeLoadingRequest(_ loadingRequest: ZPCLoadingRequestable) {
+    func removeLoadingRequest(_ loadingRequest: ZPC.Streaming.LoadingRequestable) {
         _pendingFetchers.removeAll { $0.loadingRequest == loadingRequest }
     }
 

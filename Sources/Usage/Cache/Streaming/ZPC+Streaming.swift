@@ -8,8 +8,64 @@
 extension ZPC {
     /// Download during playback base on AVAssetResourceLoader.
     public final class Streaming: NSObject {
-        public let source: ZPCStreamingSourceable
-        public init(source: ZPCStreamingSourceable = DefaultStreamingSource()) {
+        public protocol Sourceable {
+            var plugins: [Pluggable] { get set }
+
+            func storage(for url: URL) -> DataStorable
+            func provider(for url: URL) -> DataProvidable
+        }
+
+        public protocol DataProvidable {
+            func addLoadingRequest(_ loadingRequest: LoadingRequestable)
+            func removeLoadingRequest(_ loadingRequest: LoadingRequestable)
+        }
+
+        public protocol Pluggable {
+            func prepare(_ request: URLRequest, forRange range: NSRange) -> URLRequest
+            func willSend(_ request: URLRequest, forRange range: NSRange)
+            func didReceive(_ data: Data, forURL url: URL, withRange range: NSRange, fromRemote remoteFlag: Bool)
+            func didReceive(_ metaData: MetaData, forURL url: URL, fromRemote remoteFlag: Bool)
+            func didComplete(
+                _ result: Result<Void,
+                ZonPlayer.Error>,
+                forURL url: URL,
+                withRange range: NSRange,
+                fromRemote remoteFlag: Bool
+            )
+            func anErrorOccurred(in storage: DataStorable, _ error: ZonPlayer.Error)
+        }
+
+        public protocol DataTaskable {
+            var range: NSRange { get }
+            var loadingRequest: LoadingRequestable { get }
+
+            func requestData(completion: @escaping (Result<Void, ZonPlayer.Error>) -> Void)
+        }
+
+        public protocol DataRequestable {
+            var url: URL { get }
+            var plugins: [Pluggable] { get }
+
+            func dataTask(
+                forRange range: NSRange,
+                withLoadingRequest loadingRequest: LoadingRequestable
+            ) -> DataTaskable
+        }
+
+        public protocol DataStorable {
+            var url: URL { get }
+            var onError: ZonPlayer.Delegate<ZonPlayer.Error, Void> { get }
+
+            func getCacheFragments(completion: @escaping ([NSRange]) -> Void)
+            func setMetaData(_ metaData: ZPC.Streaming.MetaData)
+            func getMetaData(completion: @escaping (ZPC.Streaming.MetaData?) -> Void)
+            func writeData(_ data: Data, to range: NSRange)
+            func readData(from range: NSRange, completion: @escaping (Data?) -> Void)
+            func clean(completion: (() -> Void)?)
+        }
+
+        public let source: Sourceable
+        public init(source: Sourceable = DefaultSource()) {
             self.source = source
         }
 
@@ -18,11 +74,11 @@ extension ZPC {
         }()
 
         private let _addedSchemePrefix = "ZonPlayer:"
-        private var _providerPairs: [URL: ZPCStreamingDataProvidable] = [:]
+        private var _providerPairs: [URL: DataProvidable] = [:]
     }
 }
 
-extension ZPC.Streaming: ZPCacheable {
+extension ZPC.Streaming: ZonPlayer.Cacheable {
     public func prepare(url: URL, completion: @escaping (Result<AVURLAsset, ZonPlayer.Error>) -> Void) {
         if url.isFileURL { completion(.success(AVURLAsset(url: url))); return }
         let modifiedURL = URL(string: _addedSchemePrefix + url.absoluteString) ?? url
@@ -61,4 +117,23 @@ extension ZPC.Streaming: AVAssetResourceLoaderDelegate {
         guard let url = loadingRequest.request.url else { return }
         _providerPairs[url]?.removeLoadingRequest(loadingRequest)
     }
+}
+
+extension ZPC.Streaming.Pluggable {
+    public func prepare(_ request: URLRequest, forRange range: NSRange) -> URLRequest { request }
+    public func willSend(_ request: URLRequest, forRange range: NSRange) {}
+    public func didReceive(_ data: Data, forURL url: URL, withRange range: NSRange, fromRemote remoteFlag: Bool) {}
+    public func didReceive(_ metaData: ZPC.Streaming.MetaData, forURL url: URL, fromRemote remoteFlag: Bool) {}
+    public func didComplete(
+        _ result: Result<Void,
+        ZonPlayer.Error>,
+        forURL url: URL,
+        withRange range: NSRange,
+        fromRemote remoteFlag: Bool
+    ) {}
+    public func anErrorOccurred(in storage: ZPC.Streaming.DataStorable, _ error: ZonPlayer.Error) {}
+}
+
+extension ZPC.Streaming.DataStorable {
+    public func clean() { clean(completion: nil) }
 }

@@ -1,30 +1,36 @@
 //
-//  ZPRemoteControllable.swift
+//  ZonPlayer+RemoteControllable.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/3.
 //
 
-/// The command of remote control.
-public protocol ZPRemoteCommandable {
-    func enable()
-    func disable()
+extension ZonPlayer {
+    /// The command of remote control.
+    public protocol RemoteCommandable {
+        func enable()
+        func disable()
+    }
+
+    /// The remote control for player in lock screen or control center.
+    ///
+    /// - Important: The time for playback is rounded.
+    public protocol RemoteControllable {
+        var commands: [RemoteCommandable] { get nonmutating set }
+
+        var title: String? { get nonmutating set }
+        var artist: String? { get nonmutating set }
+        var artwork: UIImage? { get nonmutating set }
+
+        var extraInfo: [String: Any]? { get nonmutating set }
+    }
+
+    public protocol RemoteControlSettable {
+        var remoteControl: ZonPlayer.Delegate<RemoteControllable, Void>? { get nonmutating set }
+    }
 }
 
-/// The remote control for player in lock screen or control center.
-///
-/// - Important: The time for playback is rounded.
-public protocol ZPRemoteControllable {
-    var commands: [ZPRemoteCommandable] { get nonmutating set }
-
-    var title: String? { get nonmutating set }
-    var artist: String? { get nonmutating set }
-    var artwork: UIImage? { get nonmutating set }
-
-    var extraInfo: [String: Any]? { get nonmutating set }
-}
-
-extension ZPRemoteControllable {
+extension ZonPlayer.RemoteControllable {
     @discardableResult
     public func title(_ title: String?) -> Self {
         self.title = title
@@ -92,12 +98,8 @@ extension ZPRemoteControllable {
     }
 }
 
-public protocol ZPRemoteControlSettable {
-    var remoteControl: ZPDelegate<ZPRemoteControllable, Void>? { get nonmutating set }
-}
-
-extension ZPRemoteControlSettable {
-    public func remoteControl<T: AnyObject>(_ target: T, block: ((T, ZPRemoteControllable) -> Void)?) -> Self {
+extension ZonPlayer.RemoteControlSettable {
+    public func remoteControl<T: AnyObject>(_ target: T, block: ((T, ZonPlayer.RemoteControllable) -> Void)?) -> Self {
         remoteControl = (remoteControl ?? .init()).delegate(on: target, block: block)
         return self
     }

@@ -46,15 +46,15 @@ final class DataRequesterTests: QuickSpec {
         }
     }
 
-    private var _requesters: [ZPCDataRequestable] = []
+    private var _requesters: [ZPC.Streaming.DataRequestable] = []
 }
 
 extension DataRequesterTests {
-    private class _Plugin: ZPCStreamingPluggable {
+    private class _Plugin: ZPC.Streaming.Pluggable {
         var prepared: Bool = false
         var willSend: Bool = false
         var dataReceived: (Data, URL, NSRange, Bool)?
-        var metaDataReceived: (ZPC.MetaData, URL, Bool)?
+        var metaDataReceived: (ZPC.Streaming.MetaData, URL, Bool)?
 
         func prepare(_ request: URLRequest, forRange range: NSRange) -> URLRequest {
             prepared = true
@@ -69,7 +69,7 @@ extension DataRequesterTests {
             dataReceived = (data, url, range, remoteFlag)
         }
 
-        func didReceive(_ metaData: ZPC.MetaData, forURL url: URL, fromRemote remoteFlag: Bool) {
+        func didReceive(_ metaData: ZPC.Streaming.MetaData, forURL url: URL, fromRemote remoteFlag: Bool) {
             metaDataReceived = (metaData, url, remoteFlag)
         }
     }

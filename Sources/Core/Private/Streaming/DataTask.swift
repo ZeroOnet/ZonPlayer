@@ -5,11 +5,11 @@
 //  Created by 李文康 on 2023/11/9.
 //
 
-struct DataFromStorage: ZPCDataTaskable {
-    let storage: ZPCDataStorable
+struct DataFromStorage: ZPC.Streaming.DataTaskable {
+    let storage: ZPC.Streaming.DataStorable
     let range: NSRange
-    let loadingRequest: ZPCLoadingRequestable
-    let plugins: [ZPCStreamingPluggable]
+    let loadingRequest: ZPC.Streaming.LoadingRequestable
+    let plugins: [ZPC.Streaming.Pluggable]
 
     func requestData(
         completion: @escaping (Result<Void, ZonPlayer.Error>) -> Void
@@ -34,16 +34,16 @@ struct DataFromStorage: ZPCDataTaskable {
     }
 }
 
-final class DataFromRemote: ZPCDataTaskable {
+final class DataFromRemote: ZPC.Streaming.DataTaskable {
     let task: URLSessionTask
     let range: NSRange
-    let loadingRequest: ZPCLoadingRequestable
-    let onRequest = ZPDelegate<Void, Void>()
+    let loadingRequest: ZPC.Streaming.LoadingRequestable
+    let onRequest = ZonPlayer.Delegate<Void, Void>()
     var contentOffset: Int
     init(
         task: URLSessionTask,
         range: NSRange,
-        loadingRequest: ZPCLoadingRequestable
+        loadingRequest: ZPC.Streaming.LoadingRequestable
     ) {
         self.task = task
         self.range = range

@@ -28,7 +28,7 @@ final class InvalidInitializationTests: QuickSpec {
 
             it("Invalid audio session") {
                 waitUntil(timeout: .seconds(5)) { done in
-                    struct InvalidSession: ZPSessionable {
+                    struct InvalidSession: ZonPlayer.Sessionable {
                         func apply() throws {
                             throw NSError(domain: "com.zonplayer.error", code: 10101)
                         }
@@ -51,7 +51,7 @@ final class InvalidInitializationTests: QuickSpec {
 
             it("Invalid cache") {
                 waitUntil(timeout: .seconds(5)) { done in
-                    struct InvalidCache: ZPCacheable {
+                    struct InvalidCache: ZonPlayer.Cacheable {
                         func prepare(url: URL, completion: @escaping (Result<AVURLAsset, ZonPlayer.Error>) -> Void) {
                             completion(.failure(.cacheFailed(.downloadFailed(url, NSError(domain: "com.zonplayer.error", code: 113939)))))
                         }

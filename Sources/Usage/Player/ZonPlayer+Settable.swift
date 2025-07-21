@@ -1,20 +1,22 @@
 //
-//  ZPSettable.swift
+//  ZonPlayer+Settable.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/2.
 //
 
-public protocol ZPSettable: ZPObservable,
-                            ZPSessionSettable,
-                            ZPRemoteControlSettable,
-                            ZPCacheSettable {
-    var url: URLConvertible { get }
-    var maxRetryCount: Int { get nonmutating set }
-    var progressInterval: TimeInterval { get nonmutating set }
+extension ZonPlayer {
+    public protocol Settable: Observable,
+                              SessionSettable,
+                              RemoteControlSettable,
+                              CacheSettable {
+        var url: URLConvertible { get }
+        var maxRetryCount: Int { get nonmutating set }
+        var progressInterval: TimeInterval { get nonmutating set }
+    }
 }
 
-extension ZPSettable {
+extension ZonPlayer.Settable {
     /// Maximum retry time when an error occurred. The default value is 1.
     public func maxRetryCount(_ maxRetryCount: Int) -> Self {
         self.maxRetryCount = maxRetryCount
@@ -28,7 +30,7 @@ extension ZPSettable {
     }
 }
 
-extension ZPSettable {
+extension ZonPlayer.Settable {
     public func activate() -> ZonPlayable {
         ZonPlayer.Manager.shared.start(setter: self)
     }

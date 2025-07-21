@@ -1,12 +1,12 @@
 //
-//  ZPC+DefaultStreamingSource.swift
+//  ZPC+Streaming+DefaultSource.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/14.
 //
 
-extension ZPC {
-    public final class DefaultStreamingSource: ZPCStreamingSourceable {
+extension ZPC.Streaming {
+    public final class DefaultSource: Sourceable {
         public let saveToDisk: Bool
         public var enableConsoleLog: Bool
         public init(
@@ -17,7 +17,7 @@ extension ZPC {
             self.enableConsoleLog = enableConsoleLog
         }
 
-        public var plugins: [ZPCStreamingPluggable] = []
+        public var plugins: [Pluggable] = []
 
         public func cleanCache(completion: (() -> Void)? = nil) {
             _config.ioQueue.async {
@@ -27,26 +27,26 @@ extension ZPC {
             }
         }
 
-        public func storage(for url: URL) -> ZPCDataStorable {
+        public func storage(for url: URL) -> DataStorable {
             guard saveToDisk else { return DummyDataStorage(url: url) }
-            return ZPC.DefaultDataStorage(url: url, config: _config)
+            return ZPC.Streaming.DefaultDataStorage(url: url, config: _config)
         }
 
-        public func provider(for url: URL) -> ZPCStreamingDataProvidable {
+        public func provider(for url: URL) -> DataProvidable {
             let storage = storage(for: url)
             let plugins = (enableConsoleLog ? [_logPlugin] : []) + self.plugins + [_SaveToDiskPlugin(storage: storage)]
             let requester = DataRequester(url: url, plugins: plugins)
             return DataProvider(storage: storage, requester: requester)
         }
 
-        private lazy var _config: Config = { .config(components: "Streaming") }()
+        private lazy var _config: ZPC.Config = { .config(components: "Streaming") }()
 
         private let _logPlugin = _LogPlugin()
     }
 }
 
-extension ZPC.DefaultStreamingSource {
-    private struct _LogPlugin: ZPCStreamingPluggable {
+extension ZPC.Streaming.DefaultSource {
+    private struct _LogPlugin: ZPC.Streaming.Pluggable {
         let logQueue: DispatchQueue
         init(logQueue: DispatchQueue = ZonPlayer.Manager.shared.logQueue) {
             self.logQueue = logQueue
@@ -60,7 +60,7 @@ extension ZPC.DefaultStreamingSource {
             _print("📦 did receive \(data) from \(_source(remoteFlag)) with \(range)", url: url)
         }
 
-        func didReceive(_ metaData: ZPC.MetaData, forURL url: URL, fromRemote remoteFlag: Bool) {
+        func didReceive(_ metaData: ZPC.Streaming.MetaData, forURL url: URL, fromRemote remoteFlag: Bool) {
             _print("📢 did receive \(metaData) from \(_source(remoteFlag))", url: url)
         }
 
@@ -81,7 +81,7 @@ extension ZPC.DefaultStreamingSource {
             _print("\(resultString) from \(_source(remoteFlag)) with \(range)", url: url)
         }
 
-        func anErrorOccurred(in storage: ZPCDataStorable, _ error: ZonPlayer.Error) {
+        func anErrorOccurred(in storage: ZPC.Streaming.DataStorable, _ error: ZonPlayer.Error) {
             _print("🚒 There is an error in \(storage) -> \(error.localizedDescription)", url: storage.url)
         }
 
@@ -102,9 +102,9 @@ ZonPlayer Streaming Cache <<< \(url.unsafelyUnwrapped)
     }
 }
 
-extension ZPC.DefaultStreamingSource {
-    private struct _SaveToDiskPlugin: ZPCStreamingPluggable {
-        let storage: ZPCDataStorable
+extension ZPC.Streaming.DefaultSource {
+    private struct _SaveToDiskPlugin: ZPC.Streaming.Pluggable {
+        let storage: ZPC.Streaming.DataStorable
 
         func didReceive(
             _ data: Data,
@@ -117,7 +117,7 @@ extension ZPC.DefaultStreamingSource {
         }
 
         func didReceive(
-            _ metaData: ZPC.MetaData,
+            _ metaData: ZPC.Streaming.MetaData,
             forURL url: URL,
             fromRemote remoteFlag: Bool
         ) {

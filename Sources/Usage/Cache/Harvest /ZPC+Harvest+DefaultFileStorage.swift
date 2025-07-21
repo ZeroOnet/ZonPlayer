@@ -1,21 +1,25 @@
 //
-//  ZPC+DefaultFileStorage.swift
+//  ZPC+Harvest+DefaultFileStorage.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/6.
 //
 
-extension ZPC {
+extension ZPC.Harvest {
     public final class DefaultFileStorage {
-        public let config: Config
-        public init(config: Config = .config(components: "DownloadThenPlay")) {
+        public let config: ZPC.Config
+        public init(config: ZPC.Config = .config(components: "DownloadThenPlay")) {
             self.config = config
         }
     }
 }
 
-extension ZPC.DefaultFileStorage: ZPFileStorable {
-    public func create(file: File, with url: RemoteURL, completion: @escaping (Result<File, ZonPlayer.Error>) -> Void) {
+extension ZPC.Harvest.DefaultFileStorage: ZPC.Harvest.FileStorable {
+    public func create(
+        file: ZPC.Harvest.File,
+        with url: ZPC.Harvest.RemoteURL,
+        completion: @escaping (Result<ZPC.Harvest.File, ZonPlayer.Error>) -> Void
+    ) {
         switch fileURL(url: url) {
         case .success(let storeURL):
             config.ioQueue.async {
@@ -24,7 +28,7 @@ extension ZPC.DefaultFileStorage: ZPFileStorable {
                         try FileManager.default.removeItem(at: storeURL)
                     }
                     try FileManager.default.moveItem(at: file.location, to: storeURL)
-                    completion(.success(File(location: storeURL)))
+                    completion(.success(ZPC.Harvest.File(location: storeURL)))
                 } catch {
                     completion(.failure(.cacheFailed(.fileStoreFailed(storeURL, error))))
                 }
@@ -34,11 +38,11 @@ extension ZPC.DefaultFileStorage: ZPFileStorable {
         }
     }
 
-    public func read(with url: RemoteURL) -> Result<File?, ZonPlayer.Error> {
+    public func read(with url: ZPC.Harvest.RemoteURL) -> Result<ZPC.Harvest.File?, ZonPlayer.Error> {
         switch fileURL(url: url) {
         case .success(let fileURL):
             if FileManager.default.fileExists(atPath: fileURL.path) {
-                return .success(File(location: fileURL))
+                return .success(ZPC.Harvest.File(location: fileURL))
             } else {
                 return .success(nil)
             }
@@ -47,7 +51,7 @@ extension ZPC.DefaultFileStorage: ZPFileStorable {
         }
     }
 
-    public func fileURL(url: RemoteURL) -> Result<FileURL, ZonPlayer.Error> {
+    public func fileURL(url: ZPC.Harvest.RemoteURL) -> Result<ZPC.Harvest.FileURL, ZonPlayer.Error> {
         let fileURL = config.fileURL(with: url)
         let dir = config.cacheDirectory
 
@@ -58,7 +62,7 @@ extension ZPC.DefaultFileStorage: ZPFileStorable {
         }
     }
 
-    public func delete(with url: RemoteURL, completion: (() -> Void)?) {
+    public func delete(with url: ZPC.Harvest.RemoteURL, completion: (() -> Void)?) {
         guard let existURL = try? fileURL(url: url).get() else { completion?(); return }
         config.ioQueue.async {
             try? FileManager.default.removeItem(at: existURL)

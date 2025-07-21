@@ -8,10 +8,10 @@
 import CoreServices
 
 final class DataSessionDelegate: NSObject {
-    let onMetaData = ZPDelegate<(URLSessionTask, ZPC.MetaData), Void>()
-    let onData = ZPDelegate<(URLSessionTask, Data), Void>()
-    let onFinished = ZPDelegate<URLSessionTask, Void>()
-    let onFailed = ZPDelegate<(URLSessionTask, ZonPlayer.Error), Void>()
+    let onMetaData = ZonPlayer.Delegate<(URLSessionTask, ZPC.Streaming.MetaData), Void>()
+    let onData = ZonPlayer.Delegate<(URLSessionTask, Data), Void>()
+    let onFinished = ZonPlayer.Delegate<URLSessionTask, Void>()
+    let onFailed = ZonPlayer.Delegate<(URLSessionTask, ZonPlayer.Error), Void>()
 }
 
 extension DataSessionDelegate: URLSessionDataDelegate {
@@ -82,7 +82,7 @@ extension DataSessionDelegate: URLSessionDataDelegate {
 }
 
 extension URLResponse {
-    fileprivate var __zon_metaData: ZPC.MetaData? {
+    fileprivate var __zon_metaData: ZPC.Streaming.MetaData? {
         let mimeType = mimeType ?? ""
         var isSupported = false
         for type in ["video/", "audio/", "application"] where mimeType.range(of: type) != nil {

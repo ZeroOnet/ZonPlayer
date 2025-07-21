@@ -15,7 +15,7 @@
 		FA094C112B0B0E3200B2F195 /* InvalidInitializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C102B0B0E3200B2F195 /* InvalidInitializationTests.swift */; };
 		FA094C132B0B2A0600B2F195 /* ControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C122B0B2A0600B2F195 /* ControllerTests.swift */; };
 		FA094C152B0B2AEB00B2F195 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C142B0B2AEB00B2F195 /* Utils.swift */; };
-		FA094C182B0B2EFF00B2F195 /* DownloadThenPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C172B0B2EFF00B2F195 /* DownloadThenPlayTests.swift */; };
+		FA094C182B0B2EFF00B2F195 /* HarvestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C172B0B2EFF00B2F195 /* HarvestTests.swift */; };
 		FA094C1A2B0B319800B2F195 /* FileStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C192B0B319800B2F195 /* FileStorageTests.swift */; };
 		FA094C1C2B0B3A8C00B2F195 /* FileDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C1B2B0B3A8C00B2F195 /* FileDownloaderTests.swift */; };
 		FA094C1E2B0B41A000B2F195 /* DataStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA094C1D2B0B41A000B2F195 /* DataStorageTests.swift */; };
@@ -28,6 +28,7 @@
 		FA5538812AFA10CD003AA11C /* VideoPlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5538802AFA10CD003AA11C /* VideoPlayerScene.swift */; };
 		FA5538832AFA150A003AA11C /* AudioPlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5538822AFA150A003AA11C /* AudioPlayerScene.swift */; };
 		FA5538852AFA1592003AA11C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5538842AFA1592003AA11C /* Main.storyboard */; };
+		FAEE30172E2A4EEF00CFDA60 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE30162E2A4EEF00CFDA60 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +63,7 @@
 		FA094C102B0B0E3200B2F195 /* InvalidInitializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidInitializationTests.swift; sourceTree = "<group>"; };
 		FA094C122B0B2A0600B2F195 /* ControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerTests.swift; sourceTree = "<group>"; };
 		FA094C142B0B2AEB00B2F195 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		FA094C172B0B2EFF00B2F195 /* DownloadThenPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadThenPlayTests.swift; sourceTree = "<group>"; };
+		FA094C172B0B2EFF00B2F195 /* HarvestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestTests.swift; sourceTree = "<group>"; };
 		FA094C192B0B319800B2F195 /* FileStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorageTests.swift; sourceTree = "<group>"; };
 		FA094C1B2B0B3A8C00B2F195 /* FileDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDownloaderTests.swift; sourceTree = "<group>"; };
 		FA094C1D2B0B41A000B2F195 /* DataStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTests.swift; sourceTree = "<group>"; };
@@ -75,6 +76,7 @@
 		FA5538802AFA10CD003AA11C /* VideoPlayerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerScene.swift; sourceTree = "<group>"; };
 		FA5538822AFA150A003AA11C /* AudioPlayerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerScene.swift; sourceTree = "<group>"; };
 		FA5538842AFA1592003AA11C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FAEE30162E2A4EEF00CFDA60 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				FA5538822AFA150A003AA11C /* AudioPlayerScene.swift */,
 				FA5538802AFA10CD003AA11C /* VideoPlayerScene.swift */,
 				FA241FF12E2655CA00BF2C16 /* SwiftUIView.swift */,
+				FAEE30162E2A4EEF00CFDA60 /* Utils.swift */,
 				8DEC093A248F8294002D1391 /* Assets.xcassets */,
 				8DEC093C248F8294002D1391 /* LaunchScreen.storyboard */,
 				FA5538842AFA1592003AA11C /* Main.storyboard */,
@@ -181,7 +184,7 @@
 		FA094C162B0B2ED700B2F195 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				FA094C172B0B2EFF00B2F195 /* DownloadThenPlayTests.swift */,
+				FA094C172B0B2EFF00B2F195 /* HarvestTests.swift */,
 				FA094C192B0B319800B2F195 /* FileStorageTests.swift */,
 				FA094C1B2B0B3A8C00B2F195 /* FileDownloaderTests.swift */,
 				FA35FA5D2B0C7B5C00CA5795 /* DataFetcherTests.swift */,
@@ -392,6 +395,7 @@
 				FA55387F2AFA0A72003AA11C /* HomeScene.swift in Sources */,
 				FA55387D2AFA0A3F003AA11C /* AppDelegate.swift in Sources */,
 				FA241FF22E2655CA00BF2C16 /* SwiftUIView.swift in Sources */,
+				FAEE30172E2A4EEF00CFDA60 /* Utils.swift in Sources */,
 				FA5538812AFA10CD003AA11C /* VideoPlayerScene.swift in Sources */,
 				FA5538832AFA150A003AA11C /* AudioPlayerScene.swift in Sources */,
 				245EAB52298795D800AA2FC1 /* main.swift in Sources */,
@@ -405,7 +409,7 @@
 				FA094C202B0B709700B2F195 /* DataRequesterTests.swift in Sources */,
 				FA094C112B0B0E3200B2F195 /* InvalidInitializationTests.swift in Sources */,
 				FA094C152B0B2AEB00B2F195 /* Utils.swift in Sources */,
-				FA094C182B0B2EFF00B2F195 /* DownloadThenPlayTests.swift in Sources */,
+				FA094C182B0B2EFF00B2F195 /* HarvestTests.swift in Sources */,
 				FA094C1A2B0B319800B2F195 /* FileStorageTests.swift in Sources */,
 				FA35FA5E2B0C7B5C00CA5795 /* DataFetcherTests.swift in Sources */,
 				FA35FA5A2B0C49C700CA5795 /* RecordTests.swift in Sources */,
@@ -526,6 +530,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -710,6 +715,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -734,6 +740,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,7 +7,7 @@
 
 struct DummyPlayer {}
 
-extension DummyPlayer: ZPControllable {
+extension DummyPlayer: ZonPlayer.Controllable {
     func takeSnapshot(at time: TimeInterval?, completion: @escaping (UIImage?) -> Void) {}
     func seek(to time: TimeInterval, completion: ((Bool) -> Void)?) {}
     func play() {}
@@ -19,7 +19,7 @@ extension DummyPlayer: ZPControllable {
     func resumePlayingInfo() {}
 }
 
-extension DummyPlayer: ZPGettable {
+extension DummyPlayer: ZonPlayer.Gettable {
     var isPlaying: Bool { false }
     var volume: Float { 0 }
     var rate: Float { 0 }

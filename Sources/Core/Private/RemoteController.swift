@@ -7,11 +7,11 @@
 
 @_exported import MediaPlayer
 
-final class RemoteController: ZPRemoteControllable {
+final class RemoteController: ZonPlayer.RemoteControllable {
     // Hold a singleton now playing info to avoid race condition. https://stackoverflow.com/questions/34867294/mpnowplayinginfocenter-nowplayinginfo-not-updating-at-end-of-track
     var info: NowPlayingInfo { Self._info }
 
-    var commands: [ZPRemoteCommandable] = []
+    var commands: [ZonPlayer.RemoteCommandable] = []
 
     var title: String?
     var artist: String?

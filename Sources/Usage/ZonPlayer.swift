@@ -12,13 +12,13 @@ public enum ZonPlayer {
     /// ```swift
     ///
     /// ZonPlayer
-    ///     .player(ZPSessionable)
-    ///     .session() // Set audio session.
-    ///     .remoteControl(ZPRemoteControllable) // Set background control and now playing info.
-    ///     .cache(ZPCacheable) // Set cache policy like downloading before playback.
+    ///     .player(URLConvertible)
+    ///     .session(Sessionable) // Set audio session.
+    ///     .remoteControl(RemoteControllable) // Set background control and now playing info.
+    ///     .cache(Cacheable) // Set cache policy like downloading before playback.
     ///
     /// ```
-    public static func player(_ url: URLConvertible) -> ZPSettable {
+    public static func player(_ url: URLConvertible) -> Settable {
         Builder(url: url)
     }
 }

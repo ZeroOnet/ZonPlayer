@@ -1,25 +1,27 @@
 //
-//  ZPObservable.swift
+//  ZonPlayer+Observable.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/2.
 //
 
-public protocol ZPObservable {
-    var callbackQueue: DispatchQueue { get nonmutating set }
+extension ZonPlayer {
+    public protocol Observable {
+        var callbackQueue: DispatchQueue { get nonmutating set }
 
-    var waitToPlay: ZPDelegate<(ZonPlayable, ZPWaitingReason), Void>? { get nonmutating set }
-    var play: ZPDelegate<(ZonPlayable, Float), Void>? { get nonmutating set }
-    var pause: ZPDelegate<ZonPlayable, Void>? { get nonmutating set }
-    var finish: ZPDelegate<(ZonPlayable, URL), Void>? { get nonmutating set }
-    var error: ZPDelegate<(ZonPlayable, ZonPlayer.Error), Void>? { get nonmutating set }
-    var progress: ZPDelegate<(ZonPlayable, TimeInterval, TimeInterval), Void>? { get nonmutating set }
-    var duration: ZPDelegate<(ZonPlayable, TimeInterval), Void>? { get nonmutating set }
-    var background: ZPDelegate<(ZonPlayable, Bool), Void>? { get nonmutating set }
-    var rate: ZPDelegate<(ZonPlayable, Float, Float), Void>? { get nonmutating set }
+        var waitToPlay: Delegate<(ZonPlayable, WaitingReason), Void>? { get nonmutating set }
+        var play: Delegate<(ZonPlayable, Float), Void>? { get nonmutating set }
+        var pause: Delegate<ZonPlayable, Void>? { get nonmutating set }
+        var finish: Delegate<(ZonPlayable, URL), Void>? { get nonmutating set }
+        var error: Delegate<(ZonPlayable, ZonPlayer.Error), Void>? { get nonmutating set }
+        var progress: Delegate<(ZonPlayable, TimeInterval, TimeInterval), Void>? { get nonmutating set }
+        var duration: Delegate<(ZonPlayable, TimeInterval), Void>? { get nonmutating set }
+        var background: Delegate<(ZonPlayable, Bool), Void>? { get nonmutating set }
+        var rate: Delegate<(ZonPlayable, Float, Float), Void>? { get nonmutating set }
+    }
 }
 
-extension ZPObservable {
+extension ZonPlayer.Observable {
     /// Which dispatch queue to callback, the default value is main queue.
     public func callbackQueue(_ queue: DispatchQueue) -> Self {
         self.callbackQueue = queue
@@ -27,7 +29,10 @@ extension ZPObservable {
     }
 
     /// Listen to which reason cause player to wait to play.
-    public func onWaitToPlay<T: AnyObject>(_ target: T, block: ((T, (ZonPlayable, ZPWaitingReason)) -> Void)?) -> Self {
+    public func onWaitToPlay<T: AnyObject>(
+        _ target: T,
+        block: ((T, (ZonPlayable, ZonPlayer.WaitingReason)) -> Void)?
+    ) -> Self {
         waitToPlay = (waitToPlay ?? .init()).delegate(on: target, block: block)
         return self
     }

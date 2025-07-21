@@ -5,8 +5,6 @@
 //  Created by 李文康 on 2023/11/2.
 //
 
-public typealias ZPWaitingReason = ZonPlayer.WaitingReason
-
 extension ZonPlayer {
     public struct WaitingReason {
         let desc: AVPlayer.WaitingReason

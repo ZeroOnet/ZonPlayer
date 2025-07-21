@@ -64,10 +64,10 @@ extension VideoPlayerScene {
         _player = ZonPlayer.player(_url)
             .cache(ZonPlayer.Cache.Streaming())
             .onDuration(self) { wlf, payload in
-                wlf.totalTimeLabel.text = wlf._timeString(value: payload.1)
+                wlf.totalTimeLabel.text = timeString(value: payload.1)
             }
             .onProgress(self) { wlf, payload in
-                wlf.currentTimeLabel.text = wlf._timeString(value: payload.1)
+                wlf.currentTimeLabel.text = timeString(value: payload.1)
                 wlf.timeProgressView.progress = Float(payload.1 / payload.2)
             }
             .onPlayed(self) { wlf, _ in
@@ -78,18 +78,5 @@ extension VideoPlayerScene {
             }
             .activate(in: videoView)
         _player?.play()
-    }
-
-    private func _timeString(value: TimeInterval) -> String {
-        let intValue = Int(value)
-        let hours = intValue / 3600
-        let hoursInSeconds = hours * 3600
-        let minutes = (intValue - hoursInSeconds) / 60
-        let seconds = intValue - hoursInSeconds - minutes * 60
-        let format = "%02i:"
-
-        return (hours != 0 ? String(format: format, hours) : "")
-            + (minutes != 0 ? String(format: format, minutes) : "")
-            + String(format: "%02i", seconds)
     }
 }

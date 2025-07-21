@@ -8,18 +8,18 @@
 final class Player: NSObject {
     let url: URL
     let context: Context
-    let session: ZPSessionable?
-    let cache: ZPCacheable?
-    let observer: ZPObservable
-    let remoteControl: ZPDelegate<ZPRemoteControllable, Void>?
+    let session: ZonPlayer.Sessionable?
+    let cache: ZonPlayer.Cacheable?
+    let observer: ZonPlayer.Observable
+    let remoteControl: ZonPlayer.Delegate<ZonPlayer.RemoteControllable, Void>?
     let view: ZonPlayerView?
     init(
         url: URL,
         context: Context,
-        session: ZPSessionable?,
-        cache: ZPCacheable?,
-        observer: ZPObservable,
-        remoteControl: ZPDelegate<ZPRemoteControllable, Void>?,
+        session: ZonPlayer.Sessionable?,
+        cache: ZonPlayer.Cacheable?,
+        observer: ZonPlayer.Observable,
+        remoteControl: ZonPlayer.Delegate<ZonPlayer.RemoteControllable, Void>?,
         view: ZonPlayerView?
     ) {
         self.url = url
@@ -115,7 +115,7 @@ final class Player: NSObject {
             } else if status == .paused {
                 _callback { $0.pause?.call($1) }
             } else if status == .waitingToPlayAtSpecifiedRate {
-                let reason: ZPWaitingReason
+                let reason: ZonPlayer.WaitingReason
                 if let desc = player.reasonForWaitingToPlay {
                     reason = .init(desc: desc)
                 } else {
@@ -127,7 +127,7 @@ final class Player: NSObject {
     }
 }
 
-extension Player: ZPGettable {
+extension Player: ZonPlayer.Gettable {
     var isPlaying: Bool { (_player?.rate ?? 0) != 0 }
 
     var volume: Float { _player?.volume ?? 0 }
@@ -139,7 +139,7 @@ extension Player: ZPGettable {
     var duration: TimeInterval { _duration }
 }
 
-extension Player: ZPControllable {
+extension Player: ZonPlayer.Controllable {
     func play() {
         _doOrPending(exclusive: true) {
             $0._main {
@@ -475,7 +475,7 @@ extension Player {
         _pendingCommands = []
     }
 
-    private func _callback(work: @escaping (ZPObservable, Player) -> Void) {
+    private func _callback(work: @escaping (ZonPlayer.Observable, Player) -> Void) {
         observer.callbackQueue.async { [weak self] in
             guard let self = self else { return }
             work(self.observer, self)

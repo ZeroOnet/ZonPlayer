@@ -7,10 +7,10 @@
 
 struct Record: Codable {
     var url: URL?
-    var metaData: ZPC.MetaData?
+    var metaData: ZPC.Streaming.MetaData?
     private(set) var fragments: [NSRange]
 
-    init(url: URL? = nil, metaData: ZPC.MetaData? = nil, fragments: [NSRange] = []) {
+    init(url: URL? = nil, metaData: ZPC.Streaming.MetaData? = nil, fragments: [NSRange] = []) {
         self.url = url
         self.metaData = metaData
         self.fragments = fragments
@@ -19,7 +19,7 @@ struct Record: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.url = try? container.decodeIfPresent(URL.self, forKey: .url)
-        self.metaData = try? container.decodeIfPresent(ZPC.MetaData.self, forKey: .metaData)
+        self.metaData = try? container.decodeIfPresent(ZPC.Streaming.MetaData.self, forKey: .metaData)
         self.fragments = (try? container.decode([NSRange].self, forKey: .fragments)) ?? []
     }
 

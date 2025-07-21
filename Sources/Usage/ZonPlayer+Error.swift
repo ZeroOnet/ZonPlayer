@@ -27,7 +27,7 @@ extension ZonPlayer {
             case streamingStorageCreateFileHandleFailed(URL, Swift.Error)
             case streamingStorageWriteFailed(URL, Data, NSRange, Swift.Error)
             case streamingStorageReadFailed(URL, NSRange, Swift.Error)
-            case streamingStorageSaveMetaDataFailed(URL, ZPC.MetaData, Swift.Error)
+            case streamingStorageSaveMetaDataFailed(URL, ZPC.Streaming.MetaData, Swift.Error)
             case streamingStorageReleaseFailed(URL, Swift.Error)
             case streamingStorageCleanFailed(URL, Swift.Error)
             case invalidDataFromStreamingStorage(URL, NSRange)
@@ -36,7 +36,7 @@ extension ZonPlayer {
         }
 
         case invalidURL(URLConvertible)
-        case sessionError(ZPSessionable, Swift.Error)
+        case sessionError(Sessionable, Swift.Error)
         case playerTerminated(TerminationReason)
         case cacheFailed(CacheFailureReason)
 

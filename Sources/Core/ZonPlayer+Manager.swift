@@ -12,7 +12,7 @@ extension ZonPlayer {
         /// Global player activity monitors like ZPObservable.
         ///
         /// - Important: Add monitor before playback.
-        public var monitors: [ZPMonitorable] = []
+        public var monitors: [Monitorable] = []
 
         public var enableConsoleLog: Bool = false {
             didSet {
@@ -48,7 +48,7 @@ extension ZonPlayer {
 
 extension ZonPlayer.Manager {
     func start(
-        setter: ZPSettable,
+        setter: ZonPlayer.Settable,
         in view: ZonPlayerView? = nil
     ) -> ZonPlayable {
         do {

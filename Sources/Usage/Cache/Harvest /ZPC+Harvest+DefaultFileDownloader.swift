@@ -1,12 +1,12 @@
 //
-//  ZPC+DefaultFileDownloader.swift
+//  ZPC+Harvest+DefaultFileDownloader.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/6.
 //
 
-extension ZPC {
-    public final class DefaultFileDownloader: ZPFileDownloadable {
+extension ZPC.Harvest {
+    public final class DefaultFileDownloader: ZPC.Harvest.FileDownloadable {
         public var timeout: TimeInterval
         public let callbackQueue: DispatchQueue
         public init(timeout: TimeInterval, callbackQueue: DispatchQueue = .main) {
@@ -24,8 +24,8 @@ extension ZPC {
             with url: URL,
             destination: URL,
             completion: @escaping (Result<Void, ZonPlayer.Error>) -> Void
-        ) -> ZPCCancellable {
-            let callback = ZPDelegate<Result<Void, ZonPlayer.Error>, Void>()
+        ) -> ZPC.Harvest.Cancellable {
+            let callback = ZonPlayer.Delegate<Result<Void, ZonPlayer.Error>, Void>()
             callback.delegate(on: self) { _, result in completion(result) }
             let request = URLRequest(
                 url: url,
