@@ -16,7 +16,7 @@ ZonPlayer is a player library base on AVPlayer with cache and remote control sup
 # Features
 
 - [x] Configure AVAudioSession asynchronously to prevent the main thread from hang.
-- [x] Support 3rd-party cache like VIMediaCache. There are presetted with `ZPC.DownloadThenPlay` and `ZPC.Streaming(base on AVAssetResourceLoader)`.
+- [x] Support 3rd-party cache like VIMediaCache. There are presetted with `ZPC.Harvest` and `ZPC.Streaming(base on AVAssetResourceLoader)`.
 - [x] Manage now playing info and remote control command.
 - [x] Use plugin to intercept progress for streaming playback.
 - [x] Retry automatically if then player has an error, eg: media services were reset.
@@ -26,22 +26,22 @@ ZonPlayer is a player library base on AVPlayer with cache and remote control sup
 ```swift
 
     let player: ZonPlayable = ZonPlayer.player(URLConvertible)
-        .session(ZPSessionable)
-        .cache(ZPCacheable) // Conform ZPCacheable to customize cache category.
-        .remoteControl(self) { wlf, payload in // Conform ZPRemoteControllable to customize background playback controller.
+        .session(ZonPlayer.Sessionable)
+        .cache(ZonPlayer.Cacheable) // Conform ZonPlayer.Cacheable to customize cache category.
+        .remoteControl(self) { wlf, payload in // Conform ZonPlayer.RemoteControllable to customize background playback controller.
             payload.title(String).artist(String)....
         }
-        .onPaused(self) { wlf, payload in // Conform ZPObservable to listen player.
+        .onPaused(self) { wlf, payload in // Conform ZonPlayer.Observable to listen player.
         }
         .activate(in: ZonPlayerView)
 
-    // Conform ZPControllable to control player instance.
+    // Conform ZonPlayer.Controllable to control player instance.
     player.pause()
     player.play()
     player.seek(to: 0)
     // ...
 
-    // Conform ZPGettable to read player status.
+    // Conform ZonPlayer.Gettable to read player status.
     player.currentTime
     player.duration
     player.url
@@ -55,7 +55,7 @@ Integrate 3rd-party cache:
 
 import VIMediaCache
 
-final class TestCache: ZPCacheable {
+final class TestCache: ZonPlayer.Cacheable {
     let manager = VIResourceLoaderManager()
 
     func prepare(url: URL, completion: @escaping (Result<AVURLAsset, ZonPlayer.Error>) -> Void) {
@@ -108,8 +108,8 @@ func seekAndPause(to time: TimeInterval) {
 
 # Requirements
 
-- iOS 12.0 or later
-- Swift 5.0 or later
+- iOS 13.0 or later
+- Swift 6.0 or later
 
 # Installation
 
@@ -117,11 +117,11 @@ func seekAndPause(to time: TimeInterval) {
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '12.0'
+platform :ios, '13.0'
 use_frameworks!
 
 target 'MyApp' do
-  pod 'ZonPlayer', '~> 1.0.0'
+  pod 'ZonPlayer', '~> 1.1.0'
 end
 
 ```

@@ -5,9 +5,9 @@
 //  Created by 李文康 on 2023/11/3.
 //
 
-final class Builder: ZonPlayer.Settable {
-    let url: URLConvertible
-    init(url: URLConvertible) {
+final class Builder: ZonPlayer.Settable, @unchecked Sendable {
+    let url: URLConvertible & Sendable
+    init(url: URLConvertible & Sendable) {
         self.url = url
     }
 

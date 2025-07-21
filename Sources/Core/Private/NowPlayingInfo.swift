@@ -5,9 +5,11 @@
 //  Created by 李文康 on 2023/11/3.
 //
 
-class NowPlayingInfo {
+@preconcurrency import MediaPlayer
+
+final class NowPlayingInfo {
     // Avoid multi-thread accessing crashs.
-    @Protected private(set) var existed: [String: Any] = [:]
+    @Protected private(set) var existed: [String: Sendable] = [:]
 
     private lazy var _queue: DispatchQueue = {
         .init(label: "com.zonplayer.nowplayinginfo", qos: .userInitiated)
@@ -20,7 +22,7 @@ extension NowPlayingInfo {
         $existed.read { [weak self] in self?.set(info: $0) }
     }
 
-    func set(info: [String: Any]?) {
+    func set(info: [String: Sendable]?) {
         _queue.async { MPNowPlayingInfoCenter.default().nowPlayingInfo = info }
     }
 
@@ -68,7 +70,7 @@ extension NowPlayingInfo {
     }
 
     @discardableResult
-    func extra(_ extra: [String: Any]?) -> Self {
+    func extra(_ extra: [String: Sendable]?) -> Self {
         guard let extra else { return self }
         $existed.write { $0.merge(extra) { $1 } }
         return self

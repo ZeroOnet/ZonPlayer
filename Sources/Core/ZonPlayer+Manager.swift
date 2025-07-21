@@ -6,7 +6,7 @@
 //
 
 extension ZonPlayer {
-    public final class Manager {
+    public final class Manager: @unchecked Sendable {
         public static let shared = Manager()
 
         /// Global player activity monitors like ZPObservable.

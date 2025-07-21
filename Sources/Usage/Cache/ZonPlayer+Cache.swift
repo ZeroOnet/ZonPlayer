@@ -11,7 +11,7 @@ extension ZonPlayer {
     public enum Cache {}
 
     public protocol Cacheable {
-        func prepare(url: URL, completion: @escaping (Result<AVURLAsset, ZonPlayer.Error>) -> Void)
+        func prepare(url: URL, completion: @escaping @Sendable (Result<AVURLAsset, ZonPlayer.Error>) -> Void)
     }
 
     public protocol CacheSettable {

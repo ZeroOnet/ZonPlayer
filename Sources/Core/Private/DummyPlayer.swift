@@ -8,8 +8,8 @@
 struct DummyPlayer {}
 
 extension DummyPlayer: ZonPlayer.Controllable {
-    func takeSnapshot(at time: TimeInterval?, completion: @escaping (UIImage?) -> Void) {}
-    func seek(to time: TimeInterval, completion: ((Bool) -> Void)?) {}
+    func takeSnapshot(at time: TimeInterval?, completion: @escaping @MainActor (UIImage?) -> Void) {}
+    func seek(to time: TimeInterval, completion: (@MainActor (Bool) -> Void)?) {}
     func play() {}
     func pause() {}
     func setRate(_ value: Float) {}

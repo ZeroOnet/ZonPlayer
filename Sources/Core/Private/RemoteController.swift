@@ -7,7 +7,7 @@
 
 @_exported import MediaPlayer
 
-final class RemoteController: ZonPlayer.RemoteControllable {
+final class RemoteController: ZonPlayer.RemoteControllable, @unchecked Sendable {
     // Hold a singleton now playing info to avoid race condition. https://stackoverflow.com/questions/34867294/mpnowplayinginfocenter-nowplayinginfo-not-updating-at-end-of-track
     var info: NowPlayingInfo { Self._info }
 
@@ -16,11 +16,12 @@ final class RemoteController: ZonPlayer.RemoteControllable {
     var title: String?
     var artist: String?
     var artwork: UIImage?
-    var extraInfo: [String: Any]?
+    var extraInfo: [String: Sendable]?
 
     private var _freezed = false
-    private var _stashedInfo: [String: Any]?
+    private var _stashedInfo: [String: Sendable]?
 
+    nonisolated(unsafe)
     private static var _info = NowPlayingInfo()
 }
 

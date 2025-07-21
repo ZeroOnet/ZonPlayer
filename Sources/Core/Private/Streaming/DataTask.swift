@@ -5,14 +5,14 @@
 //  Created by 李文康 on 2023/11/9.
 //
 
-struct DataFromStorage: ZPC.Streaming.DataTaskable {
+struct DataFromStorage: ZPC.Streaming.DataTaskable, @unchecked Sendable {
     let storage: ZPC.Streaming.DataStorable
     let range: NSRange
     let loadingRequest: ZPC.Streaming.LoadingRequestable
     let plugins: [ZPC.Streaming.Pluggable]
 
     func requestData(
-        completion: @escaping (Result<Void, ZonPlayer.Error>) -> Void
+        completion: @escaping @Sendable (Result<Void, ZonPlayer.Error>) -> Void
     ) {
         let url = storage.url
         storage.readData(from: range) { data in
@@ -34,7 +34,7 @@ struct DataFromStorage: ZPC.Streaming.DataTaskable {
     }
 }
 
-final class DataFromRemote: ZPC.Streaming.DataTaskable {
+final class DataFromRemote: ZPC.Streaming.DataTaskable, @unchecked Sendable {
     let task: URLSessionTask
     let range: NSRange
     let loadingRequest: ZPC.Streaming.LoadingRequestable

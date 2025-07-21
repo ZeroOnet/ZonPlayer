@@ -6,7 +6,7 @@
 //
 
 extension ZPC.Streaming {
-    public struct MetaData: Codable, Equatable {
+    public struct MetaData: Codable, Equatable, Sendable {
         public let contentType: String
         public let isByteRangeAccessSupported: Bool
         public let contentLength: Int

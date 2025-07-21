@@ -22,7 +22,7 @@ extension ZonPlayer {
         var artist: String? { get nonmutating set }
         var artwork: UIImage? { get nonmutating set }
 
-        var extraInfo: [String: Any]? { get nonmutating set }
+        var extraInfo: [String: Sendable]? { get nonmutating set }
     }
 
     public protocol RemoteControlSettable {
@@ -50,7 +50,7 @@ extension ZonPlayer.RemoteControllable {
     }
 
     @discardableResult
-    public func extraInfo(_ extraInfo: [String: Any]?) -> Self {
+    public func extraInfo(_ extraInfo: [String: Sendable]?) -> Self {
         self.extraInfo = extraInfo
         return self
     }

@@ -6,7 +6,7 @@
 //
 
 extension ZPC.Streaming {
-    public final class DefaultDataStorage: DataStorable {
+    public final class DefaultDataStorage: DataStorable, @unchecked Sendable {
         public let url: URL
         public let config: ZPC.Config
         public let onError: ZonPlayer.Delegate<ZonPlayer.Error, Void>
@@ -29,7 +29,7 @@ extension ZPC.Streaming {
             }
         }
 
-        public func getCacheFragments(completion: @escaping ([NSRange]) -> Void) {
+        public func getCacheFragments(completion: @escaping @Sendable ([NSRange]) -> Void) {
             config.ioQueue.async { completion(self._record?.fragments ?? []) }
         }
 
@@ -49,7 +49,7 @@ extension ZPC.Streaming {
             }
         }
 
-        public func getMetaData(completion: @escaping (ZPC.Streaming.MetaData?) -> Void) {
+        public func getMetaData(completion: @escaping @Sendable (ZPC.Streaming.MetaData?) -> Void) {
             config.ioQueue.async { completion(self._record?.metaData) }
         }
 
@@ -68,7 +68,7 @@ extension ZPC.Streaming {
             }
         }
 
-        public func readData(from range: NSRange, completion: @escaping (Data?) -> Void) {
+        public func readData(from range: NSRange, completion: @escaping @Sendable (Data?) -> Void) {
             config.ioQueue.async {
                 do {
                     completion(try self._readFileHandle?.readData(from: range))
@@ -81,7 +81,7 @@ extension ZPC.Streaming {
         /// Clean data storage.
         ///
         /// - Important: Storage is unavailable after cleanning.
-        public func clean(completion: (() -> Void)?) {
+        public func clean(completion: (@Sendable () -> Void)?) {
             config.ioQueue.async {
                 self._record?.reset()
                 let fileManager = FileManager.default

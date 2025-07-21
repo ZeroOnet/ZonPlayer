@@ -5,7 +5,7 @@
 //  Created by 李文康 on 2023/11/3.
 //
 
-final class CallbackCompositer: ZonPlayer.Observable {
+final class CallbackCompositer: ZonPlayer.Observable, @unchecked Sendable {
     var callbackQueue: DispatchQueue
     let observer: ZonPlayer.Observable
     let monitors: [ZonPlayer.Monitorable]
@@ -84,11 +84,11 @@ final class CallbackCompositer: ZonPlayer.Observable {
 }
 
 extension CallbackCompositer {
-    private func _callback(work: @escaping (ZonPlayer.Observable) -> Void) {
+    private func _callback(work: @escaping @Sendable (ZonPlayer.Observable) -> Void) {
         observer.callbackQueue.async { work(self.observer) }
     }
 
-    private func _monitor(work: @escaping (ZonPlayer.Monitorable) -> Void) {
+    private func _monitor(work: @escaping @Sendable (ZonPlayer.Monitorable) -> Void) {
         monitors.forEach { monitor in monitor.queue.async { work(monitor) } }
     }
 }

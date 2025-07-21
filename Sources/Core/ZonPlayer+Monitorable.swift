@@ -6,7 +6,7 @@
 //
 
 extension ZonPlayer {
-    public protocol Monitorable {
+    public protocol Monitorable: Sendable {
         func player(_ player: ZonPlayable, didWaitToPlay reason: WaitingReason)
 
         func player(_ player: ZonPlayable, didPlay rate: Float)

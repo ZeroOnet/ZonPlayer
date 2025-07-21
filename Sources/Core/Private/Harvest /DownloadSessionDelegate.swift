@@ -5,7 +5,7 @@
 //  Created by 李文康 on 2023/11/7.
 //
 
-final class DownloadSessionDelegate: NSObject {
+final class DownloadSessionDelegate: NSObject, @unchecked Sendable {
     func addDownloadTask(
         with sessionTask: URLSessionDownloadTask,
         context: DownloadTask.Context

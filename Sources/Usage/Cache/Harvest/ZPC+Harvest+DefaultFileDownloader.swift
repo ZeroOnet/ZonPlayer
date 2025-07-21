@@ -23,7 +23,7 @@ extension ZPC.Harvest {
         public func download(
             with url: URL,
             destination: URL,
-            completion: @escaping (Result<Void, ZonPlayer.Error>) -> Void
+            completion: @escaping @Sendable (Result<Void, ZonPlayer.Error>) -> Void
         ) -> ZPC.Harvest.Cancellable {
             let callback = ZonPlayer.Delegate<Result<Void, ZonPlayer.Error>, Void>()
             callback.delegate(on: self) { _, result in completion(result) }

@@ -7,7 +7,7 @@
 
 extension ZonPlayer {
     // From https://github.com/onevcat/Kingfisher/blob/277f1ab2c6664b19b4a412e32b094b201e2d5757/Sources/Utility/Delegate.swift#L71
-    public final class Delegate<Input, Output> {
+    public final class Delegate<Input, Output>: @unchecked Sendable {
         public init() {}
 
         private var block: ((Input) -> Output?)?

@@ -18,7 +18,7 @@ extension ZPC.Harvest.DefaultFileStorage: ZPC.Harvest.FileStorable {
     public func create(
         file: ZPC.Harvest.File,
         with url: ZPC.Harvest.RemoteURL,
-        completion: @escaping (Result<ZPC.Harvest.File, ZonPlayer.Error>) -> Void
+        completion: @escaping @Sendable (Result<ZPC.Harvest.File, ZonPlayer.Error>) -> Void
     ) {
         switch fileURL(url: url) {
         case .success(let storeURL):
@@ -62,7 +62,7 @@ extension ZPC.Harvest.DefaultFileStorage: ZPC.Harvest.FileStorable {
         }
     }
 
-    public func delete(with url: ZPC.Harvest.RemoteURL, completion: (() -> Void)?) {
+    public func delete(with url: ZPC.Harvest.RemoteURL, completion: (@Sendable () -> Void)?) {
         guard let existURL = try? fileURL(url: url).get() else { completion?(); return }
         config.ioQueue.async {
             try? FileManager.default.removeItem(at: existURL)
@@ -70,7 +70,7 @@ extension ZPC.Harvest.DefaultFileStorage: ZPC.Harvest.FileStorable {
         }
     }
 
-    public func deleteAll(completion: (() -> Void)?) {
+    public func deleteAll(completion: (@Sendable () -> Void)?) {
         let dir = config.cacheDirectory
         config.ioQueue.async {
             try? FileManager.default.removeItem(at: dir)

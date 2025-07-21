@@ -23,7 +23,7 @@ extension ZonPlayer {
         private var _setter: Settable?
 
         public init(
-            url: URLConvertible,
+            url: URLConvertible & Sendable,
             builder: ((Settable) -> Settable)? = nil
         ) {
             var setter = ZonPlayer.player(url)

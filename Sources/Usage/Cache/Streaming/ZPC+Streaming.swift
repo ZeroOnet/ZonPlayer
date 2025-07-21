@@ -39,7 +39,7 @@ extension ZPC {
             var range: NSRange { get }
             var loadingRequest: LoadingRequestable { get }
 
-            func requestData(completion: @escaping (Result<Void, ZonPlayer.Error>) -> Void)
+            func requestData(completion: @escaping @Sendable (Result<Void, ZonPlayer.Error>) -> Void)
         }
 
         public protocol DataRequestable {
@@ -56,12 +56,12 @@ extension ZPC {
             var url: URL { get }
             var onError: ZonPlayer.Delegate<ZonPlayer.Error, Void> { get }
 
-            func getCacheFragments(completion: @escaping ([NSRange]) -> Void)
+            func getCacheFragments(completion: @escaping @Sendable ([NSRange]) -> Void)
             func setMetaData(_ metaData: ZPC.Streaming.MetaData)
-            func getMetaData(completion: @escaping (ZPC.Streaming.MetaData?) -> Void)
+            func getMetaData(completion: @escaping @Sendable (ZPC.Streaming.MetaData?) -> Void)
             func writeData(_ data: Data, to range: NSRange)
-            func readData(from range: NSRange, completion: @escaping (Data?) -> Void)
-            func clean(completion: (() -> Void)?)
+            func readData(from range: NSRange, completion: @escaping @Sendable (Data?) -> Void)
+            func clean(completion: (@Sendable () -> Void)?)
         }
 
         public let source: Sourceable

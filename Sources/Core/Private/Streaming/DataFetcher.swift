@@ -5,7 +5,7 @@
 //  Created by 李文康 on 2023/11/15.
 //
 
-final class DataFetcher {
+final class DataFetcher: @unchecked Sendable {
     let onCompleted = ZonPlayer.Delegate<(DataFetcher, Result<Void, ZonPlayer.Error>), Void>()
     let storage: ZPC.Streaming.DataStorable
     let requester: ZPC.Streaming.DataRequestable
@@ -31,8 +31,8 @@ final class DataFetcher {
 
     func fetch() {
         guard let dataRequest = loadingRequest.theDataRequest else { return }
-        var offset = Int(dataRequest.requestedOffset)
-        var length = dataRequest.requestedLength
+        nonisolated(unsafe) var offset = Int(dataRequest.requestedOffset)
+        nonisolated(unsafe) var length = dataRequest.requestedLength
         if dataRequest.currentOffset != 0 {
             offset = Int(dataRequest.currentOffset)
         }
@@ -78,7 +78,7 @@ extension DataFetcher {
 
     private func _executeDataTasks(_ dataTasks: [ZPC.Streaming.DataTaskable]) {
         guard let firstTask = dataTasks.first else { return }
-        let dataTasks = Array(dataTasks.dropFirst())
+        nonisolated(unsafe) let dataTasks = Array(dataTasks.dropFirst())
         firstTask.requestData { [weak self] result in
             switch result {
             case .success:

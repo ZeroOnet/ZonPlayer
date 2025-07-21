@@ -10,7 +10,7 @@ extension ZonPlayer {
         /// The reason for player terminated.
         ///
         /// - Important: Play cannot resume and should be recreated at the moment.
-        public enum TerminationReason {
+        public enum TerminationReason: Sendable {
             case mediaServicesWereReset
             /// The status of AVPlayer is failed with an error.
             case playerError(Swift.Error)
@@ -18,7 +18,7 @@ extension ZonPlayer {
             case unknownError
         }
 
-        public enum CacheFailureReason {
+        public enum CacheFailureReason: Sendable {
             case downloadFailed(URL, Swift.Error)
             case createCacheDirectoryFailed(URL)
             case fileStoreFailed(URL, Swift.Error)
@@ -35,7 +35,7 @@ extension ZonPlayer {
             case invalidStreamingResponse(URLResponse)
         }
 
-        case invalidURL(URLConvertible)
+        case invalidURL(URLConvertible & Sendable)
         case sessionError(Sessionable, Swift.Error)
         case playerTerminated(TerminationReason)
         case cacheFailed(CacheFailureReason)

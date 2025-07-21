@@ -9,8 +9,9 @@ extension ZonPlayer {
     public protocol Settable: Observable,
                               SessionSettable,
                               RemoteControlSettable,
-                              CacheSettable {
-        var url: URLConvertible { get }
+                              CacheSettable,
+                              Sendable {
+        var url: URLConvertible & Sendable { get }
         var maxRetryCount: Int { get nonmutating set }
         var progressInterval: TimeInterval { get nonmutating set }
     }

@@ -7,7 +7,7 @@
 
 import CoreServices
 
-final class DataSessionDelegate: NSObject {
+final class DataSessionDelegate: NSObject, @unchecked Sendable {
     let onMetaData = ZonPlayer.Delegate<(URLSessionTask, ZPC.Streaming.MetaData), Void>()
     let onData = ZonPlayer.Delegate<(URLSessionTask, Data), Void>()
     let onFinished = ZonPlayer.Delegate<URLSessionTask, Void>()

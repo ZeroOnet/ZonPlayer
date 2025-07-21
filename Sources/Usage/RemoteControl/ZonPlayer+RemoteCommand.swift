@@ -6,7 +6,7 @@
 //
 
 extension ZonPlayer {
-    public final class RemoteCommand: NSObject, RemoteCommandable {
+    public final class RemoteCommand: NSObject, RemoteCommandable, @unchecked Sendable {
         public typealias EventHandler = (MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus
 
         public var handler: ZonPlayer.Delegate<MPRemoteCommandEvent, MPRemoteCommandHandlerStatus>?

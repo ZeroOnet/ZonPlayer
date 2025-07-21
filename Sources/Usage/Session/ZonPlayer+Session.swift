@@ -8,7 +8,7 @@
 public typealias ZPS = ZonPlayer.Session
 
 extension ZonPlayer {
-    public protocol Sessionable {
+    public protocol Sessionable: Sendable {
         func apply() throws
     }
 

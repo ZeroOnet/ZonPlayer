@@ -18,7 +18,16 @@ public enum ZonPlayer {
     ///     .cache(Cacheable) // Set cache policy like downloading before playback.
     ///
     /// ```
-    public static func player(_ url: URLConvertible) -> Settable {
+    public static func player(_ url: URLConvertible & Sendable) -> Settable {
         Builder(url: url)
+    }
+}
+
+@_unavailableFromAsync(message: "express the closure as an explicit function declared on the specified 'actor' instead")
+nonisolated func assumeIsolated<T>(
+    _ operation: @MainActor () throws -> T
+) rethrows -> T {
+    try withoutActuallyEscaping(operation) { (_ fucn: @escaping () throws -> T) throws -> T in
+        try fucn()
     }
 }

@@ -6,7 +6,7 @@
 //
 
 extension ZPC.Streaming {
-    public final class DefaultSource: Sourceable {
+    public final class DefaultSource: Sourceable, @unchecked Sendable {
         public let saveToDisk: Bool
         public var enableConsoleLog: Bool
         public init(
@@ -19,7 +19,7 @@ extension ZPC.Streaming {
 
         public var plugins: [Pluggable] = []
 
-        public func cleanCache(completion: (() -> Void)? = nil) {
+        public func cleanCache(completion: (@Sendable () -> Void)? = nil) {
             _config.ioQueue.async {
                 try? FileManager.default.removeItem(at: self._config.cacheDirectory)
                 self._config.prepare()
