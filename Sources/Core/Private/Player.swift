@@ -8,31 +8,29 @@
 @preconcurrency import AVFoundation
 
 final class Player: NSObject, @unchecked Sendable {
-    let url: URL
-    let context: Context
-    let session: ZonPlayer.Sessionable?
+    private(set) var url: URL
+    let session: (value: ZonPlayer.Sessionable, queue: DispatchQueue)?
+    let retry: ZonPlayer.Retryable?
     let cache: ZonPlayer.Cacheable?
     let observer: ZonPlayer.Observable
     let remoteControl: ZonPlayer.Delegate<ZonPlayer.RemoteControllable, Void>?
     let view: ZonPlayerView?
     init(
         url: URL,
-        context: Context,
-        session: ZonPlayer.Sessionable?,
+        session: (value: ZonPlayer.Sessionable, queue: DispatchQueue)?,
+        retry: ZonPlayer.Retryable?,
         cache: ZonPlayer.Cacheable?,
         observer: ZonPlayer.Observable,
         remoteControl: ZonPlayer.Delegate<ZonPlayer.RemoteControllable, Void>?,
         view: ZonPlayerView?
     ) {
         self.url = url
-        self.context = context
         self.session = session
+        self.retry = retry
         self.cache = cache
         self.observer = observer
         self.remoteControl = remoteControl
         self.view = view
-
-        self._restRetryCount = context.maxRetryCount
 
         super.init()
 
@@ -44,7 +42,6 @@ final class Player: NSObject, @unchecked Sendable {
     }
 
     private var _shouldResumePlaying = false
-    private var _restRetryCount: Int
     private var _rate: Float = 1
     private var _background = false
     private var _player: AVPlayer?
@@ -95,7 +92,7 @@ final class Player: NSObject, @unchecked Sendable {
                 // https://developer.apple.com/forums/thread/679862
                 // When media services were reset, We cannot recreate player before App enter foreground.
                 guard (item.error as? NSError)?.code != -11819 else { return }
-                _rebuildIfNeeded()
+                _retryIfNeeded()
             } else if item.status == .readyToPlay {
                 // Important:
                 // Set player to view after AVPlayerItem is ready to play,
@@ -104,7 +101,6 @@ final class Player: NSObject, @unchecked Sendable {
                 assumeIsolated { view?.player = _player }
 
                 _playable = true
-                _restRetryCount = self.context.maxRetryCount
                 _executePendingCommands()
             } else if item.status == .unknown {
                 _playable = false
@@ -122,6 +118,7 @@ final class Player: NSObject, @unchecked Sendable {
                 if let desc = player.reasonForWaitingToPlay {
                     reason = .init(desc: desc)
                 } else {
+                    item.errorLog()
                     reason = .unknown
                 }
                 _callback { $0.waitToPlay?(($1, reason)) }
@@ -274,12 +271,12 @@ extension Player {
             if let session = session {
                 _callback { $0.waitToPlay?(($1, .session)) }
 
-                context.sessionQueue.async { [weak self] in
+                session.queue.async { [weak self] in
                     do {
-                        try session.apply()
+                        try session.value.apply()
                         completion()
                     } catch {
-                        if let self = self { self._callback { $0.error?(($1, .sessionError(session, error))) } }
+                        if let self = self { self._callback { $0.error?(($1, .sessionError(session.value, error))) } }
                     }
                 }
             } else { completion() }
@@ -317,7 +314,7 @@ extension Player {
     private func _initPlayer(asset: AVURLAsset) {
         let player = AVPlayer(playerItem: AVPlayerItem(asset: asset))
         player.actionAtItemEnd = .pause
-        let seconds = context.progressInterval > 0 ? context.progressInterval : 1
+        let seconds = observer.progressInterval > 0 ? observer.progressInterval : 1
         // Important: Time scale should be a large value to avoid hang.
         let interval = CMTime(seconds: seconds, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         let timeObserver = player.addPeriodicTimeObserver(
@@ -346,7 +343,7 @@ extension Player {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(_playToEndTimeAction),
-            name: .AVPlayerItemDidPlayToEndTime,
+            name: AVPlayerItem.didPlayToEndTimeNotification,
             object: player.currentItem
         )
         NotificationCenter.default.addObserver(
@@ -386,9 +383,10 @@ extension Player {
             name: AVAudioSession.mediaServicesWereResetNotification,
             object: nil
         )
+
         NotificationCenter.default.removeObserver(
             self,
-            name: .AVPlayerItemDidPlayToEndTime,
+            name: AVPlayerItem.didPlayToEndTimeNotification,
             object: player.currentItem
         )
         NotificationCenter.default.removeObserver(
@@ -401,18 +399,19 @@ extension Player {
         _remoteController?.reset()
     }
 
-    private func _rebuildIfNeeded() {
-        let currentTime = currentTime
-        let isPaused = assumeIsolated { _player?.rate } == 0
+    private func _retryIfNeeded() {
+        retry?.shouldRetry(for: url) { [weak self] in
+            guard let newURL = $0 else { return }
+            self?._main { player in
+                player._deinitPlayerIfNeeded()
+                player.url = newURL
+                let currentTime = player.currentTime
+                let isPaused = player._player?.rate == 0
 
-        _deinitPlayerIfNeeded()
-
-        if _restRetryCount > 0 {
-            _prepare()
-            seek(to: currentTime)
-            if isPaused { pause() } else { play() }
-
-            _restRetryCount -= 1
+                player._prepare()
+                player.seek(to: currentTime)
+                if isPaused { player.pause() } else { player.play() }
+            }
         }
     }
 }
@@ -421,7 +420,7 @@ extension Player {
     @objc
     private func _mediaServicesWereResetAction(notification: NSNotification) {
         _callback { $0.error?(($1, .playerTerminated(.mediaServicesWereReset))) }
-        _rebuildIfNeeded()
+        _retryIfNeeded()
     }
 
     @objc
@@ -492,7 +491,7 @@ extension Player {
         }
     }
 
-    private func _main(work: @escaping @Sendable (Player) -> Void) {
+    private func _main(work: @escaping @MainActor @Sendable (Player) -> Void) {
         DispatchQueue.__zon_mainAsync { [weak self] in
             guard let self = self else { return }
             work(self)

@@ -6,6 +6,7 @@
 //
 
 final class Builder: ZonPlayer.Settable, @unchecked Sendable {
+
     let url: URLConvertible & Sendable
     init(url: URLConvertible & Sendable) {
         self.url = url
@@ -27,6 +28,7 @@ final class Builder: ZonPlayer.Settable, @unchecked Sendable {
     var background: ZonPlayer.Delegate<(ZonPlayable, Bool), Void>?
     var rate: ZonPlayer.Delegate<(ZonPlayable, Float, Float), Void>?
 
+    var retry: ZonPlayer.Retryable? = ZonPlayer.StepRetry()
     var session: ZonPlayer.Sessionable?
     var cache: ZonPlayer.Cacheable?
 

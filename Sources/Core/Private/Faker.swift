@@ -1,13 +1,13 @@
 //
-//  DummyPlayer.swift
+//  Faker.swift
 //  ZonPlayer
 //
 //  Created by 李文康 on 2023/11/3.
 //
 
-struct DummyPlayer {}
+struct Faker {}
 
-extension DummyPlayer: ZonPlayer.Controllable {
+extension Faker: ZonPlayer.Controllable {
     func takeSnapshot(at time: TimeInterval?, completion: @escaping @MainActor (UIImage?) -> Void) {}
     func seek(to time: TimeInterval, completion: (@MainActor (Bool) -> Void)?) {}
     func play() {}
@@ -19,11 +19,11 @@ extension DummyPlayer: ZonPlayer.Controllable {
     func resumePlayingInfo() {}
 }
 
-extension DummyPlayer: ZonPlayer.Gettable {
+extension Faker: ZonPlayer.Gettable {
     var isPlaying: Bool { false }
     var volume: Float { 0 }
     var rate: Float { 0 }
     var currentTime: TimeInterval { 0 }
     var duration: TimeInterval { 0 }
-    var url: URL { URL(string: "https://dummy").unsafelyUnwrapped }
+    var url: URL { URL(string: "https://faker").unsafelyUnwrapped }
 }

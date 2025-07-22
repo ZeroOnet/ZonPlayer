@@ -54,21 +54,21 @@ extension ZonPlayer.Manager {
         do {
             let url = try setter.url.asURL()
             let observer = CallbackCompositer(observer: setter, monitors: monitors, callbackQueue: logQueue)
+            let session: (ZonPlayer.Sessionable, DispatchQueue)? = {
+                if let session = setter.session { return (session, _sessionQueue) }
+                return nil
+            }()
             return Player(
                 url: url,
-                context: .init(
-                    sessionQueue: _sessionQueue,
-                    maxRetryCount: setter.maxRetryCount,
-                    progressInterval: setter.progressInterval
-                ),
-                session: setter.session,
+                session: session,
+                retry: setter.retry,
                 cache: setter.cache,
                 observer: observer,
                 remoteControl: setter.remoteControl,
                 view: view
             )
         } catch {
-            let dummy = DummyPlayer()
+            let dummy = Faker()
             setter.callbackQueue.async { setter.error?.call((dummy, .invalidURL(setter.url))) }
             return dummy
         }

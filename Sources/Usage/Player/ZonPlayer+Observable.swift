@@ -7,6 +7,7 @@
 
 extension ZonPlayer {
     public protocol Observable {
+        var progressInterval: TimeInterval { get nonmutating set }
         var callbackQueue: DispatchQueue { get nonmutating set }
 
         var waitToPlay: Delegate<(ZonPlayable, WaitingReason), Void>? { get nonmutating set }
@@ -22,6 +23,12 @@ extension ZonPlayer {
 }
 
 extension ZonPlayer.Observable {
+    /// The time interval for playback progress callback. The default value is 1.
+    public func progressInterval(_ progressInterval: TimeInterval) -> Self {
+        self.progressInterval = progressInterval
+        return self
+    }
+
     /// Which dispatch queue to callback, the default value is main queue.
     public func callbackQueue(_ queue: DispatchQueue) -> Self {
         self.callbackQueue = queue

@@ -6,6 +6,11 @@
 //
 
 final class CallbackCompositer: ZonPlayer.Observable, @unchecked Sendable {
+    var progressInterval: TimeInterval {
+        get { observer.progressInterval }
+        set { observer.progressInterval = newValue }
+    }
+
     var callbackQueue: DispatchQueue
     let observer: ZonPlayer.Observable
     let monitors: [ZonPlayer.Monitorable]
