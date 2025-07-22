@@ -5,32 +5,32 @@
 //  Created by 李文康 on 2023/11/3.
 //
 
-final class Player: NSObject {
-    let url: URL
-    let context: Context
-    let session: ZPSessionable?
-    let cache: ZPCacheable?
-    let observer: ZPObservable
-    let remoteControl: ZPDelegate<ZPRemoteControllable, Void>?
+@preconcurrency import AVFoundation
+
+final class Player: NSObject, @unchecked Sendable {
+    private(set) var url: URL
+    let session: (value: ZonPlayer.Sessionable, queue: DispatchQueue)?
+    let retry: ZonPlayer.Retryable?
+    let cache: ZonPlayer.Cacheable?
+    let observer: ZonPlayer.Observable
+    let remoteControl: ZonPlayer.Delegate<ZonPlayer.RemoteControllable, Void>?
     let view: ZonPlayerView?
     init(
         url: URL,
-        context: Context,
-        session: ZPSessionable?,
-        cache: ZPCacheable?,
-        observer: ZPObservable,
-        remoteControl: ZPDelegate<ZPRemoteControllable, Void>?,
+        session: (value: ZonPlayer.Sessionable, queue: DispatchQueue)?,
+        retry: ZonPlayer.Retryable?,
+        cache: ZonPlayer.Cacheable?,
+        observer: ZonPlayer.Observable,
+        remoteControl: ZonPlayer.Delegate<ZonPlayer.RemoteControllable, Void>?,
         view: ZonPlayerView?
     ) {
         self.url = url
-        self.context = context
         self.session = session
+        self.retry = retry
         self.cache = cache
         self.observer = observer
         self.remoteControl = remoteControl
         self.view = view
-
-        self._restRetryCount = context.maxRetryCount
 
         super.init()
 
@@ -42,7 +42,6 @@ final class Player: NSObject {
     }
 
     private var _shouldResumePlaying = false
-    private var _restRetryCount: Int
     private var _rate: Float = 1
     private var _background = false
     private var _player: AVPlayer?
@@ -76,16 +75,16 @@ final class Player: NSObject {
         switch kvoCase {
         case .duration:
             let duration = item.duration.seconds
-            guard _duration != duration else { return }
+            guard !duration.isNaN, _duration != duration else { return }
             _duration = duration
             _remoteController?.update { $0.duration(duration) }
-            _callback { $0.duration?.call(($1, duration)) }
+            _callback { $0.duration?(($1, duration)) }
         case .status:
             if item.status == .failed {
                 _playable = false
                 let reason: ZonPlayer.Error.TerminationReason = item.error != nil
                 ? .playerError(item.error.unsafelyUnwrapped) : .unknownError
-                _callback { $0.error?.call(($1, .playerTerminated(reason))) }
+                _callback { $0.error?(($1, .playerTerminated(reason))) }
                 // When you get -11819, it means that a daemon has crashed.
                 // Error Domain=AVFoundationErrorDomain Code=-11819 "Cannot Complete Action"
                 // UserInfo={NSLocalizedDescription=Cannot Complete Action,
@@ -93,42 +92,43 @@ final class Player: NSObject {
                 // https://developer.apple.com/forums/thread/679862
                 // When media services were reset, We cannot recreate player before App enter foreground.
                 guard (item.error as? NSError)?.code != -11819 else { return }
-                _rebuildIfNeeded()
+                _retryIfNeeded()
             } else if item.status == .readyToPlay {
                 // Important:
                 // Set player to view after AVPlayerItem is ready to play,
                 // otherwise player cannot playback from beginning on a few device with specified system version.
                 // eg: iPad 4 16.5.1
-                view?.player = _player
+                assumeIsolated { view?.player = _player }
 
                 _playable = true
-                _restRetryCount = self.context.maxRetryCount
                 _executePendingCommands()
             } else if item.status == .unknown {
                 _playable = false
-                _callback { $0.waitToPlay?.call(($1, .itemLoading)) }
+                _callback { $0.waitToPlay?(($1, .itemLoading)) }
             }
         case .timeControlStatus:
             let status = player.timeControlStatus
             if status == .playing {
-                _callback { $0.play?.call(($1, player.rate)) }
+                let rate = assumeIsolated { player.rate }
+                _callback { $0.play?(($1, rate)) }
             } else if status == .paused {
-                _callback { $0.pause?.call($1) }
+                _callback { $0.pause?($1) }
             } else if status == .waitingToPlayAtSpecifiedRate {
-                let reason: ZPWaitingReason
+                let reason: ZonPlayer.WaitingReason
                 if let desc = player.reasonForWaitingToPlay {
                     reason = .init(desc: desc)
                 } else {
+                    item.errorLog()
                     reason = .unknown
                 }
-                _callback { $0.waitToPlay?.call(($1, reason)) }
+                _callback { $0.waitToPlay?(($1, reason)) }
             }
         }
     }
 }
 
-extension Player: ZPGettable {
-    var isPlaying: Bool { (_player?.rate ?? 0) != 0 }
+extension Player: ZonPlayer.Gettable {
+    var isPlaying: Bool { assumeIsolated { (_player?.rate ?? 0) } != 0 }
 
     var volume: Float { _player?.volume ?? 0 }
 
@@ -139,13 +139,15 @@ extension Player: ZPGettable {
     var duration: TimeInterval { _duration }
 }
 
-extension Player: ZPControllable {
+extension Player: ZonPlayer.Controllable {
     func play() {
         _doOrPending(exclusive: true) {
             $0._main {
                 let rate = $0._rate
                 let time = $0.currentTime
-                $0._player?.playImmediately(atRate: rate)
+                if let player = $0._player {
+                    assumeIsolated { player.playImmediately(atRate: rate) }
+                }
                 $0._remoteController?.update { $0.rate(rate).time(time) }
                 $0._shouldResumePlaying = true
             }
@@ -156,7 +158,8 @@ extension Player: ZPControllable {
         _doOrPending(exclusive: true) {
             $0._main {
                 let time = $0.currentTime
-                $0._player?.rate = 0
+                if let player = $0._player { assumeIsolated { player.rate = 0 } }
+
                 // Important: Set rate to 0 to update time for remote control.
                 $0._remoteController?.update { $0.rate(0).time(time) }
                 $0._shouldResumePlaying = false
@@ -171,18 +174,21 @@ extension Player: ZPControllable {
         _rate = value
 
         _doOrPending { player in
-            player._callback { $0.rate?.call(($1, old, value)) }
+            player._callback { $0.rate?(($1, old, value)) }
             player._main {
-                if $0._player?.rate == 0 { return }
+                guard
+                    let player = $0._player,
+                    assumeIsolated({ player.rate }) != 0
+                else { return }
                 $0.play()
             }
         }
     }
 
-    func takeSnapshot(at time: TimeInterval?, completion: @escaping (UIImage?) -> Void) {
+    func takeSnapshot(at time: TimeInterval?, completion: @escaping @Sendable @MainActor (UIImage?) -> Void) {
         _doOrPending { anp in
-            let completion = { image in DispatchQueue.__zon_mainAsync { completion(image) } }
-            guard let player = anp._player, let asset = player.currentItem?.asset else {
+            let completion = { @Sendable image in DispatchQueue.__zon_mainAsync { completion(image) } }
+            guard let player = anp._player, let asset = assumeIsolated({ player.currentItem?.asset }) else {
                 completion(nil)
                 return
             }
@@ -201,8 +207,8 @@ extension Player: ZPControllable {
         }
     }
 
-    func seek(to time: TimeInterval, completion: ((Bool) -> Void)?) {
-        if time < 0 { completion?(false); return }
+    func seek(to time: TimeInterval, completion: (@Sendable @MainActor (Bool) -> Void)?) {
+        if time < 0 { if let completion { Task { await completion(false) } }; return }
 
         _doOrPending { player in
             player._player?.seek(
@@ -261,31 +267,32 @@ extension Player: ZPControllable {
 
 extension Player {
     private func _prepare() {
-        func setSession(completion: @escaping () -> Void) {
+        func setSession(completion: @escaping @Sendable () -> Void) {
             if let session = session {
-                _callback { $0.waitToPlay?.call(($1, .session)) }
+                _callback { $0.waitToPlay?(($1, .session)) }
 
-                context.sessionQueue.async { [weak self] in
+                session.queue.async { [weak self] in
                     do {
-                        try session.apply()
+                        try session.value.apply()
                         completion()
                     } catch {
-                        if let self = self { self._callback { $0.error?.call(($1, .sessionError(session, error))) } }
+                        if let self = self { self._callback { $0.error?(($1, .sessionError(session.value, error))) } }
                     }
                 }
             } else { completion() }
         }
 
-        func setCache(completion: @escaping (AVURLAsset) -> Void) {
+        @Sendable
+        func setCache(completion: @escaping @Sendable (AVURLAsset) -> Void) {
             if let cache = cache {
-                _callback { $0.waitToPlay?.call(($1, .cache)) }
+                _callback { $0.waitToPlay?(($1, .cache)) }
 
                 cache.prepare(url: url) { [weak self] in
                     switch $0 {
                     case .success(let asset):
                         completion(asset)
                     case .failure(let error):
-                        if let self = self { self._callback { $0.error?.call(($1, error)) } }
+                        if let self = self { self._callback { $0.error?(($1, error)) } }
                     }
                 }
             } else { completion(AVURLAsset(url: url)) }
@@ -295,7 +302,7 @@ extension Player {
             setCache { [weak self] asset in
                 // Important: Hold player to avoid KVO issues.
                 guard let self = self else { return }
-                self._callback { $0.waitToPlay?.call(($1, .initializing)) }
+                self._callback { $0.waitToPlay?(($1, .initializing)) }
                 DispatchQueue.__zon_mainAsync {
                     self._asset = asset
                     self._initPlayer(asset: asset)
@@ -307,7 +314,7 @@ extension Player {
     private func _initPlayer(asset: AVURLAsset) {
         let player = AVPlayer(playerItem: AVPlayerItem(asset: asset))
         player.actionAtItemEnd = .pause
-        let seconds = context.progressInterval > 0 ? context.progressInterval : 1
+        let seconds = observer.progressInterval > 0 ? observer.progressInterval : 1
         // Important: Time scale should be a large value to avoid hang.
         let interval = CMTime(seconds: seconds, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         let timeObserver = player.addPeriodicTimeObserver(
@@ -315,7 +322,7 @@ extension Player {
             queue: observer.callbackQueue
         ) { [weak self] time in
             guard let self else { return }
-            self.observer.progress?.call((self, time.seconds, self._duration))
+            self.observer.progress?((self, time.seconds, self._duration))
         }
         if player.currentItem != nil {
             KVOKeyPath.allCases.forEach {
@@ -336,7 +343,7 @@ extension Player {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(_playToEndTimeAction),
-            name: .AVPlayerItemDidPlayToEndTime,
+            name: AVPlayerItem.didPlayToEndTimeNotification,
             object: player.currentItem
         )
         NotificationCenter.default.addObserver(
@@ -350,7 +357,7 @@ extension Player {
 
         if let remoteControl = remoteControl {
             let remoteController = RemoteController()
-            remoteControl.call(remoteController)
+            remoteControl(remoteController)
             remoteController.setup()
             _remoteController = remoteController
         }
@@ -368,7 +375,7 @@ extension Player {
             player.removeObserver(self, forKeyPath: $0.rawValue, context: nil)
         }
 
-         view?.player = nil
+        assumeIsolated { view?.player = nil }
         _player = nil
 
         NotificationCenter.default.removeObserver(
@@ -376,9 +383,10 @@ extension Player {
             name: AVAudioSession.mediaServicesWereResetNotification,
             object: nil
         )
+
         NotificationCenter.default.removeObserver(
             self,
-            name: .AVPlayerItemDidPlayToEndTime,
+            name: AVPlayerItem.didPlayToEndTimeNotification,
             object: player.currentItem
         )
         NotificationCenter.default.removeObserver(
@@ -391,18 +399,19 @@ extension Player {
         _remoteController?.reset()
     }
 
-    private func _rebuildIfNeeded() {
-        let currentTime = currentTime
-        let isPaused = _player?.rate == 0
+    private func _retryIfNeeded() {
+        retry?.shouldRetry(for: url) { [weak self] in
+            guard let newURL = $0 else { return }
+            self?._main { player in
+                player._deinitPlayerIfNeeded()
+                player.url = newURL
+                let currentTime = player.currentTime
+                let isPaused = player._player?.rate == 0
 
-        _deinitPlayerIfNeeded()
-
-        if _restRetryCount > 0 {
-            _prepare()
-            seek(to: currentTime)
-            if isPaused { pause() } else { play() }
-
-            _restRetryCount -= 1
+                player._prepare()
+                player.seek(to: currentTime)
+                if isPaused { player.pause() } else { player.play() }
+            }
         }
     }
 }
@@ -410,13 +419,13 @@ extension Player {
 extension Player {
     @objc
     private func _mediaServicesWereResetAction(notification: NSNotification) {
-        _callback { $0.error?.call(($1, .playerTerminated(.mediaServicesWereReset))) }
-        _rebuildIfNeeded()
+        _callback { $0.error?(($1, .playerTerminated(.mediaServicesWereReset))) }
+        _retryIfNeeded()
     }
 
     @objc
     private func _playToEndTimeAction(notification: NSNotification) {
-        let url = url; _callback { $0.finish?.call(($1, url)) }
+        let url = url; _callback { $0.finish?(($1, url)) }
     }
 
     @objc
@@ -436,15 +445,15 @@ extension Player {
 
     @objc
     private func _backgroundAction(notification: NSNotification) {
-        view?.player = nil
-        _callback { $0.background?.call(($1, true)) }
+        assumeIsolated { view?.player = nil }
+        _callback { $0.background?(($1, true)) }
     }
 
     // https://developer.apple.com/documentation/avfoundation/media_playback_and_selection/creating_a_basic_video_player_ios_and_tvos/playing_audio_from_a_video_asset_in_the_background
     @objc
     private func _foregroundAction(notification: NSNotification) {
-        view?.player = _player
-        _callback { $0.background?.call(($1, false)) }
+        assumeIsolated { view?.player = _player }
+        _callback { $0.background?(($1, false)) }
     }
 }
 
@@ -475,14 +484,14 @@ extension Player {
         _pendingCommands = []
     }
 
-    private func _callback(work: @escaping (ZPObservable, Player) -> Void) {
+    private func _callback(work: @escaping @Sendable (ZonPlayer.Observable, Player) -> Void) {
         observer.callbackQueue.async { [weak self] in
             guard let self = self else { return }
             work(self.observer, self)
         }
     }
 
-    private func _main(work: @escaping (Player) -> Void) {
+    private func _main(work: @escaping @MainActor @Sendable (Player) -> Void) {
         DispatchQueue.__zon_mainAsync { [weak self] in
             guard let self = self else { return }
             work(self)
@@ -513,8 +522,8 @@ private protocol _Commandable {
 }
 
 extension DispatchQueue {
-    fileprivate static func __zon_mainAsync(work: @escaping () -> Void) {
-        if Thread.isMainThread { work(); return }
+    fileprivate static func __zon_mainAsync(work: @escaping @MainActor () -> Void) {
+        if Thread.isMainThread { assumeIsolated(work); return }
         DispatchQueue.main.async(execute: work)
     }
 } // swiftlint:disable:this file_length

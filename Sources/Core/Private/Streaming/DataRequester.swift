@@ -5,10 +5,10 @@
 //  Created by 李文康 on 2023/11/15.
 //
 
-final class DataRequester: ZPCDataRequestable {
+final class DataRequester: ZPC.Streaming.DataRequestable {
     let url: URL
-    let plugins: [ZPCStreamingPluggable]
-    init(url: URL, plugins: [ZPCStreamingPluggable]) {
+    let plugins: [ZPC.Streaming.Pluggable]
+    init(url: URL, plugins: [ZPC.Streaming.Pluggable]) {
         self.url = url
         self.plugins = plugins
     }
@@ -17,8 +17,8 @@ final class DataRequester: ZPCDataRequestable {
 
     func dataTask(
         forRange range: NSRange,
-        withLoadingRequest loadingRequest: ZPCLoadingRequestable
-    ) -> ZPCDataTaskable {
+        withLoadingRequest loadingRequest: ZPC.Streaming.LoadingRequestable
+    ) -> ZPC.Streaming.DataTaskable {
         let lowerBound = range.location
         let upperBound = range.location + range.length - 1
         var request = plugins.reduce(URLRequest(url: url)) { $1.prepare($0, forRange: range) }

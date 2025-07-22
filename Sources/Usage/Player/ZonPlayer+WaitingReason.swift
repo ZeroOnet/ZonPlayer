@@ -5,10 +5,8 @@
 //  Created by 李文康 on 2023/11/2.
 //
 
-public typealias ZPWaitingReason = ZonPlayer.WaitingReason
-
 extension ZonPlayer {
-    public struct WaitingReason {
+    public struct WaitingReason: @unchecked Sendable {
         let desc: AVPlayer.WaitingReason
 
         public static let unknown = Self(desc: .init(rawValue: "ZonPlayerWaitingUnknownReason"))

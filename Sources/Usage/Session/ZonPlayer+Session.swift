@@ -8,8 +8,16 @@
 public typealias ZPS = ZonPlayer.Session
 
 extension ZonPlayer {
+    public protocol Sessionable: Sendable {
+        func apply() throws
+    }
+
+    public protocol SessionSettable {
+        var session: Sessionable? { get nonmutating set }
+    }
+
     public enum Session {
-        public struct SoloSilencePlayback: ZPSessionable {
+        public struct SoloSilencePlayback: Sessionable {
             public init() {}
 
             public func apply() throws {
@@ -18,7 +26,7 @@ extension ZonPlayer {
             }
         }
 
-        public struct SoloBackgroundPlayback: ZPSessionable {
+        public struct SoloBackgroundPlayback: Sessionable {
             public init() {}
 
             public func apply() throws {
@@ -26,5 +34,12 @@ extension ZonPlayer {
                 try AVAudioSession.sharedInstance().setActive(true)
             }
         }
+    }
+}
+
+extension ZonPlayer.SessionSettable {
+    public func session(_ session: ZonPlayer.Sessionable?) -> Self {
+        self.session = session
+        return self
     }
 }

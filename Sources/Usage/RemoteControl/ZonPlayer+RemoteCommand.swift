@@ -5,13 +5,11 @@
 //  Created by 李文康 on 2023/11/3.
 //
 
-public typealias ZPRemoteCommand = ZonPlayer.RemoteCommand
-
 extension ZonPlayer {
-    public final class RemoteCommand: NSObject, ZPRemoteCommandable {
+    public final class RemoteCommand: NSObject, RemoteCommandable, @unchecked Sendable {
         public typealias EventHandler = (MPRemoteCommandEvent) -> MPRemoteCommandHandlerStatus
 
-        public var handler: ZPDelegate<MPRemoteCommandEvent, MPRemoteCommandHandlerStatus>?
+        public var handler: ZonPlayer.Delegate<MPRemoteCommandEvent, MPRemoteCommandHandlerStatus>?
         public let command: MPRemoteCommand
         public init(command: MPRemoteCommand) {
             self.command = command
@@ -28,9 +26,9 @@ extension ZonPlayer {
             command.isEnabled = false
         }
 
-        fileprivate var action: ZPDelegate<MPRemoteCommandEvent, MPRemoteCommandHandlerStatus> {
+        fileprivate var action: ZonPlayer.Delegate<MPRemoteCommandEvent, MPRemoteCommandHandlerStatus> {
             if let handler { return handler }
-            let result = ZPDelegate<MPRemoteCommandEvent, MPRemoteCommandHandlerStatus>()
+            let result = ZonPlayer.Delegate<MPRemoteCommandEvent, MPRemoteCommandHandlerStatus>()
             handler = result
             return result
         }
@@ -46,28 +44,28 @@ extension ZonPlayer {
     }
 }
 
-extension ZPRemoteCommand {
-    public static func play<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZPRemoteCommand {
+extension ZonPlayer.RemoteCommand {
+    public static func play<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZonPlayer.RemoteCommand {
         play.action.delegate(on: target) { wlt, _ in block?(wlt); return .success }
         return play
     }
 
-    public static func pause<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZPRemoteCommand {
+    public static func pause<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZonPlayer.RemoteCommand {
         pause.action.delegate(on: target) { wlt, _ in block?(wlt); return .success }
         return pause
     }
 
-    public static func previousTrack<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZPRemoteCommand {
+    public static func previousTrack<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZonPlayer.RemoteCommand {
         previousTrack.action.delegate(on: target) { wlt, _ in block?(wlt); return .success }
         return previousTrack
     }
 
-    public static func nextTrack<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZPRemoteCommand {
+    public static func nextTrack<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZonPlayer.RemoteCommand {
         nextTrack.action.delegate(on: target) { wlt, _ in block?(wlt); return .success }
         return nextTrack
     }
 
-    public static func seek<T: AnyObject>(_ target: T, block: ((T, TimeInterval) -> Void)?) -> ZPRemoteCommand {
+    public static func seek<T: AnyObject>(_ target: T, block: ((T, TimeInterval) -> Void)?) -> ZonPlayer.RemoteCommand {
         seek.action.delegate(on: target) { wlt, event in
             guard let pvt = event as? MPChangePlaybackPositionCommandEvent else { return .commandFailed }
             block?(wlt, pvt.positionTime); return .success
@@ -75,7 +73,10 @@ extension ZPRemoteCommand {
         return seek
     }
 
-    public static func playOrPauseViaHeadset<T: AnyObject>(_ target: T, block: ((T) -> Void)?) -> ZPRemoteCommand {
+    public static func playOrPauseViaHeadset<T: AnyObject>(
+        _ target: T,
+        block: ((T) -> Void)?
+    ) -> ZonPlayer.RemoteCommand {
         headset.action.delegate(on: target) { wlt, _ in block?(wlt); return .success }
         return headset
     }
@@ -87,11 +88,13 @@ extension ZPRemoteCommand {
 
  So we wrapped singleton instance for remote command.
  */
-extension ZPRemoteCommand {
-    public static let play = ZPRemoteCommand(command: MPRemoteCommandCenter.shared().playCommand)
-    public static let pause = ZPRemoteCommand(command: MPRemoteCommandCenter.shared().pauseCommand)
-    public static let previousTrack = ZPRemoteCommand(command: MPRemoteCommandCenter.shared().previousTrackCommand)
-    public static let nextTrack = ZPRemoteCommand(command: MPRemoteCommandCenter.shared().nextTrackCommand)
-    public static let seek = ZPRemoteCommand(command: MPRemoteCommandCenter.shared().changePlaybackPositionCommand)
-    public static let headset = ZPRemoteCommand(command: MPRemoteCommandCenter.shared().togglePlayPauseCommand)
+extension ZonPlayer.RemoteCommand {
+    // swiftlint:disable line_length
+    public static let play = ZonPlayer.RemoteCommand(command: MPRemoteCommandCenter.shared().playCommand)
+    public static let pause = ZonPlayer.RemoteCommand(command: MPRemoteCommandCenter.shared().pauseCommand)
+    public static let previousTrack = ZonPlayer.RemoteCommand(command: MPRemoteCommandCenter.shared().previousTrackCommand)
+    public static let nextTrack = ZonPlayer.RemoteCommand(command: MPRemoteCommandCenter.shared().nextTrackCommand)
+    public static let seek = ZonPlayer.RemoteCommand(command: MPRemoteCommandCenter.shared().changePlaybackPositionCommand)
+    public static let headset = ZonPlayer.RemoteCommand(command: MPRemoteCommandCenter.shared().togglePlayPauseCommand)
+    // swiftlint:enable line_length
 }

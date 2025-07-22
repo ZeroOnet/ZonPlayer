@@ -6,13 +6,13 @@
 //
 
 extension ZonPlayer {
-    public final class Manager {
+    public final class Manager: @unchecked Sendable {
         public static let shared = Manager()
 
         /// Global player activity monitors like ZPObservable.
         ///
         /// - Important: Add monitor before playback.
-        public var monitors: [ZPMonitorable] = []
+        public var monitors: [Monitorable] = []
 
         public var enableConsoleLog: Bool = false {
             didSet {
@@ -48,27 +48,27 @@ extension ZonPlayer {
 
 extension ZonPlayer.Manager {
     func start(
-        setter: ZPSettable,
+        setter: ZonPlayer.Settable,
         in view: ZonPlayerView? = nil
     ) -> ZonPlayable {
         do {
             let url = try setter.url.asURL()
             let observer = CallbackCompositer(observer: setter, monitors: monitors, callbackQueue: logQueue)
+            let session: (ZonPlayer.Sessionable, DispatchQueue)? = {
+                if let session = setter.session { return (session, _sessionQueue) }
+                return nil
+            }()
             return Player(
                 url: url,
-                context: .init(
-                    sessionQueue: _sessionQueue,
-                    maxRetryCount: setter.maxRetryCount,
-                    progressInterval: setter.progressInterval
-                ),
-                session: setter.session,
+                session: session,
+                retry: setter.retry,
                 cache: setter.cache,
                 observer: observer,
                 remoteControl: setter.remoteControl,
                 view: view
             )
         } catch {
-            let dummy = DummyPlayer()
+            let dummy = Faker()
             setter.callbackQueue.async { setter.error?.call((dummy, .invalidURL(setter.url))) }
             return dummy
         }

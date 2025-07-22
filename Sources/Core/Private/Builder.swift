@@ -5,9 +5,10 @@
 //  Created by 李文康 on 2023/11/3.
 //
 
-final class Builder: ZPSettable {
-    let url: URLConvertible
-    init(url: URLConvertible) {
+final class Builder: ZonPlayer.Settable, @unchecked Sendable {
+
+    let url: URLConvertible & Sendable
+    init(url: URLConvertible & Sendable) {
         self.url = url
     }
 
@@ -17,22 +18,20 @@ final class Builder: ZPSettable {
     // MARK: - ZPObservable
     var callbackQueue: DispatchQueue = .main
 
-    var waitToPlay: ZPDelegate<(ZonPlayable, ZPWaitingReason), Void>?
-    var play: ZPDelegate<(ZonPlayable, Float), Void>?
-    var pause: ZPDelegate<ZonPlayable, Void>?
-    var finish: ZPDelegate<(ZonPlayable, URL), Void>?
-    var error: ZPDelegate<(ZonPlayable, ZonPlayer.Error), Void>?
-    var progress: ZPDelegate<(ZonPlayable, TimeInterval, TimeInterval), Void>?
-    var duration: ZPDelegate<(ZonPlayable, TimeInterval), Void>?
-    var background: ZPDelegate<(ZonPlayable, Bool), Void>?
-    var rate: ZPDelegate<(ZonPlayable, Float, Float), Void>?
+    var waitToPlay: ZonPlayer.Delegate<(ZonPlayable, ZonPlayer.WaitingReason), Void>?
+    var play: ZonPlayer.Delegate<(ZonPlayable, Float), Void>?
+    var pause: ZonPlayer.Delegate<ZonPlayable, Void>?
+    var finish: ZonPlayer.Delegate<(ZonPlayable, URL), Void>?
+    var error: ZonPlayer.Delegate<(ZonPlayable, ZonPlayer.Error), Void>?
+    var progress: ZonPlayer.Delegate<(ZonPlayable, TimeInterval, TimeInterval), Void>?
+    var duration: ZonPlayer.Delegate<(ZonPlayable, TimeInterval), Void>?
+    var background: ZonPlayer.Delegate<(ZonPlayable, Bool), Void>?
+    var rate: ZonPlayer.Delegate<(ZonPlayable, Float, Float), Void>?
 
-    // MARK: - ZPSessionSettable
-    var session: ZPSessionable?
+    var retry: ZonPlayer.Retryable? = ZonPlayer.StepRetry()
+    var session: ZonPlayer.Sessionable?
+    var cache: ZonPlayer.Cacheable?
 
     // MARK: - ZPRemoteControlSettable
-    var remoteControl: ZPDelegate<ZPRemoteControllable, Void>?
-
-    // MARK: - ZPCacheSettable
-    var cache: ZPCacheable?
+    var remoteControl: ZonPlayer.Delegate<ZonPlayer.RemoteControllable, Void>?
 }

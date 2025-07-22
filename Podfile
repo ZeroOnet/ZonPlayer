@@ -1,4 +1,4 @@
-platform :ios, '12.0'
+platform :ios, '13.0'
 use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git'
@@ -11,8 +11,8 @@ target 'Example-iOS' do
   target 'Tests' do
     inherit! :search_paths
 
-    pod 'Nimble', '10.0.0'
-    pod 'Quick', '5.0.1'
+    pod 'Nimble', '13.7.1'
+    pod 'Quick', '7.6.2'
   end
 end
 

@@ -7,16 +7,16 @@
 //
 
 final class ControllerTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test player controller") {
             it("play") {
                 waitUntil(timeout: .seconds(5)) { done in
                     let player = ZonPlayer
                         .player(self._url)
-                        .onError(self) { wlf, _ in
-                            wlf.__zon_triggerUnexpectedError()
+                        .onError(_error) { _, _ in
+                            self.__zon_triggerUnexpectedError()
                         }
-                        .onPlayed(self) { _, payload in
+                        .onPlayed(_play) { _, payload in
                             expect { payload.1 } == 1
                             done()
                         }
@@ -30,10 +30,10 @@ final class ControllerTests: QuickSpec {
                 waitUntil(timeout: .seconds(5)) { done in
                     let player = ZonPlayer
                         .player(self._url)
-                        .onError(self) { wlf, _ in
-                            wlf.__zon_triggerUnexpectedError()
+                        .onError(_error) { _, _ in
+                            self.__zon_triggerUnexpectedError()
                         }
-                        .onPaused(self) { _, _ in
+                        .onPaused(_pause) { _, _ in
                             done()
                         }
                         .activate()
@@ -48,10 +48,10 @@ final class ControllerTests: QuickSpec {
                     let rate: Float = 1.5
                     let player = ZonPlayer
                         .player(self._url)
-                        .onError(self) { wlf, _ in
-                            wlf.__zon_triggerUnexpectedError()
+                        .onError(_error) { _, _ in
+                            self.__zon_triggerUnexpectedError()
                         }
-                        .onRate(self) { _, payload in
+                        .onRate(_rate) { _, payload in
                             expect { payload.1 } == 1
                             expect { payload.2 } == rate
                             done()
@@ -67,8 +67,8 @@ final class ControllerTests: QuickSpec {
                     let time: TimeInterval = 3
                     let player = ZonPlayer
                         .player(self._url)
-                        .onError(self) { wlf, _ in
-                            wlf.__zon_triggerUnexpectedError()
+                        .onError(_error) { _, _ in
+                            self.__zon_triggerUnexpectedError()
                         }
                         .activate()
                     player.play()
@@ -85,10 +85,10 @@ final class ControllerTests: QuickSpec {
                     var status = [true, false]
                     let player = ZonPlayer
                         .player(self._url)
-                        .onError(self) { wlf, _ in
-                            wlf.__zon_triggerUnexpectedError()
+                        .onError(_error) { _, _ in
+                            self.__zon_triggerUnexpectedError()
                         }
-                        .onBackground(self) { wlf, payload in
+                        .onBackground(_background) { _, payload in
                             expect { status.isEmpty }.to(beFalse())
                             expect { status.removeFirst() } == payload.1
                             if status.isEmpty { done() }
@@ -107,6 +107,11 @@ final class ControllerTests: QuickSpec {
         }
     }
 
-    private var _players: [ZonPlayable] = []
-    private let _url = "https://media-audio1.baydn.com/creeper/listening/33aede75f51823e9f7242cc65d09bc45.8c3bc6434a2d9c9b61f7fe28b519a841.mp3"
+    private static var _error = ZonPlayer.Delegate<(ZonPlayable, ZonPlayer.Error), Void>()
+    private static var _background = ZonPlayer.Delegate<(ZonPlayable, Bool), Void>()
+    private static var _play = ZonPlayer.Delegate<(ZonPlayable, Float), Void>()
+    private static var _pause = ZonPlayer.Delegate<ZonPlayable, Void>()
+    private static var _rate = ZonPlayer.Delegate<(ZonPlayable, Float, Float), Void>()
+    private static var _players: [ZonPlayable] = []
+    private static let _url = "https://media-audio1.baydn.com/creeper/listening/33aede75f51823e9f7242cc65d09bc45.8c3bc6434a2d9c9b61f7fe28b519a841.mp3"
 }

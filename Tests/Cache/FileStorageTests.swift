@@ -7,21 +7,21 @@
 //
 
 final class FileStorageTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test file storage") {
             it("Invalid cache directory") {
                 let config = ZPC.Config(
                     cacheDirectory: URL(string: "https://abc").unsafelyUnwrapped,
-                    fileName: ZPC.FileNameMD5BaseOnURL(),
+                    fileName: ZPC.FileNameSHA256BaseOnURL(),
                     ioQueue: .init(label: "")
                 )
-                let storage = ZPC.DefaultFileStorage(config: config)
+                let storage = ZPC.Harvest.DefaultFileStorage(config: config)
                 let fileURLResult = storage.fileURL(url: URL(string: "xxx").unsafelyUnwrapped)
                 let readResult = storage.read(with: URL(string: "abc").unsafelyUnwrapped)
 
                 waitUntil(timeout: .seconds(5)) { done in
                     storage.create(
-                        file: File(location: URL(string: "https://ccc").unsafelyUnwrapped),
+                        file: ZPC.Harvest.File(location: URL(string: "https://ccc").unsafelyUnwrapped),
                         with: URL(string: "hhh").unsafelyUnwrapped
                     ) { result in
                         guard 
@@ -38,7 +38,7 @@ final class FileStorageTests: QuickSpec {
             }
 
             it("File not found") {
-                let storage = ZPC.DefaultFileStorage()
+                let storage = ZPC.Harvest.DefaultFileStorage()
                 let result = storage.read(with: URL(string: "FileNotFound\(Int.random(in: 100..<1000))").unsafelyUnwrapped)
                 guard case .success(nil) = result else {
                     self.__zon_triggerUnexpectedError()
@@ -47,8 +47,8 @@ final class FileStorageTests: QuickSpec {
             }
 
             it("Fie cannot store") {
-                let file = File(location: URL(string: "https://aaa").unsafelyUnwrapped)
-                let storage = ZPC.DefaultFileStorage()
+                let file = ZPC.Harvest.File(location: URL(string: "https://aaa").unsafelyUnwrapped)
+                let storage = ZPC.Harvest.DefaultFileStorage()
                 waitUntil(timeout: .seconds(5)) { done in
                     storage.create(file: file, with: URL(string: "abcded").unsafelyUnwrapped) { result in
                         guard case .failure(.cacheFailed(.fileStoreFailed)) = result else {
@@ -61,10 +61,10 @@ final class FileStorageTests: QuickSpec {
             }
 
             it("Store, read and delete file") {
-                let storage = ZPC.DefaultFileStorage()
+                let storage = ZPC.Harvest.DefaultFileStorage()
                 let fileURL = storage.config.cacheDirectory.appendingPathComponent("storeAndReadFile.text", isDirectory: false)
                 FileManager.default.createFile(atPath: fileURL.path, contents: "ABCD".data(using: .utf8))
-                let file = File(location: fileURL)
+                let file = ZPC.Harvest.File(location: fileURL)
                 let url = URL(string: "haha").unsafelyUnwrapped
                 waitUntil(timeout: .seconds(5)) { done in
                     storage.create(file: file, with: url) { storeResult in

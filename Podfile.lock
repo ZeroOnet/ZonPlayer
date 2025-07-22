@@ -1,15 +1,30 @@
 PODS:
-  - Nimble (10.0.0)
-  - Quick (5.0.1)
+  - CwlCatchException (2.2.1):
+    - CwlCatchExceptionSupport (~> 2.2.1)
+  - CwlCatchExceptionSupport (2.2.1)
+  - CwlMachBadInstructionHandler (2.2.2)
+  - CwlPosixPreconditionTesting (2.2.2)
+  - CwlPreconditionTesting (2.2.2):
+    - CwlCatchException (~> 2.2.1)
+    - CwlMachBadInstructionHandler (~> 2.2.2)
+    - CwlPosixPreconditionTesting (~> 2.2.2)
+  - Nimble (13.7.1):
+    - CwlPreconditionTesting (~> 2.2.0)
+  - Quick (7.6.2)
   - ZonPlayer (1.0.0)
 
 DEPENDENCIES:
-  - Nimble (= 10.0.0)
-  - Quick (= 5.0.1)
+  - Nimble (= 13.7.1)
+  - Quick (= 7.6.2)
   - ZonPlayer (from `./`)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - CwlCatchException
+    - CwlCatchExceptionSupport
+    - CwlMachBadInstructionHandler
+    - CwlPosixPreconditionTesting
+    - CwlPreconditionTesting
     - Nimble
     - Quick
 
@@ -18,10 +33,15 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
-  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
-  ZonPlayer: 51bc15f40546820879c7a451a55d44c43e1906e8
+  CwlCatchException: 7acc161b299a6de7f0a46a6ed741eae2c8b4d75a
+  CwlCatchExceptionSupport: 54ccab8d8c78907b57f99717fb19d4cc3bce02dc
+  CwlMachBadInstructionHandler: dae4fdd124d45c9910ac240287cc7b898f4502a1
+  CwlPosixPreconditionTesting: ecd095aa2129e740b44301c34571e8d85906fb88
+  CwlPreconditionTesting: 67a0047dd4de4382b93442c0e3f25207f984f35a
+  Nimble: 317d713c30c3336dd8571da1889f7ec3afc626e8
+  Quick: b8bec97cd4b9f21da0472d45580f763b801fc353
+  ZonPlayer: 378854ff3d4b4d0f02f210fb4ba6fbf925a4af14
 
-PODFILE CHECKSUM: 921fe75d7d69560ff977d2255cf93c43dab543de
+PODFILE CHECKSUM: 87dcc43d2e4b1ed78b2b835c6c927b4bdee27a9e
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.16.2

@@ -5,10 +5,10 @@
 //  Created by 李文康 on 2023/11/3.
 //
 
-struct Logger: ZPMonitorable {
+struct Logger: ZonPlayer.Monitorable {
     let queue: DispatchQueue
 
-    func player(_ player: ZonPlayable, didWaitToPlay reason: ZPWaitingReason) {
+    func player(_ player: ZonPlayable, didWaitToPlay reason: ZonPlayer.WaitingReason) {
         _print("did wait to play: \(reason)")
     }
 

@@ -7,13 +7,13 @@
 //
 
 final class DataStorageTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test data storage") {
             it("Set and get meta data") {
                 let url = URL(string: "https://test/metadata").unsafelyUnwrapped
                 let config = ZPC.Config.config(components: "MetaData")
-                let storage = ZPC.DefaultDataStorage(url: url, config: config)
-                let metaData = ZPC.MetaData(contentType: "abcd", isByteRangeAccessSupported: false, contentLength: 10239)
+                let storage = ZPC.Streaming.DefaultDataStorage(url: url, config: config)
+                let metaData = ZPC.Streaming.MetaData(contentType: "abcd", isByteRangeAccessSupported: false, contentLength: 10239)
                 waitUntil(timeout: .seconds(5)) { done in
                     storage.setMetaData(metaData)
                     storage.getMetaData {
@@ -32,7 +32,7 @@ final class DataStorageTests: QuickSpec {
             it("Set, get and delete data") {
                 let url = URL(string: "https://test/data").unsafelyUnwrapped
                 let config = ZPC.Config.config(components: "Data")
-                let storage = ZPC.DefaultDataStorage(url: url, config: config)
+                let storage = ZPC.Streaming.DefaultDataStorage(url: url, config: config)
                 waitUntil(timeout: .seconds(5)) { done in
                     let data = "ABCDEFG".data(using: .utf8).unsafelyUnwrapped
                     let range = NSRange(location: 0, length: data.count)

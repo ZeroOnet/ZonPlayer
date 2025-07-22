@@ -12,23 +12,23 @@
 @_exported import Quick
 
 extension XCTestCase {
-    func __zon_triggerUnexpectedError() {
+    static func __zon_triggerUnexpectedError() {
         XCTFail("Unexpected error occurred.")
     }
 }
 
-class LoadingRequest: NSObject, ZPCLoadingRequestable {
+class LoadingRequest: NSObject, ZPC.Streaming.LoadingRequestable {
     var isFinished: Bool = false
 
-    var theDataRequest: ZPCLoadingDataRequestable?
-    var theMetaDataRequest: ZPCLoadingMetaDataRequestable? = LoadingMetaDataRequest()
+    var theDataRequest: ZPC.Streaming.LoadingDataRequestable?
+    var theMetaDataRequest: ZPC.Streaming.LoadingMetaDataRequestable? = LoadingMetaDataRequest()
 
     func finishLoading(with error: Error?) { isFinished = true }
 
     func finishLoading() { isFinished = true }
 }
 
-class LoadingDataRequest: NSObject, ZPCLoadingDataRequestable {
+class LoadingDataRequest: NSObject, ZPC.Streaming.LoadingDataRequestable {
     var requestedOffset: Int64 = 0
     var requestedLength: Int = 0
     var currentOffset: Int64 = 0
@@ -40,7 +40,7 @@ class LoadingDataRequest: NSObject, ZPCLoadingDataRequestable {
     }
 }
 
-class LoadingMetaDataRequest: NSObject, ZPCLoadingMetaDataRequestable {
+class LoadingMetaDataRequest: NSObject, ZPC.Streaming.LoadingMetaDataRequestable {
     var contentLength: Int64 = 0
     var contentType: String?
     var isByteRangeAccessSupported = false

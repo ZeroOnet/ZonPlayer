@@ -9,12 +9,12 @@
 @testable import ZonPlayer
 
 final class DataFetcherTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test data fetcher") {
             it("Fullfill meta data") {
                 let url = URL(string: "abcd").unsafelyUnwrapped
                 let storage = _Storage(url: url)
-                let metaData = ZPC.MetaData(contentType: "ABC", isByteRangeAccessSupported: true, contentLength: 10101393)
+                let metaData = ZPC.Streaming.MetaData(contentType: "ABC", isByteRangeAccessSupported: true, contentLength: 10101393)
                 storage.setMetaData(metaData)
                 let request = LoadingRequest()
                 let fetcher = DataFetcher(storage: storage, requester: _Requester(url: url, plugins: []), loadingRequest: request)
@@ -42,7 +42,7 @@ final class DataFetcherTests: QuickSpec {
                 let url = URL(string: "efg").unsafelyUnwrapped
                 let data = "dkdjdjddj".data(using: .utf8).unsafelyUnwrapped
                 let storage = _Storage(url: url)
-                let metaData = ZPC.MetaData(
+                let metaData = ZPC.Streaming.MetaData(
                     contentType: "public.mpeg-4",
                     isByteRangeAccessSupported: true,
                     contentLength: data.count
@@ -85,9 +85,9 @@ final class DataFetcherTests: QuickSpec {
                 fetcher.fetch()
                 requester.didReceive(data: remoteData, range: NSRange(location: storageDataOne.count, length: remoteData.count))
                 waitUntil(timeout: .seconds(5)) { done in
-                    fetcher.onCompleted.delegate(on: self) { wlf, _ in
-                            expect { dataRequest.data == mergedData }.to(beTrue())
-                            done()
+                    fetcher.onCompleted.delegate(on: _delegate) { _, _ in
+                        expect { dataRequest.data == mergedData }.to(beTrue())
+                        done()
                     }
                 }
                 self._fetchers.append(fetcher)
@@ -95,17 +95,18 @@ final class DataFetcherTests: QuickSpec {
         }
     }
 
-    private var _fetchers: [DataFetcher] = []
+    private static var _delegate = ZonPlayer.Delegate<(DataFetcher, Result<Void, ZonPlayer.Error>), Void>()
+    private static var _fetchers: [DataFetcher] = []
 }
 
 extension DataFetcherTests {
-    private class _Storage: ZPCDataStorable {
+    private class _Storage: ZPC.Streaming.DataStorable {
         let url: URL
         init(url: URL) {
             self.url = url
             self.record = Record(url: url)
         }
-        let onError = ZPDelegate<ZonPlayer.Error, Void>()
+        let onError = ZonPlayer.Delegate<ZonPlayer.Error, Void>()
         var record: Record
         var pair: [NSRange: Data] = [:]
 
@@ -113,11 +114,11 @@ extension DataFetcherTests {
             completion(record.fragments)
         }
         
-        func setMetaData(_ metaData: ZPC.MetaData) {
+        func setMetaData(_ metaData: ZPC.Streaming.MetaData) {
             self.record.metaData = metaData
         }
         
-        func getMetaData(completion: @escaping (ZPC.MetaData?) -> Void) {
+        func getMetaData(completion: @escaping (ZPC.Streaming.MetaData?) -> Void) {
             completion(self.record.metaData)
         }
         
@@ -137,21 +138,21 @@ extension DataFetcherTests {
         }
     }
 
-    private class _Requester: ZPCDataRequestable {
+    private class _Requester: ZPC.Streaming.DataRequestable {
         let url: URL
-        let plugins: [ZPCStreamingPluggable]
-        init(url: URL, plugins: [ZPCStreamingPluggable]) {
+        let plugins: [ZPC.Streaming.Pluggable]
+        init(url: URL, plugins: [ZPC.Streaming.Pluggable]) {
             self.url = url
             self.plugins = plugins
         }
 
-        var pair: [NSRange: ZPCLoadingRequestable] = [:]
+        var pair: [NSRange: ZPC.Streaming.LoadingRequestable] = [:]
 
         func didReceive(data: Data, range: NSRange) {
             pair[range]?.theDataRequest?.respond(with: data)
         }
 
-        func dataTask(forRange range: NSRange, withLoadingRequest loadingRequest: ZPCLoadingRequestable) -> ZPCDataTaskable {
+        func dataTask(forRange range: NSRange, withLoadingRequest loadingRequest: ZPC.Streaming.LoadingRequestable) -> ZPC.Streaming.DataTaskable {
             pair[range] = loadingRequest
             let task = URLSession.shared.dataTask(with: URLRequest(url: url))
             let result = DataFromRemote(task: task, range: range, loadingRequest: loadingRequest)

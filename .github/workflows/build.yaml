@@ -4,11 +4,11 @@ on: [push, pull_request]
 
 jobs:
   run-test:
-    runs-on: macos-13
+    runs-on: macos-15
     strategy:
       matrix:
-        destination: ["iOS Simulator,name=iPhone 14"]
-        swift-version: [5.0]
+        destination: ["iOS Simulator,name=iPhone 16"]
+        swift-version: [5.9] # ⚠️ 当前使用的 Nimble 和 Quick 在 Swift 6 上编译错误。
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.2
+          ruby-version: 3.3.6
           bundler-cache: true
 
       # - name: Check Cache

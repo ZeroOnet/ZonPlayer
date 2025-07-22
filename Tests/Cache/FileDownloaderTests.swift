@@ -7,11 +7,11 @@
 //
 
 final class FileDownloaderTests: QuickSpec {
-    override func spec() {
+    override static func spec() {
         describe("Test file downloader") {
             it("Download cancelled") {
                 waitUntil(timeout: .seconds(1)) { done in
-                    let downloader = ZPC.DefaultFileDownloader(timeout: 5)
+                    let downloader = ZPC.Harvest.DefaultFileDownloader(timeout: 5)
                     downloader.download(
                         with: URL(string: "https://abc.com").unsafelyUnwrapped,
                         destination: self._downloadDir.appendingPathComponent("1.a")
@@ -28,7 +28,7 @@ final class FileDownloaderTests: QuickSpec {
 
             it("Download finished") {
                 waitUntil(timeout: .seconds(10)) { done in
-                    let downloader = ZPC.DefaultFileDownloader(timeout: 20)
+                    let downloader = ZPC.Harvest.DefaultFileDownloader(timeout: 20)
                     let destination = self._downloadDir.appendingPathComponent("2.mp3")
                     downloader.download(
                         with: URL(string: "https://media-audio1.baydn.com/creeper/listening/33aede75f51823e9f7242cc65d09bc45.8c3bc6434a2d9c9b61f7fe28b519a841.mp3")!,
@@ -47,7 +47,7 @@ final class FileDownloaderTests: QuickSpec {
 
             it("Download failed") {
                 waitUntil(timeout: .seconds(10)) { done in
-                    let downloader = ZPC.DefaultFileDownloader(timeout: 10)
+                    let downloader = ZPC.Harvest.DefaultFileDownloader(timeout: 10)
                     downloader.download(
                         with: URL(string: "test://xx").unsafelyUnwrapped,
                         destination: self._downloadDir.appendingPathComponent("3.b")
@@ -64,6 +64,6 @@ final class FileDownloaderTests: QuickSpec {
         }
     }
 
-    private let _downloadDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    private var _downloaders: [ZPFileDownloadable] = []
+    private static let _downloadDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    private static var _downloaders: [ZPC.Harvest.FileDownloadable] = []
 }
