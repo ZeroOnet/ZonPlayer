@@ -15,6 +15,7 @@ final class InvalidInitializationTests: QuickSpec {
                     let player = ZonPlayer
                         .player(invalidURL)
                         .onError(_delegate) { _, payload in
+                            // TODO: - 多个错误回调问题
                             guard case .invalidURL = payload.1 else {
                                 self.__zon_triggerUnexpectedError()
                                 return
