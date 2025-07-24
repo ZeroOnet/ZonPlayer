@@ -15,7 +15,7 @@ extension ZonPlayer {
 
         func playerPlayDidFinish(_ player: ZonPlayable, url: URL)
 
-        func player(_ player: ZonPlayable, playFailed error: ZonPlayer.Error)
+        func player(_ player: ZonPlayable?, playFailed error: ZonPlayer.Error)
 
         func player(_ player: ZonPlayable, playProgressDidChange currentTime: TimeInterval, totalTime: TimeInterval)
 
@@ -35,7 +35,7 @@ extension ZonPlayer.Monitorable {
     public func player(_ player: ZonPlayable, didPlay rate: Float) {}
     public func playerDidPause(_ player: ZonPlayable) {}
     public func playerPlayDidFinish(_ player: ZonPlayable, url: URL) {}
-    public func player(_ player: ZonPlayable, playFailed error: ZonPlayer.Error) {}
+    public func player(_ player: ZonPlayable?, playFailed error: ZonPlayer.Error) {}
     public func player(
         _ player: ZonPlayable,
         playProgressDidChange currentTime: TimeInterval,
