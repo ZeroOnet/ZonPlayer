@@ -8,15 +8,34 @@
 extension ZonPlayer {
     // From https://github.com/onevcat/Kingfisher/blob/277f1ab2c6664b19b4a412e32b094b201e2d5757/Sources/Utility/Delegate.swift#L71
     public final class Delegate<Input, Output>: @unchecked Sendable {
+        public typealias Block = (Input) -> Output?
+
+        private var block: Block?
         public init() {}
 
-        private var block: ((Input) -> Output?)?
+        public init(block: @escaping Block) {
+            self.block = block
+        }
+
+        public init<T: AnyObject>(on target: T, block: @escaping (T, Input) -> Output) {
+            self.block = { [weak target] input in
+                guard let target = target else { return nil }
+                return block(target, input)
+            }
+        }
+
         @discardableResult
         public func delegate<T: AnyObject>(on target: T, block: ((T, Input) -> Output)?) -> Self {
             self.block = { [weak target] input in
                 guard let target = target else { return nil }
                 return block?(target, input)
             }
+            return self
+        }
+
+        @discardableResult
+        public func delegate(block: ((Input) -> Output)?) -> Self {
+            self.block = block
             return self
         }
 

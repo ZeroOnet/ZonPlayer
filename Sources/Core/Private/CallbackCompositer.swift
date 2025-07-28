@@ -52,7 +52,7 @@ final class CallbackCompositer: ZonPlayer.Observable, @unchecked Sendable {
         }
     }()
 
-    lazy var error: ZonPlayer.Delegate<(ZonPlayable, ZonPlayer.Error), Void>? = {
+    lazy var error: ZonPlayer.Delegate<(ZonPlayable?, ZonPlayer.Error), Void>? = {
         .init().delegate(on: self) { wlf, input in
             wlf._callback { $0.error?.call(input) }
             wlf._monitor { $0.player(input.0, playFailed: input.1) }

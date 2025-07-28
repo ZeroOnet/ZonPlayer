@@ -9,7 +9,7 @@
 final class ControllerTests: QuickSpec {
     override static func spec() {
         describe("Test player controller") {
-            it("play") {
+            it("Play") {
                 waitUntil(timeout: .seconds(5)) { done in
                     let player = ZonPlayer
                         .player(self._url)
@@ -26,7 +26,7 @@ final class ControllerTests: QuickSpec {
                 }
             }
 
-            it("pause") {
+            it("Pause") {
                 waitUntil(timeout: .seconds(5)) { done in
                     let player = ZonPlayer
                         .player(self._url)
