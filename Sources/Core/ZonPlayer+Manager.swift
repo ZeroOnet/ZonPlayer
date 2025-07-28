@@ -25,6 +25,10 @@ extension ZonPlayer {
             }
         }
 
+        lazy var logQueue: DispatchQueue = {
+            .init(label: "com.zonplayer.log")
+        }()
+
         private init() {}
 
         /**
@@ -39,10 +43,6 @@ extension ZonPlayer {
         private lazy var _sessionQueue: DispatchQueue = {
             .init(label: "com.zonplayer.session", qos: .userInitiated)
         }()
-
-        lazy var logQueue: DispatchQueue = {
-            .init(label: "com.zonplayer.log")
-        }()
     }
 }
 
@@ -50,27 +50,27 @@ extension ZonPlayer.Manager {
     func start(
         setter: ZonPlayer.Settable,
         in view: ZonPlayerView? = nil
-    ) -> ZonPlayable {
+    ) -> some ZonPlayable {
+        let url: URL
         do {
-            let url = try setter.url.asURL()
-            let observer = CallbackCompositer(observer: setter, monitors: monitors, callbackQueue: logQueue)
-            let session: (ZonPlayer.Sessionable, DispatchQueue)? = {
-                if let session = setter.session { return (session, _sessionQueue) }
-                return nil
-            }()
-            return Player(
-                url: url,
-                session: session,
-                retry: setter.retry,
-                cache: setter.cache,
-                observer: observer,
-                remoteControl: setter.remoteControl,
-                view: view
-            )
+            url = try setter.url.asURL()
         } catch {
-            let dummy = Faker()
-            setter.callbackQueue.async { setter.error?.call((dummy, .invalidURL(setter.url))) }
-            return dummy
+            url = URL(string: "https://zonplayer.faker").unsafelyUnwrapped
+            setter.callbackQueue.async { setter.error?.call((nil, .invalidURL(setter.url))) }
         }
+        let observer = CallbackCompositer(observer: setter, monitors: monitors, callbackQueue: logQueue)
+        let session: (ZonPlayer.Sessionable, DispatchQueue)? = {
+            if let session = setter.session { return (session, _sessionQueue) }
+            return nil
+        }()
+        return Player(
+            url: url,
+            session: session,
+            retry: setter.retry,
+            cache: setter.cache,
+            observer: observer,
+            remoteControl: setter.remoteControl,
+            view: view
+        )
     }
 }
