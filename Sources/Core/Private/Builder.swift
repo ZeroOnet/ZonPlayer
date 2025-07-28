@@ -6,14 +6,12 @@
 //
 
 final class Builder: ZonPlayer.Settable, @unchecked Sendable {
-
     let url: URLConvertible & Sendable
     init(url: URLConvertible & Sendable) {
         self.url = url
     }
 
     var progressInterval: TimeInterval = 1
-    var maxRetryCount: Int = 1
 
     // MARK: - ZPObservable
     var callbackQueue: DispatchQueue = .main
@@ -22,7 +20,7 @@ final class Builder: ZonPlayer.Settable, @unchecked Sendable {
     var play: ZonPlayer.Delegate<(ZonPlayable, Float), Void>?
     var pause: ZonPlayer.Delegate<ZonPlayable, Void>?
     var finish: ZonPlayer.Delegate<(ZonPlayable, URL), Void>?
-    var error: ZonPlayer.Delegate<(ZonPlayable, ZonPlayer.Error), Void>?
+    var error: ZonPlayer.Delegate<(ZonPlayable?, ZonPlayer.Error), Void>?
     var progress: ZonPlayer.Delegate<(ZonPlayable, TimeInterval, TimeInterval), Void>?
     var duration: ZonPlayer.Delegate<(ZonPlayable, TimeInterval), Void>?
     var background: ZonPlayer.Delegate<(ZonPlayable, Bool), Void>?

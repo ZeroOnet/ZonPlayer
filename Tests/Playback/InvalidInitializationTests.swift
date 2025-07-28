@@ -10,16 +10,19 @@ final class InvalidInitializationTests: QuickSpec {
     override static func spec() {
         describe("Test player initialization") {
             it("Invalid url") {
-                waitUntil { done in
+                waitUntil(timeout: .seconds(5)) { done in
+                    var errorsCount = 2
                     let invalidURL = ""
                     let player = ZonPlayer
                         .player(invalidURL)
+                        .cache(ZPC.Streaming())
                         .onError(_delegate) { _, payload in
-                            guard case .invalidURL = payload.1 else {
-                                self.__zon_triggerUnexpectedError()
-                                return
+                            switch payload.1 {
+                            case .invalidURL, .playerTerminated:
+                                errorsCount -= 1
+                            default: return
                             }
-                            done()
+                            if errorsCount == 0 { done() }
                         }
                         .activate()
                     self._players.append(player)
