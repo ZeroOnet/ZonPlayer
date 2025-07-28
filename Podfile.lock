@@ -11,7 +11,7 @@ PODS:
   - Nimble (13.7.1):
     - CwlPreconditionTesting (~> 2.2.0)
   - Quick (7.6.2)
-  - ZonPlayer (1.0.0)
+  - ZonPlayer (1.1.0)
 
 DEPENDENCIES:
   - Nimble (= 13.7.1)
@@ -40,7 +40,7 @@ SPEC CHECKSUMS:
   CwlPreconditionTesting: 67a0047dd4de4382b93442c0e3f25207f984f35a
   Nimble: 317d713c30c3336dd8571da1889f7ec3afc626e8
   Quick: b8bec97cd4b9f21da0472d45580f763b801fc353
-  ZonPlayer: 378854ff3d4b4d0f02f210fb4ba6fbf925a4af14
+  ZonPlayer: 8fc8075486c80850d07ba58484415a880f2a1790
 
 PODFILE CHECKSUM: 87dcc43d2e4b1ed78b2b835c6c927b4bdee27a9e
 
