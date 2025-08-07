@@ -106,6 +106,37 @@ func seekAndPause(to time: TimeInterval) {
 }
 ```
 
+# Issues? Features!
+## AVPlayer Unexpectedly Pauses After View Controller is Popped
+Scenario:
+- A UIViewController (Controller A) hosts an AVPlayer for video playback.
+- Background audio playback is enabled via AVAudioSession.
+- The app enters background → then returns to foreground.
+- Immediately after returning to foreground, Controller A is popped from the navigation stack.
+- The controller instance is retained manually and not deallocated.
+- ❗️ Unexpected behavior: AVPlayer pauses automatically after pop, even though play() was not interrupted and no errors were triggered.
+
+Possible Cause:
+When Controller A is popped, its view is removed from the view hierarchy. If the AVPlayerLayer is attached to self.view.layer, it may lose its rendering context.
+This could cause AVPlayer to automatically pause, especially after returning from background, because the rendering engine may detect that there is no active video layer available.
+
+Fix Example:
+```swift
+final class A: UIViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        video.playerView.playerLayer.player = _stashedPlayer
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        let playerLayer = video.playerView.playerLayer
+        _stashedPlayer = playerLayer?.player
+        playerLayer?.player = nil
+    }
+}
+```
+
 # Requirements
 
 - iOS 13.0 or later
