@@ -19,6 +19,18 @@ jobs:
           ruby-version: 3.3.6
           bundler-cache: true
 
+      - name: Set Xcode version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "16.2"
+
+      - name: Check Xcode
+        run: xcode-select -p && xcodebuild -version
+
+      - name: Check Simulators
+        run: |
+          xcodebuild -scheme Example-iOS -showdestinations
+
       # - name: Check Cache
       #   uses: actions/cache@v2
       #   id: cocoapods-cache
