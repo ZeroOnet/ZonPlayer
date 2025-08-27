@@ -29,6 +29,7 @@ jobs:
 
       - name: Check Simulators
         run: |
+          xcrun simctl list runtimes
           xcodebuild -scheme Example-iOS -showdestinations
 
       # - name: Check Cache
