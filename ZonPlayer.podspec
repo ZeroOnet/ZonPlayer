@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ZonPlayer'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'A library for player in iOS.'
   s.homepage         = 'https://github.com/ZeroOnet/ZonPlayer'
   s.license          = { :type => "MIT", :file => "LICENSE" }
