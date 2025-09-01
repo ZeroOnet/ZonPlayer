@@ -25,3 +25,11 @@ extension ZonPlayer.Settable {
         ZonPlayer.Manager.shared.start(setter: self, in: view)
     }
 }
+
+extension ZonPlayer.Settable {
+    @discardableResult
+    public func on<Value>(_ keyPath: ReferenceWritableKeyPath<Self, Value>, _ value: Value) -> Self {
+        self[keyPath: keyPath] = value
+        return self
+    }
+}

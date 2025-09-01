@@ -25,15 +25,23 @@ ZonPlayer is a player library base on AVPlayer with cache and remote control sup
 
 ```swift
 
-    let player: ZonPlayable = ZonPlayer.player(URLConvertible)
-        .session(ZonPlayer.Sessionable)
-        .cache(ZonPlayer.Cacheable) // Conform ZonPlayer.Cacheable to customize cache category.
+    let player: ZonPlayable = ZonPlayer.player(any URLConvertible)
+        .session(any ZonPlayer.Sessionable)
+        .cache(any ZonPlayer.Cacheable) // Conform ZonPlayer.Cacheable to customize cache category.
         .remoteControl(self) { wlf, payload in // Conform ZonPlayer.RemoteControllable to customize background playback controller.
             payload.title(String).artist(String)....
         }
         .onPaused(self) { wlf, payload in // Conform ZonPlayer.Observable to listen player.
         }
         .activate(in: ZonPlayerView)
+
+    // or
+    let player: ZonPlayable = ZonPlayer.player(any URLConvertible)
+        .on(\.session, any ZonPlayer.Sessionable)
+        .on(\.cache, any ZonPlayer.Cacheable)
+        .on(\.finish, .init {  in })
+        .on(\.pause, .init(on: self, block: { wlf, player in }))
+        .activate()
 
     // Conform ZonPlayer.Controllable to control player instance.
     player.pause()

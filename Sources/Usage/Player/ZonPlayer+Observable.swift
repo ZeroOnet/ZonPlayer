@@ -14,7 +14,7 @@ extension ZonPlayer {
         var play: Delegate<(ZonPlayable, Float), Void>? { get nonmutating set }
         var pause: Delegate<ZonPlayable, Void>? { get nonmutating set }
         var finish: Delegate<(ZonPlayable, URL), Void>? { get nonmutating set }
-        var error: Delegate<(ZonPlayable, ZonPlayer.Error), Void>? { get nonmutating set }
+        var error: Delegate<(ZonPlayable?, ZonPlayer.Error), Void>? { get nonmutating set }
         var progress: Delegate<(ZonPlayable, TimeInterval, TimeInterval), Void>? { get nonmutating set }
         var duration: Delegate<(ZonPlayable, TimeInterval), Void>? { get nonmutating set }
         var background: Delegate<(ZonPlayable, Bool), Void>? { get nonmutating set }
@@ -63,7 +63,7 @@ extension ZonPlayer.Observable {
     }
 
     /// Listen to player failed because of an error.
-    public func onError<T: AnyObject>(_ target: T, block: ((T, (ZonPlayable, ZonPlayer.Error)) -> Void)?) -> Self {
+    public func onError<T: AnyObject>(_ target: T, block: ((T, (ZonPlayable?, ZonPlayer.Error)) -> Void)?) -> Self {
         error = (error ?? .init()).delegate(on: target, block: block)
         return self
     }

@@ -18,7 +18,7 @@ public enum ZonPlayer {
     ///     .cache(Cacheable) // Set cache policy like downloading before playback.
     ///
     /// ```
-    public static func player(_ url: URLConvertible & Sendable) -> Settable {
+    public static func player(_ url: URLConvertible & Sendable) -> some Settable {
         Builder(url: url)
     }
 }
